@@ -1,0 +1,189 @@
+{
+  "meta": {
+    "title": "ATS Studio — Estúdio digital de design e desenvolvimento",
+    "description": "Construímos marcas digitais que se notam. Web design, desenvolvimento, UI/UX e branding."
+  },
+  "nav": {
+    "work": "Trabalho",
+    "services": "Serviços",
+    "about": "Sobre",
+    "process": "Processo",
+    "contact": "Contacto",
+    "letsTalk": "Falar com o estúdio"
+  },
+  "hero": {
+    "eyebrow": "Estúdio digital · Guarda",
+    "title": "ATS Studio",
+    "statement": "Da Guarda para marcas que querem ser levadas a sério online.",
+    "subtitle": "Design, desenvolvimento e direção digital para negócios que precisam de presença, clareza e execução sem ruído.",
+    "cta": "Ver trabalho",
+    "secondaryCta": "Falar sobre um projeto",
+    "scroll": "Desliza"
+  },
+  "marquee": [
+    "Web Design",
+    "Development",
+    "Branding",
+    "UI/UX",
+    "Motion",
+    "Design Systems"
+  ],
+  "work": {
+    "eyebrow": "Trabalho selecionado",
+    "title": "Concept studies.",
+    "subtitle": "Quatro estudos editoriais criados para mostrar como a ATS Studio pensa direção visual, produto, marca e execução.",
+    "concept": "Concept work",
+    "viewProject": "Ver projeto",
+    "back": "Voltar",
+    "credits": "Créditos",
+    "year": "Ano",
+    "role": "Função",
+    "category": "Categoria",
+    "next": "Projeto seguinte"
+  },
+  "services": {
+    "eyebrow": "Serviços",
+    "title": "O que fazemos.",
+    "subtitle": "Capacidades que combinamos consoante o desafio.",
+    "network": {
+      "eyebrow": "Rede parceira",
+      "title": "O pacote completo, quando o projeto pede mais.",
+      "description": "Para além de design e desenvolvimento, trabalhamos com empresas parceiras de marketing digital, fotografia, vídeo e copywriting. Assim, quando uma marca precisa de lançamento, conteúdo, campanhas, texto ou produção visual, conseguimos coordenar a equipa certa sem perder a direção criativa.",
+      "items": ["Marketing digital", "Fotografia", "Vídeo", "Copywriting", "Conteúdo", "Campanhas", "Lançamento"]
+    },
+    "items": [
+      {
+        "id": "01",
+        "title": "Web Design",
+        "description": "Sistemas de design, prototipagem de alta fidelidade, art direction.",
+        "tags": ["Sistemas", "Prototipagem", "Art Direction"]
+      },
+      {
+        "id": "02",
+        "title": "Web Development",
+        "description": "Sites estáticos, web apps, e-commerce e performance no limite.",
+        "tags": ["Next.js", "Shopify", "Headless CMS"]
+      },
+      {
+        "id": "03",
+        "title": "UI/UX",
+        "description": "Pesquisa, wireframing, testes de usabilidade e fluxos otimizados.",
+        "tags": ["Pesquisa", "Wireframes", "Acessibilidade"]
+      },
+      {
+        "id": "04",
+        "title": "Branding",
+        "description": "Identidade visual, logótipos e guidelines para marcas que duram.",
+        "tags": ["Identidade", "Logo", "Guidelines"]
+      }
+    ]
+  },
+  "audience": {
+    "eyebrow": "Para quem trabalhamos",
+    "title": "Feito para quem precisa de parecer profissional antes de explicar tudo.",
+    "subtitle": "Trabalhamos com negócios que querem transformar uma ideia, marca ou serviço numa presença digital clara e credível.",
+    "items": [
+      {
+        "id": "01",
+        "title": "Negócios locais",
+        "description": "Restaurantes, clínicas, lojas, ateliers e serviços que querem ser encontrados, compreendidos e escolhidos."
+      },
+      {
+        "id": "02",
+        "title": "Marcas novas",
+        "description": "Projetos a nascer que precisam de nome, identidade, website e uma primeira impressão forte."
+      },
+      {
+        "id": "03",
+        "title": "Empresas em renovação",
+        "description": "Equipas que já existem, mas cujo site, imagem ou experiência digital deixou de acompanhar a qualidade do trabalho."
+      },
+      {
+        "id": "04",
+        "title": "Profissionais independentes",
+        "description": "Criadores, consultores e especialistas que precisam de uma presença simples, elegante e fácil de manter."
+      }
+    ]
+  },
+  "about": {
+    "eyebrow": "Sobre",
+    "title": "Design com intenção. Código com precisão.",
+    "p1": "ATS Studio é o novo projeto de Alexandre Terras Simões, designer e developer da cidade da Guarda. É um estúdio de design e desenvolvimento digital para fundadores, negócios locais e equipas que querem mais do que uma página bonita — querem uma presença digital clara, memorável e pronta a crescer.",
+    "p2": "Cada projeto começa com uma conversa franca. Definimos o que a marca precisa de comunicar, desenhamos a experiência e construímos em código limpo, rápido e fácil de manter.",
+    "p3": "Pequeno por opção. Próximo do cliente, sempre.",
+    "skills": "Stack & ferramentas",
+    "skillsList": ["Figma", "Next.js", "React", "TypeScript", "Tailwind", "Python", "Photoshop", "Databases", "PostgreSQL", "Supabase", "Node.js", "Shopify", "Webflow", "Framer Motion", "Vercel"]
+  },
+  "process": {
+    "eyebrow": "Processo",
+    "title": "Como trabalhamos.",
+    "subtitle": "Quatro fases. Sem mistério, sem fluff.",
+    "steps": [
+      {
+        "id": "01",
+        "title": "Discovery",
+        "description": "Briefing, pesquisa, alinhamento de objetivos e definição de sucesso.",
+        "outputs": ["Brief", "Mapa de objetivos", "Direção inicial"]
+      },
+      {
+        "id": "02",
+        "title": "Design",
+        "description": "Wireframes, mood boards, identidade e protótipos navegáveis.",
+        "outputs": ["Sitemap", "Wireframes", "Design system"]
+      },
+      {
+        "id": "03",
+        "title": "Development",
+        "description": "Build em código limpo, testes, performance e acessibilidade.",
+        "outputs": ["Frontend", "CMS/dados", "Performance"]
+      },
+      {
+        "id": "04",
+        "title": "Launch",
+        "description": "Deploy, formação, documentação e suporte contínuo.",
+        "outputs": ["Deploy", "Formação", "Suporte"]
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Contacto",
+    "title": "Tens uma ideia? Vamos falar.",
+    "subtitle": "Escreve-nos um email — respondemos em menos de 24h em dias úteis.",
+    "email": "geral@atstudio.pt",
+    "projectTypes": {
+      "title": "Por onde podemos começar",
+      "items": ["Site institucional", "Loja online", "Branding + presença digital"]
+    },
+    "form": {
+      "name": "Nome",
+      "namePlaceholder": "O teu nome",
+      "email": "Email",
+      "emailPlaceholder": "tu@email.com",
+      "message": "Mensagem",
+      "messagePlaceholder": "Conta-nos sobre o teu projeto...",
+      "submit": "Enviar mensagem",
+      "sending": "A enviar...",
+      "success": "Mensagem enviada. Em breve entraremos em contacto.",
+      "error": "Algo correu mal. Tenta novamente."
+    },
+    "location": "Guarda, Portugal",
+    "social": {
+      "instagram": {
+        "label": "Instagram",
+        "url": "https://www.instagram.com/atstudioagency/"
+      },
+      "linkedin": {
+        "label": "LinkedIn",
+        "url": "https://www.linkedin.com/in/alexandre-sim%C3%B5es-a4aaba407/"
+      },
+      "behance": {
+        "label": "Behance",
+        "url": "https://www.behance.net/atstudioagency"
+      }
+    }
+  },
+  "footer": {
+    "rights": "Todos os direitos reservados.",
+    "built": "Construído com cuidado na Guarda."
+  }
+}

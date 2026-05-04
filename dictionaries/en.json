@@ -1,0 +1,189 @@
+{
+  "meta": {
+    "title": "ATS Studio — Digital design & development studio",
+    "description": "We build digital brands that get noticed. Web design, development, UI/UX and branding."
+  },
+  "nav": {
+    "work": "Work",
+    "services": "Services",
+    "about": "About",
+    "process": "Process",
+    "contact": "Contact",
+    "letsTalk": "Let's talk"
+  },
+  "hero": {
+    "eyebrow": "Digital studio · Guarda",
+    "title": "ATS Studio",
+    "statement": "From Guarda for brands that want to be taken seriously online.",
+    "subtitle": "Design, development and digital direction for businesses that need presence, clarity and clean execution.",
+    "cta": "See work",
+    "secondaryCta": "Talk about a project",
+    "scroll": "Scroll"
+  },
+  "marquee": [
+    "Web Design",
+    "Development",
+    "Branding",
+    "UI/UX",
+    "Motion",
+    "Design Systems"
+  ],
+  "work": {
+    "eyebrow": "Selected work",
+    "title": "Concept studies.",
+    "subtitle": "Four editorial studies created to show how ATS Studio thinks through visual direction, product, brand and execution.",
+    "concept": "Concept work",
+    "viewProject": "View project",
+    "back": "Back",
+    "credits": "Credits",
+    "year": "Year",
+    "role": "Role",
+    "category": "Category",
+    "next": "Next project"
+  },
+  "services": {
+    "eyebrow": "Services",
+    "title": "What we do.",
+    "subtitle": "Capabilities we combine depending on the challenge.",
+    "network": {
+      "eyebrow": "Partner network",
+      "title": "The full package, when the project needs more.",
+      "description": "Beyond design and development, we work with partner companies in digital marketing, photography, video and copywriting. When a brand needs launch support, content, campaigns, messaging or visual production, we can coordinate the right team without losing creative direction.",
+      "items": ["Digital marketing", "Photography", "Video", "Copywriting", "Content", "Campaigns", "Launch"]
+    },
+    "items": [
+      {
+        "id": "01",
+        "title": "Web Design",
+        "description": "Design systems, high-fidelity prototyping, art direction.",
+        "tags": ["Systems", "Prototyping", "Art Direction"]
+      },
+      {
+        "id": "02",
+        "title": "Web Development",
+        "description": "Static sites, web apps, e-commerce, and performance to the edge.",
+        "tags": ["Next.js", "Shopify", "Headless CMS"]
+      },
+      {
+        "id": "03",
+        "title": "UI/UX",
+        "description": "Research, wireframing, usability testing and tuned flows.",
+        "tags": ["Research", "Wireframes", "Accessibility"]
+      },
+      {
+        "id": "04",
+        "title": "Branding",
+        "description": "Visual identity, logos and guidelines for brands that last.",
+        "tags": ["Identity", "Logo", "Guidelines"]
+      }
+    ]
+  },
+  "audience": {
+    "eyebrow": "Who we work with",
+    "title": "Made for teams that need to look professional before explaining everything.",
+    "subtitle": "We work with businesses that want to turn an idea, brand or service into a clear and credible digital presence.",
+    "items": [
+      {
+        "id": "01",
+        "title": "Local businesses",
+        "description": "Restaurants, clinics, shops, studios and services that want to be found, understood and chosen."
+      },
+      {
+        "id": "02",
+        "title": "New brands",
+        "description": "Early projects that need a name, identity, website and a strong first impression."
+      },
+      {
+        "id": "03",
+        "title": "Companies refreshing",
+        "description": "Teams that already exist, but whose website, image or digital experience no longer matches the quality of their work."
+      },
+      {
+        "id": "04",
+        "title": "Independent professionals",
+        "description": "Creators, consultants and specialists who need a simple, elegant and maintainable presence."
+      }
+    ]
+  },
+  "about": {
+    "eyebrow": "About",
+    "title": "Design with intent. Code with precision.",
+    "p1": "ATS Studio is Alexandre Terras Simões' new digital design and development studio, rooted in the city of Guarda. We work with founders, local businesses and teams who want more than a good-looking page — they want a clear, memorable digital presence built to grow.",
+    "p2": "Every project starts with an honest conversation. We define what the brand needs to communicate, design the experience, then build it in clean, fast, maintainable code.",
+    "p3": "Small by choice. Close to the client, always.",
+    "skills": "Stack & tools",
+    "skillsList": ["Figma", "Next.js", "React", "TypeScript", "Tailwind", "Python", "Photoshop", "Databases", "PostgreSQL", "Supabase", "Node.js", "Shopify", "Webflow", "Framer Motion", "Vercel"]
+  },
+  "process": {
+    "eyebrow": "Process",
+    "title": "How we work.",
+    "subtitle": "Four phases. No mystery, no fluff.",
+    "steps": [
+      {
+        "id": "01",
+        "title": "Discovery",
+        "description": "Briefing, research, goal alignment and definition of success.",
+        "outputs": ["Brief", "Goal map", "Initial direction"]
+      },
+      {
+        "id": "02",
+        "title": "Design",
+        "description": "Wireframes, mood boards, identity and clickable prototypes.",
+        "outputs": ["Sitemap", "Wireframes", "Design system"]
+      },
+      {
+        "id": "03",
+        "title": "Development",
+        "description": "Clean-code build, testing, performance and accessibility.",
+        "outputs": ["Frontend", "CMS/data", "Performance"]
+      },
+      {
+        "id": "04",
+        "title": "Launch",
+        "description": "Deploy, training, documentation and ongoing support.",
+        "outputs": ["Deploy", "Training", "Support"]
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Got an idea? Let's talk.",
+    "subtitle": "Drop us an email — we reply within 24h on business days.",
+    "email": "geral@atstudio.pt",
+    "projectTypes": {
+      "title": "Where we can start",
+      "items": ["Institutional website", "Online store", "Branding + digital presence"]
+    },
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "you@email.com",
+      "message": "Message",
+      "messagePlaceholder": "Tell us about your project...",
+      "submit": "Send message",
+      "sending": "Sending...",
+      "success": "Message sent. We'll be in touch soon.",
+      "error": "Something went wrong. Please try again."
+    },
+    "location": "Guarda, Portugal",
+    "social": {
+      "instagram": {
+        "label": "Instagram",
+        "url": "https://www.instagram.com/atstudioagency/"
+      },
+      "linkedin": {
+        "label": "LinkedIn",
+        "url": "https://www.linkedin.com/in/alexandre-sim%C3%B5es-a4aaba407/"
+      },
+      "behance": {
+        "label": "Behance",
+        "url": "https://www.behance.net/atstudioagency"
+      }
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "built": "Built with care in Guarda."
+  }
+}
