@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { MouseEvent, useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import type { Locale, Dictionary } from "@/lib/i18n";
 
@@ -24,6 +24,32 @@ export default function Navbar({ locale, dict }: Props) {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    if (!open) return;
+
+    const scrollY = window.scrollY;
+    window.dispatchEvent(new Event("ats:menu-lock"));
+    document.documentElement.style.overflow = "hidden";
+    document.body.style.overflow = "hidden";
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.left = "0";
+    document.body.style.right = "0";
+    document.body.style.width = "100%";
+
+    return () => {
+      document.documentElement.style.overflow = "";
+      document.body.style.overflow = "";
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.left = "";
+      document.body.style.right = "";
+      document.body.style.width = "";
+      window.scrollTo(0, scrollY);
+      window.dispatchEvent(new Event("ats:menu-unlock"));
+    };
+  }, [open]);
+
   const otherLocale: Locale = locale === "pt" ? "en" : "pt";
   const otherPath =
     pathname && pathname.startsWith(`/${locale}`)
@@ -37,6 +63,26 @@ export default function Navbar({ locale, dict }: Props) {
     { href: `/${locale}#process`, label: dict.nav.process },
     { href: `/${locale}#contact`, label: dict.nav.contact },
   ];
+
+  const handleMobileLink = (
+    href: string,
+    event: MouseEvent<HTMLAnchorElement>
+  ) => {
+    const hash = href.split("#")[1];
+    if (!hash || !href.startsWith(`/${locale}#`)) {
+      setOpen(false);
+      return;
+    }
+
+    event.preventDefault();
+    setOpen(false);
+
+    window.setTimeout(() => {
+      const target = document.getElementById(hash);
+      target?.scrollIntoView({ behavior: "smooth", block: "start" });
+      window.history.pushState(null, "", href);
+    }, 80);
+  };
 
   return (
     <header
@@ -118,7 +164,8 @@ export default function Navbar({ locale, dict }: Props) {
               animate={{ y: 0 }}
               exit={{ y: "-100%" }}
               transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              className="md:hidden fixed inset-0 z-40 bg-ink flex flex-col justify-center px-6"
+              className="md:hidden fixed inset-0 z-40 bg-ink flex flex-col justify-center px-6 overflow-hidden overscroll-none touch-none"
+              onTouchMove={(event) => event.preventDefault()}
             >
               <ul className="flex flex-col gap-6">
                 {links.map((l, i) => (
@@ -130,7 +177,7 @@ export default function Navbar({ locale, dict }: Props) {
                   >
                     <Link
                       href={l.href}
-                      onClick={() => setOpen(false)}
+                      onClick={(event) => handleMobileLink(l.href, event)}
                       className="font-display text-5xl text-paper hover:text-flame"
                     >
                       {l.label}

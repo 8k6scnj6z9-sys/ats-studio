@@ -20,6 +20,13 @@ export default function SmoothScroll() {
 
     window.addEventListener("load", refreshScrollBounds);
     window.addEventListener("resize", refreshScrollBounds);
+    const lockScroll = () => lenis.stop();
+    const unlockScroll = () => {
+      lenis.start();
+      lenis.resize();
+    };
+    window.addEventListener("ats:menu-lock", lockScroll);
+    window.addEventListener("ats:menu-unlock", unlockScroll);
 
     let rafId = 0;
     const raf = (time: number) => {
@@ -32,6 +39,8 @@ export default function SmoothScroll() {
       refreshFrames.forEach(window.clearTimeout);
       window.removeEventListener("load", refreshScrollBounds);
       window.removeEventListener("resize", refreshScrollBounds);
+      window.removeEventListener("ats:menu-lock", lockScroll);
+      window.removeEventListener("ats:menu-unlock", unlockScroll);
       cancelAnimationFrame(rafId);
       lenis.destroy();
     };
