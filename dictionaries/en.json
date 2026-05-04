@@ -1,7 +1,24 @@
 {
   "meta": {
-    "title": "ATS Studio — Digital design & development studio",
-    "description": "We build digital brands that get noticed. Web design, development, UI/UX and branding."
+    "title": "ATS Studio — Web design, development and branding in Guarda",
+    "description": "ATS Studio creates websites, web apps, visual identity and digital experiences for brands, local businesses and companies that want to grow online with clarity, performance and premium design.",
+    "siteName": "ATS Studio",
+    "shareTitle": "ATS Studio — Websites, apps and digital brands with presence",
+    "shareDescription": "Alexandre Terras Simões digital studio in Guarda. Web design, development, branding, UI/UX and digital direction for businesses that want to be taken seriously online.",
+    "keywords": [
+      "ATS Studio",
+      "AT Studio",
+      "web design Guarda",
+      "website design Portugal",
+      "web development Portugal",
+      "web developer Guarda",
+      "brand identity Portugal",
+      "UI UX Portugal",
+      "professional websites",
+      "web apps",
+      "Next.js developer Portugal",
+      "Alexandre Terras Simões"
+    ]
   },
   "nav": {
     "work": "Work",
@@ -39,7 +56,8 @@
     "year": "Year",
     "role": "Role",
     "category": "Category",
-    "next": "Next project"
+    "next": "Next project",
+    "palette": "Palette"
   },
   "services": {
     "eyebrow": "Services",
@@ -49,32 +67,56 @@
       "eyebrow": "Partner network",
       "title": "The full package, when the project needs more.",
       "description": "Beyond design and development, we work with partner companies in digital marketing, photography, video and copywriting. When a brand needs launch support, content, campaigns, messaging or visual production, we can coordinate the right team without losing creative direction.",
-      "items": ["Digital marketing", "Photography", "Video", "Copywriting", "Content", "Campaigns", "Launch"]
+      "items": [
+        "Digital marketing",
+        "Photography",
+        "Video",
+        "Copywriting",
+        "Content",
+        "Campaigns",
+        "Launch"
+      ]
     },
     "items": [
       {
         "id": "01",
         "title": "Web Design",
         "description": "Design systems, high-fidelity prototyping, art direction.",
-        "tags": ["Systems", "Prototyping", "Art Direction"]
+        "tags": [
+          "Systems",
+          "Prototyping",
+          "Art Direction"
+        ]
       },
       {
         "id": "02",
         "title": "Web Development",
         "description": "Static sites, web apps, e-commerce, and performance to the edge.",
-        "tags": ["Next.js", "Shopify", "Headless CMS"]
+        "tags": [
+          "Next.js",
+          "Shopify",
+          "Headless CMS"
+        ]
       },
       {
         "id": "03",
         "title": "UI/UX",
         "description": "Research, wireframing, usability testing and tuned flows.",
-        "tags": ["Research", "Wireframes", "Accessibility"]
+        "tags": [
+          "Research",
+          "Wireframes",
+          "Accessibility"
+        ]
       },
       {
         "id": "04",
         "title": "Branding",
         "description": "Visual identity, logos and guidelines for brands that last.",
-        "tags": ["Identity", "Logo", "Guidelines"]
+        "tags": [
+          "Identity",
+          "Logo",
+          "Guidelines"
+        ]
       }
     ]
   },
@@ -112,7 +154,45 @@
     "p2": "Every project starts with an honest conversation. We define what the brand needs to communicate, design the experience, then build it in clean, fast, maintainable code.",
     "p3": "Small by choice. Close to the client, always.",
     "skills": "Stack & tools",
-    "skillsList": ["Figma", "Next.js", "React", "TypeScript", "Tailwind", "Python", "Photoshop", "Databases", "PostgreSQL", "Supabase", "Node.js", "Shopify", "Webflow", "Framer Motion", "Vercel"]
+    "skillsList": [
+      "Figma",
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind",
+      "Python",
+      "Photoshop",
+      "Databases",
+      "PostgreSQL",
+      "Supabase",
+      "Node.js",
+      "Shopify",
+      "Webflow",
+      "Framer Motion",
+      "Vercel"
+    ],
+    "card": {
+      "label": "Studio profile",
+      "founder": "Founder / Designer & Developer",
+      "location": "Guarda, Portugal",
+      "focus": "Websites, apps and digital identities",
+      "availability": "Selected projects · 2026",
+      "note": "Visual strategy, UX and code brought together into a clear, fast digital presence built to grow.",
+      "metrics": [
+        {
+          "value": "01",
+          "label": "Direct point of contact"
+        },
+        {
+          "value": "360°",
+          "label": "Creative partner network"
+        },
+        {
+          "value": "PT/EN",
+          "label": "Bilingual presence"
+        }
+      ]
+    }
   },
   "process": {
     "eyebrow": "Process",
@@ -123,25 +203,41 @@
         "id": "01",
         "title": "Discovery",
         "description": "Briefing, research, goal alignment and definition of success.",
-        "outputs": ["Brief", "Goal map", "Initial direction"]
+        "outputs": [
+          "Brief",
+          "Goal map",
+          "Initial direction"
+        ]
       },
       {
         "id": "02",
         "title": "Design",
         "description": "Wireframes, mood boards, identity and clickable prototypes.",
-        "outputs": ["Sitemap", "Wireframes", "Design system"]
+        "outputs": [
+          "Sitemap",
+          "Wireframes",
+          "Design system"
+        ]
       },
       {
         "id": "03",
         "title": "Development",
         "description": "Clean-code build, testing, performance and accessibility.",
-        "outputs": ["Frontend", "CMS/data", "Performance"]
+        "outputs": [
+          "Frontend",
+          "CMS/data",
+          "Performance"
+        ]
       },
       {
         "id": "04",
         "title": "Launch",
         "description": "Deploy, training, documentation and ongoing support.",
-        "outputs": ["Deploy", "Training", "Support"]
+        "outputs": [
+          "Deploy",
+          "Training",
+          "Support"
+        ]
       }
     ]
   },
@@ -152,7 +248,11 @@
     "email": "geral@atstudio.pt",
     "projectTypes": {
       "title": "Where we can start",
-      "items": ["Institutional website", "Online store", "Branding + digital presence"]
+      "items": [
+        "Institutional website",
+        "Online store",
+        "Branding + digital presence"
+      ]
     },
     "form": {
       "name": "Name",
@@ -184,6 +284,8 @@
   },
   "footer": {
     "rights": "All rights reserved.",
-    "built": "Built with care in Guarda."
+    "built": "Built with care in Guarda.",
+    "privacy": "Privacy",
+    "terms": "Terms"
   }
 }

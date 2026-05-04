@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { Locale, Dictionary } from "@/lib/i18n";
 
 type Props = { locale: Locale; dict: Dictionary };
@@ -26,7 +27,19 @@ export default function Footer({ locale, dict }: Props) {
           © {year} ATS Studio. {dict.footer.rights}
         </p>
 
-        <div className="flex items-center gap-6 text-xs text-smoke">
+        <div className="flex flex-wrap items-center gap-5 md:gap-6 text-xs text-smoke">
+          <Link
+            href={`/${locale}/privacy`}
+            className="font-mono uppercase tracking-widest hover:text-flame transition-colors"
+          >
+            {dict.footer.privacy}
+          </Link>
+          <Link
+            href={`/${locale}/terms`}
+            className="font-mono uppercase tracking-widest hover:text-flame transition-colors"
+          >
+            {dict.footer.terms}
+          </Link>
           <span className="font-mono uppercase tracking-widest">
             {dict.contact.location}
           </span>

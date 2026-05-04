@@ -1,7 +1,25 @@
 {
   "meta": {
-    "title": "ATS Studio — Estúdio digital de design e desenvolvimento",
-    "description": "Construímos marcas digitais que se notam. Web design, desenvolvimento, UI/UX e branding."
+    "title": "ATS Studio — Web design, desenvolvimento e branding na Guarda",
+    "description": "ATS Studio cria websites, web apps, identidade visual e experiências digitais para marcas, negócios locais e empresas que querem crescer online com clareza, performance e design premium.",
+    "siteName": "ATS Studio",
+    "shareTitle": "ATS Studio — Websites, apps e marcas digitais com presença",
+    "shareDescription": "Estúdio digital de Alexandre Terras Simões, na Guarda. Web design, desenvolvimento, branding, UI/UX e direção digital para negócios que querem ser levados a sério online.",
+    "keywords": [
+      "ATS Studio",
+      "AT Studio",
+      "web design Guarda",
+      "criação de websites Guarda",
+      "desenvolvimento web Portugal",
+      "web developer Guarda",
+      "designer web Guarda",
+      "branding Portugal",
+      "UI UX Portugal",
+      "sites profissionais",
+      "web apps",
+      "Next.js developer Portugal",
+      "Alexandre Terras Simões"
+    ]
   },
   "nav": {
     "work": "Trabalho",
@@ -30,16 +48,17 @@
   ],
   "work": {
     "eyebrow": "Trabalho selecionado",
-    "title": "Concept studies.",
+    "title": "Estudos conceptuais.",
     "subtitle": "Quatro estudos editoriais criados para mostrar como a ATS Studio pensa direção visual, produto, marca e execução.",
-    "concept": "Concept work",
+    "concept": "Trabalho conceptual",
     "viewProject": "Ver projeto",
     "back": "Voltar",
     "credits": "Créditos",
     "year": "Ano",
     "role": "Função",
     "category": "Categoria",
-    "next": "Projeto seguinte"
+    "next": "Projeto seguinte",
+    "palette": "Paleta"
   },
   "services": {
     "eyebrow": "Serviços",
@@ -49,32 +68,56 @@
       "eyebrow": "Rede parceira",
       "title": "O pacote completo, quando o projeto pede mais.",
       "description": "Para além de design e desenvolvimento, trabalhamos com empresas parceiras de marketing digital, fotografia, vídeo e copywriting. Assim, quando uma marca precisa de lançamento, conteúdo, campanhas, texto ou produção visual, conseguimos coordenar a equipa certa sem perder a direção criativa.",
-      "items": ["Marketing digital", "Fotografia", "Vídeo", "Copywriting", "Conteúdo", "Campanhas", "Lançamento"]
+      "items": [
+        "Marketing digital",
+        "Fotografia",
+        "Vídeo",
+        "Copywriting",
+        "Conteúdo",
+        "Campanhas",
+        "Lançamento"
+      ]
     },
     "items": [
       {
         "id": "01",
         "title": "Web Design",
         "description": "Sistemas de design, prototipagem de alta fidelidade, art direction.",
-        "tags": ["Sistemas", "Prototipagem", "Art Direction"]
+        "tags": [
+          "Sistemas",
+          "Prototipagem",
+          "Art Direction"
+        ]
       },
       {
         "id": "02",
         "title": "Web Development",
         "description": "Sites estáticos, web apps, e-commerce e performance no limite.",
-        "tags": ["Next.js", "Shopify", "Headless CMS"]
+        "tags": [
+          "Next.js",
+          "Shopify",
+          "Headless CMS"
+        ]
       },
       {
         "id": "03",
         "title": "UI/UX",
         "description": "Pesquisa, wireframing, testes de usabilidade e fluxos otimizados.",
-        "tags": ["Pesquisa", "Wireframes", "Acessibilidade"]
+        "tags": [
+          "Pesquisa",
+          "Wireframes",
+          "Acessibilidade"
+        ]
       },
       {
         "id": "04",
         "title": "Branding",
         "description": "Identidade visual, logótipos e guidelines para marcas que duram.",
-        "tags": ["Identidade", "Logo", "Guidelines"]
+        "tags": [
+          "Identidade",
+          "Logo",
+          "Guidelines"
+        ]
       }
     ]
   },
@@ -112,7 +155,45 @@
     "p2": "Cada projeto começa com uma conversa franca. Definimos o que a marca precisa de comunicar, desenhamos a experiência e construímos em código limpo, rápido e fácil de manter.",
     "p3": "Pequeno por opção. Próximo do cliente, sempre.",
     "skills": "Stack & ferramentas",
-    "skillsList": ["Figma", "Next.js", "React", "TypeScript", "Tailwind", "Python", "Photoshop", "Databases", "PostgreSQL", "Supabase", "Node.js", "Shopify", "Webflow", "Framer Motion", "Vercel"]
+    "skillsList": [
+      "Figma",
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind",
+      "Python",
+      "Photoshop",
+      "Databases",
+      "PostgreSQL",
+      "Supabase",
+      "Node.js",
+      "Shopify",
+      "Webflow",
+      "Framer Motion",
+      "Vercel"
+    ],
+    "card": {
+      "label": "Perfil do estúdio",
+      "founder": "Fundador / Designer & Developer",
+      "location": "Guarda, Portugal",
+      "focus": "Websites, apps e identidades digitais",
+      "availability": "Projetos selecionados · 2026",
+      "note": "Estratégia visual, UX e código reunidos numa presença digital clara, rápida e preparada para crescer.",
+      "metrics": [
+        {
+          "value": "01",
+          "label": "Interlocutor direto"
+        },
+        {
+          "value": "360°",
+          "label": "Rede criativa parceira"
+        },
+        {
+          "value": "PT/EN",
+          "label": "Presença bilingue"
+        }
+      ]
+    }
   },
   "process": {
     "eyebrow": "Processo",
@@ -121,27 +202,43 @@
     "steps": [
       {
         "id": "01",
-        "title": "Discovery",
+        "title": "Descoberta",
         "description": "Briefing, pesquisa, alinhamento de objetivos e definição de sucesso.",
-        "outputs": ["Brief", "Mapa de objetivos", "Direção inicial"]
+        "outputs": [
+          "Brief",
+          "Mapa de objetivos",
+          "Direção inicial"
+        ]
       },
       {
         "id": "02",
         "title": "Design",
         "description": "Wireframes, mood boards, identidade e protótipos navegáveis.",
-        "outputs": ["Sitemap", "Wireframes", "Design system"]
+        "outputs": [
+          "Sitemap",
+          "Wireframes",
+          "Design system"
+        ]
       },
       {
         "id": "03",
-        "title": "Development",
+        "title": "Desenvolvimento",
         "description": "Build em código limpo, testes, performance e acessibilidade.",
-        "outputs": ["Frontend", "CMS/dados", "Performance"]
+        "outputs": [
+          "Frontend",
+          "CMS/dados",
+          "Performance"
+        ]
       },
       {
         "id": "04",
-        "title": "Launch",
+        "title": "Lançamento",
         "description": "Deploy, formação, documentação e suporte contínuo.",
-        "outputs": ["Deploy", "Formação", "Suporte"]
+        "outputs": [
+          "Deploy",
+          "Formação",
+          "Suporte"
+        ]
       }
     ]
   },
@@ -152,7 +249,11 @@
     "email": "geral@atstudio.pt",
     "projectTypes": {
       "title": "Por onde podemos começar",
-      "items": ["Site institucional", "Loja online", "Branding + presença digital"]
+      "items": [
+        "Site institucional",
+        "Loja online",
+        "Branding + presença digital"
+      ]
     },
     "form": {
       "name": "Nome",
@@ -184,6 +285,8 @@
   },
   "footer": {
     "rights": "Todos os direitos reservados.",
-    "built": "Construído com cuidado na Guarda."
+    "built": "Construído com cuidado na Guarda.",
+    "privacy": "Privacidade",
+    "terms": "Termos"
   }
 }

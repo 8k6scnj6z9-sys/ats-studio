@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { hasLocale, getDictionary, type Locale } from "@/lib/i18n";
@@ -12,6 +13,49 @@ export async function generateStaticParams() {
   return locales.flatMap((locale) =>
     projects.map((p) => ({ locale, slug: p.slug }))
   );
+}
+
+export async function generateMetadata(
+  props: PageProps<"/[locale]/work/[slug]">
+): Promise<Metadata> {
+  const { locale, slug } = await props.params;
+  if (!hasLocale(locale)) return {};
+  const project = getProject(slug);
+  if (!project) return {};
+
+  const typedLocale = locale as Locale;
+  const tagline = project.tagline[typedLocale];
+  const url = `https://atstudio.pt/${typedLocale}/work/${project.slug}`;
+  const suffix =
+    typedLocale === "pt"
+      ? "Estudo conceptual pela ATS Studio"
+      : "Concept study by ATS Studio";
+
+  return {
+    title: `${project.name} — ${suffix}`,
+    description: tagline,
+    alternates: {
+      canonical: url,
+      languages: {
+        "pt-PT": `https://atstudio.pt/pt/work/${project.slug}`,
+        en: `https://atstudio.pt/en/work/${project.slug}`,
+      },
+    },
+    openGraph: {
+      type: "article",
+      url,
+      siteName: "ATS Studio",
+      title: `${project.name} — ATS Studio`,
+      description: tagline,
+      images: [{ url: "/og-image.png", width: 1200, height: 630 }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${project.name} — ATS Studio`,
+      description: tagline,
+      images: ["/og-image.png"],
+    },
+  };
 }
 
 export default async function ProjectPage(
@@ -88,7 +132,7 @@ export default async function ProjectPage(
                 full
               />
               <div className="col-span-2">
-                <p className="h-eyebrow mb-3">Palette</p>
+                <p className="h-eyebrow mb-3">{dict.work.palette}</p>
                 <div className="flex gap-2">
                   {project.palette.map((c) => (
                     <div

@@ -32,31 +32,72 @@ export default function About({ dict }: Props) {
 
         <div className="lg:col-span-5 flex flex-col gap-8">
           <ScrollReveal>
-            <div className="relative aspect-[4/5] rounded-lg overflow-hidden bg-paper text-ink border border-line p-6 md:p-8 flex flex-col justify-between">
+            <div className="relative min-h-[560px] rounded-lg overflow-hidden bg-paper text-ink border border-line p-6 md:p-8 flex flex-col justify-between">
               <div className="absolute inset-0 mesh-bg opacity-40 invert" aria-hidden />
-              <div className="relative flex items-start justify-between gap-6">
-                <Image
-                  src="/logos/logo-full-black.png"
-                  alt="ATS Studio"
-                  width={420}
-                  height={150}
-                  className="h-auto w-64 md:w-80 object-contain"
-                />
-                <span className="font-mono text-[10px] uppercase text-ink/45">
-                  40.5373° N
-                </span>
-              </div>
               <div className="relative">
+                <div className="flex items-start justify-between gap-5">
+                  <div>
+                    <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-ink/45">
+                      {dict.about.card.label}
+                    </p>
+                    <div className="mt-5 inline-flex items-center gap-3 border-b border-ink/15 pb-5">
+                      <Image
+                        src="/logos/logo-mark-black.png"
+                        alt="ATS Studio"
+                        width={72}
+                        height={72}
+                        className="h-14 w-14 object-contain"
+                      />
+                      <Image
+                        src="/logos/logo-full-black.png"
+                        alt="ATS Studio"
+                        width={420}
+                        height={150}
+                        className="h-auto w-48 md:w-56 object-contain"
+                      />
+                    </div>
+                  </div>
+                  <span className="font-mono text-[10px] uppercase text-ink/45">
+                    40.5373° N
+                  </span>
+                </div>
+
+                <p className="mt-8 max-w-sm text-sm leading-relaxed text-ink/62">
+                  {dict.about.card.note}
+                </p>
+              </div>
+
+              <div className="relative mt-12">
                 <p className="font-display text-4xl md:text-6xl leading-[0.9]">
                   Alexandre
                   <br />
                   <span className="italic text-flame">Terras Simões</span>
                 </p>
-                <div className="mt-8 grid grid-cols-2 gap-4 border-t border-ink/15 pt-5 font-mono text-[10px] uppercase text-ink/55">
-                  <span>Founder</span>
-                  <span className="text-right">Guarda</span>
-                  <span>Design</span>
-                  <span className="text-right">Development</span>
+                <div className="mt-7 grid grid-cols-1 gap-3 border-t border-ink/15 pt-5 font-mono text-[10px] uppercase tracking-[0.12em] text-ink/55">
+                  <div className="flex items-center justify-between gap-4">
+                    <span>{dict.about.card.founder}</span>
+                    <span className="text-right">{dict.about.card.location}</span>
+                  </div>
+                  <div className="flex items-center justify-between gap-4">
+                    <span>{dict.about.card.focus}</span>
+                    <span className="text-right">{dict.about.card.availability}</span>
+                  </div>
+                </div>
+
+                <div className="mt-8 grid grid-cols-3 gap-3">
+                  {dict.about.card.metrics.map((metric) => (
+                    <div
+                      key={metric.label}
+                      className="border border-ink/15 p-3 min-h-24 flex flex-col justify-between"
+                    >
+                      <span className="font-display text-2xl text-flame">
+                        {metric.value}
+                      </span>
+                      <span className="font-mono text-[9px] uppercase tracking-[0.12em] text-ink/50">
+                        {metric.label}
+                      </span>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
