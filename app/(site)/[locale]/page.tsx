@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { hasLocale, getDictionary, type Locale } from "@/lib/i18n";
 import { getProjects } from "@/lib/projects";
+import { getProcessSteps } from "@/lib/process";
 import Navbar from "@/components/nav/Navbar";
 import Hero from "@/components/sections/Hero";
 import Work from "@/components/sections/Work";
@@ -14,8 +15,11 @@ import Footer from "@/components/sections/Footer";
 export default async function HomePage(props: PageProps<"/[locale]">) {
   const { locale } = await props.params;
   if (!hasLocale(locale)) notFound();
-  const dict = await getDictionary(locale as Locale);
-  const projects = await getProjects();
+  const [dict, projects, processSteps] = await Promise.all([
+    getDictionary(locale as Locale),
+    getProjects(),
+    getProcessSteps(),
+  ]);
 
   return (
     <>
@@ -26,7 +30,7 @@ export default async function HomePage(props: PageProps<"/[locale]">) {
         <Services dict={dict} />
         <Audience dict={dict} />
         <About dict={dict} />
-        <Process locale={locale as Locale} dict={dict} />
+        <Process locale={locale as Locale} dict={dict} steps={processSteps} />
         <Contact dict={dict} />
       </main>
       <Footer locale={locale as Locale} dict={dict} />

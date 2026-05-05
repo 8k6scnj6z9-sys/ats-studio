@@ -67,7 +67,7 @@ function ProjectRow({
       >
         <div className="relative overflow-hidden rounded-lg md:rounded-xl">
           <div className="transition-transform duration-700 ease-out group-hover:scale-[1.025] group-hover:-rotate-[0.35deg]">
-            <ProjectMockup slug={project.slug} />
+            <ProjectMockup project={project} locale={locale} />
           </div>
           <div className="absolute inset-0 ring-1 ring-inset ring-white/5 rounded-lg md:rounded-xl pointer-events-none" />
           <div className="absolute inset-x-0 top-0 h-px bg-flame origin-left scale-x-0 transition-transform duration-700 group-hover:scale-x-100" />

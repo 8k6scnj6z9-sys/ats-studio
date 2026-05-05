@@ -2,15 +2,19 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { hasLocale, getDictionary, locales, type Locale } from "@/lib/i18n";
+import {
+  getProcessStep,
+  getProcessSteps,
+  getProcessStepSlugs,
+} from "@/lib/process";
 import Navbar from "@/components/nav/Navbar";
 import Footer from "@/components/sections/Footer";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
-const stepSlugs = ["discovery", "design", "development", "launch"] as const;
-
 export async function generateStaticParams() {
+  const slugs = await getProcessStepSlugs();
   return locales.flatMap((locale) =>
-    stepSlugs.map((slug) => ({ locale, slug }))
+    slugs.map((slug) => ({ locale, slug }))
   );
 }
 
@@ -19,16 +23,20 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const { locale, slug } = await props.params;
   if (!hasLocale(locale)) return {};
-  const dict = await getDictionary(locale as Locale);
-  const step = dict.process.steps.find((s) => s.slug === slug);
+  const [dict, step] = await Promise.all([
+    getDictionary(locale as Locale),
+    getProcessStep(slug),
+  ]);
   if (!step) return {};
 
+  const typedLocale = locale as Locale;
   const url = `https://atstudio.pt/${locale}/process/${step.slug}`;
-  const title = `${step.title} — ${dict.process.eyebrow} | ATS Studio`;
+  const title = `${step.title[typedLocale]} — ${dict.process.eyebrow} | ATS Studio`;
+  const description = step.longDescription[typedLocale];
 
   return {
     title,
-    description: step.longDescription,
+    description,
     alternates: {
       canonical: url,
       languages: {
@@ -41,13 +49,13 @@ export async function generateMetadata(
       url,
       siteName: "ATS Studio",
       title,
-      description: step.longDescription,
+      description,
       images: [{ url: "/og-image.png", width: 1200, height: 630 }],
     },
     twitter: {
       card: "summary_large_image",
       title,
-      description: step.longDescription,
+      description,
       images: ["/og-image.png"],
     },
   };
@@ -58,16 +66,21 @@ export default async function ProcessStepPage(
 ) {
   const { locale, slug } = await props.params;
   if (!hasLocale(locale)) notFound();
-  const dict = await getDictionary(locale as Locale);
 
-  const idx = dict.process.steps.findIndex((s) => s.slug === slug);
-  if (idx === -1) notFound();
-  const step = dict.process.steps[idx];
-  const next = dict.process.steps[(idx + 1) % dict.process.steps.length];
+  const [dict, step, allSteps] = await Promise.all([
+    getDictionary(locale as Locale),
+    getProcessStep(slug),
+    getProcessSteps(),
+  ]);
+  if (!step) notFound();
+
+  const typedLocale = locale as Locale;
+  const idx = allSteps.findIndex((s) => s.slug === step.slug);
+  const next = allSteps[(idx + 1) % allSteps.length];
 
   return (
     <>
-      <Navbar locale={locale as Locale} dict={dict} solid />
+      <Navbar locale={typedLocale} dict={dict} solid />
       <main className="relative z-10 pt-28 md:pt-36 bg-paper text-ink">
         <div className="mx-auto max-w-[1600px] px-5 md:px-10 pb-24 md:pb-40">
           <Link
@@ -80,7 +93,7 @@ export default async function ProcessStepPage(
           <div className="mt-10 md:mt-16 grid grid-cols-1 lg:grid-cols-12 gap-8">
             <div className="lg:col-span-3">
               <p className="font-mono text-xs text-flame">
-                {step.id} / {dict.process.steps.length.toString().padStart(2, "0")}
+                {step.id} / {allSteps.length.toString().padStart(2, "0")}
               </p>
               <p className="mt-4 font-mono text-xs uppercase tracking-widest text-ink/55">
                 {dict.process.stepLabel} {step.id}
@@ -89,12 +102,12 @@ export default async function ProcessStepPage(
             <div className="lg:col-span-9">
               <ScrollReveal>
                 <h1 className="h-display text-6xl md:text-8xl lg:text-9xl text-balance text-ink">
-                  {step.title}
+                  {step.title[typedLocale]}
                 </h1>
               </ScrollReveal>
               <ScrollReveal delay={0.05}>
                 <p className="mt-6 text-xl md:text-2xl text-ink/65 max-w-3xl text-pretty">
-                  {step.longDescription}
+                  {step.longDescription[typedLocale]}
                 </p>
               </ScrollReveal>
             </div>
@@ -107,7 +120,7 @@ export default async function ProcessStepPage(
                 {dict.process.details}
               </p>
               <ul className="mt-8 border-t border-ink/15">
-                {step.details.map((item) => (
+                {step.details[typedLocale].map((item) => (
                   <li
                     key={item}
                     className="flex items-start gap-4 border-b border-ink/15 py-5 text-base md:text-lg text-ink/80"
@@ -125,7 +138,7 @@ export default async function ProcessStepPage(
                 {dict.process.deliverables}
               </p>
               <div className="mt-8 flex flex-wrap gap-2">
-                {step.outputs.map((output) => (
+                {step.outputs[typedLocale].map((output) => (
                   <span
                     key={output}
                     className="rounded-full border border-ink/15 px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-ink/55"
@@ -147,7 +160,7 @@ export default async function ProcessStepPage(
                   {dict.process.next}
                 </p>
                 <h3 className="h-display text-4xl md:text-6xl mt-3 text-ink group-hover:text-flame transition-colors">
-                  {next.title}
+                  {next.title[typedLocale]}
                 </h3>
               </div>
               <span
@@ -160,7 +173,7 @@ export default async function ProcessStepPage(
           </div>
         </div>
       </main>
-      <Footer locale={locale as Locale} dict={dict} />
+      <Footer locale={typedLocale} dict={dict} />
     </>
   );
 }

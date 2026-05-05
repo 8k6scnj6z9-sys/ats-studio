@@ -1,11 +1,15 @@
 import type { MetadataRoute } from "next";
 import { getProjects } from "@/lib/projects";
+import { getProcessStepSlugs } from "@/lib/process";
 import { locales } from "@/lib/i18n";
 
 const siteUrl = "https://atstudio.pt";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const projects = await getProjects();
+  const [projects, processSlugs] = await Promise.all([
+    getProjects(),
+    getProcessStepSlugs(),
+  ]);
   const now = new Date();
   const staticRoutes = locales.flatMap((locale) => [
     {
@@ -43,7 +47,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }))
   );
 
-  const processSlugs = ["discovery", "design", "development", "launch"];
   const processRoutes = locales.flatMap((locale) =>
     processSlugs.map((slug) => ({
       url: `${siteUrl}/${locale}/process/${slug}`,

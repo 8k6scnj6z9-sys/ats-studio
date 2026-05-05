@@ -5,6 +5,13 @@ type SanityImageSource = Parameters<
   ReturnType<typeof createImageUrlBuilder>["image"]
 >[0];
 
+export type SanityImage = {
+  _type: "image";
+  asset: { _ref: string; _type: "reference" };
+  hotspot?: { x: number; y: number; height: number; width: number };
+  crop?: { top: number; bottom: number; left: number; right: number };
+};
+
 export const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!;
 export const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET!;
 export const apiVersion =

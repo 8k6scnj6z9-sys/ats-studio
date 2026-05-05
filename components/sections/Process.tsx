@@ -3,10 +3,11 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import type { Dictionary, Locale } from "@/lib/i18n";
+import type { ProcessStep } from "@/lib/process";
 
-type Props = { dict: Dictionary; locale: Locale };
+type Props = { dict: Dictionary; locale: Locale; steps: ProcessStep[] };
 
-export default function Process({ dict, locale }: Props) {
+export default function Process({ dict, locale, steps }: Props) {
   return (
     <section
       id="process"
@@ -45,7 +46,7 @@ export default function Process({ dict, locale }: Props) {
         </div>
 
         <div className="mt-16 md:mt-24 border-t border-ink/15">
-          {dict.process.steps.map((step, i) => (
+          {steps.map((step, i) => (
             <motion.div
               key={step.id}
               initial={{ opacity: 0, y: 26 }}
@@ -60,14 +61,14 @@ export default function Process({ dict, locale }: Props) {
               >
                 <span className="md:col-span-2 font-mono text-xs text-flame">{step.id}</span>
                 <h3 className="md:col-span-5 min-w-0 h-display text-4xl md:text-5xl lg:text-6xl break-words hyphens-auto">
-                  {step.title}
+                  {step.title[locale]}
                 </h3>
                 <div className="md:col-span-4">
                   <p className="text-sm md:text-base text-ink/60 max-w-xl group-hover:text-ink/75">
-                    {step.description}
+                    {step.description[locale]}
                   </p>
                   <div className="mt-4 flex flex-wrap gap-2">
-                    {step.outputs.map((output) => (
+                    {step.outputs[locale].map((output) => (
                       <span
                         key={output}
                         className="rounded-full border border-ink/15 px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-ink/50"

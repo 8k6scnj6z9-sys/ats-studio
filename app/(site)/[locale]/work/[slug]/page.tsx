@@ -115,7 +115,7 @@ export default async function ProjectPage(
 
           <div className="mt-16 md:mt-24">
             <ScrollReveal>
-              <ProjectMockup slug={project.slug} />
+              <ProjectMockup project={project} locale={locale as Locale} />
             </ScrollReveal>
           </div>
 

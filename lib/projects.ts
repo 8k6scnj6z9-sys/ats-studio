@@ -1,4 +1,5 @@
 import { sanityClient } from "./sanity";
+import type { SanityImage } from "./sanity";
 
 export type Project = {
   slug: string;
@@ -11,6 +12,8 @@ export type Project = {
   role: { pt: string[]; en: string[] };
   status: { pt: string; en: string };
   palette: string[];
+  image: SanityImage | null;
+  imageAlt: { pt: string; en: string };
 };
 
 export type ProjectSlug = string;
@@ -21,6 +24,8 @@ const PROJECT_FIELDS = `
   index,
   year,
   palette,
+  image,
+  "imageAlt": { "pt": imageAltPt, "en": imageAltEn },
   "categories": { "pt": categoriesPt, "en": categoriesEn },
   "tagline": { "pt": taglinePt, "en": taglineEn },
   "description": { "pt": descriptionPt, "en": descriptionEn },

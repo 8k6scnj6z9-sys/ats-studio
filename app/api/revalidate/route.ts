@@ -39,10 +39,10 @@ export async function POST(req: NextRequest) {
 
     revalidateTag(type, "max");
 
-    if (type === "project" && body.slug) {
+    if (body.slug) {
       const slug =
         typeof body.slug === "string" ? body.slug : body.slug.current;
-      if (slug) revalidateTag(`project:${slug}`, "max");
+      if (slug) revalidateTag(`${type}:${slug}`, "max");
     }
 
     return NextResponse.json({ ok: true, revalidated: type, now: Date.now() });

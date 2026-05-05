@@ -44,6 +44,27 @@ export const project = defineType({
       description: "Códigos hex (ex.: #FF5A1F). 3 a 5 cores.",
       validation: (rule) => rule.min(3).max(5),
     }),
+    defineField({
+      name: "image",
+      title: "Imagem principal",
+      type: "image",
+      description:
+        "Imagem do projeto (mockup, fotografia, capa). Se vazio, é usado o mockup React por defeito (apenas para os 4 projetos originais).",
+      options: { hotspot: true },
+    }),
+    defineField({
+      name: "imageAltPt",
+      title: "Texto alternativo da imagem (PT)",
+      type: "string",
+      fieldset: "pt",
+      description: "Descrição curta para acessibilidade.",
+    }),
+    defineField({
+      name: "imageAltEn",
+      title: "Image alt text (EN)",
+      type: "string",
+      fieldset: "en",
+    }),
 
     defineField({
       name: "categoriesPt",
