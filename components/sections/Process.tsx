@@ -59,7 +59,7 @@ export default function Process({ dict, locale }: Props) {
                 className="group grid grid-cols-1 md:grid-cols-12 gap-5 py-8 md:py-10 hover:text-flame transition-colors"
               >
                 <span className="md:col-span-2 font-mono text-xs text-flame">{step.id}</span>
-                <h3 className="md:col-span-5 h-display text-4xl md:text-6xl">
+                <h3 className="md:col-span-5 min-w-0 h-display text-4xl md:text-5xl lg:text-6xl break-words hyphens-auto">
                   {step.title}
                 </h3>
                 <div className="md:col-span-4">
