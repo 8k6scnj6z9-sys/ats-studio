@@ -33,7 +33,7 @@
     "eyebrow": "Estúdio digital · Guarda",
     "title": "ATS Studio",
     "statement": "Da Guarda para marcas que querem ser levadas a sério online.",
-    "subtitle": "Design, desenvolvimento e direção digital para negócios que precisam de presença, clareza e execução sem ruído.",
+    "subtitle": "Design, desenvolvimento e direção digital para negócios que precisam de presença, clareza e execução sem entraves.",
     "cta": "Ver trabalho",
     "secondaryCta": "Falar sobre um projeto",
     "scroll": "Desliza"
@@ -123,7 +123,7 @@
   },
   "audience": {
     "eyebrow": "Para quem trabalhamos",
-    "title": "Feito para quem precisa de parecer profissional antes de explicar tudo.",
+    "title": "Feito para transmitir profissionalismo desde o primeiro olhar.",
     "subtitle": "Trabalhamos com negócios que querem transformar uma ideia, marca ou serviço numa presença digital clara e credível.",
     "items": [
       {
@@ -151,9 +151,9 @@
   "about": {
     "eyebrow": "Sobre",
     "title": "Design com intenção. Código com precisão.",
-    "p1": "ATS Studio é o novo projeto de Alexandre Terras Simões, designer e developer da cidade da Guarda. É um estúdio de design e desenvolvimento digital para fundadores, negócios locais e equipas que querem mais do que uma página bonita — querem uma presença digital clara, memorável e pronta a crescer.",
-    "p2": "Cada projeto começa com uma conversa franca. Definimos o que a marca precisa de comunicar, desenhamos a experiência e construímos em código limpo, rápido e fácil de manter.",
-    "p3": "Pequeno por opção. Próximo do cliente, sempre.",
+    "p1": "A ATS Studio é um estúdio de design e desenvolvimento digital criado por Alexandre Terras Simões, na Guarda.\n\nTrabalhamos com fundadores, negócios locais e equipas que procuram mais do que um website — procuram uma presença digital clara, consistente e preparada para crescer.",
+    "p2": "Cada projeto começa com uma conversa direta. Definimos objetivos, estruturamos a experiência e desenvolvemos soluções rápidas, funcionais e fáceis de manter.",
+    "p3": "Pequeno por opção. Próximo do cliente por princípio.",
     "skills": "Stack & ferramentas",
     "skillsList": [
       "Figma",

@@ -32,7 +32,7 @@
     "eyebrow": "Digital studio · Guarda",
     "title": "ATS Studio",
     "statement": "From Guarda for brands that want to be taken seriously online.",
-    "subtitle": "Design, development and digital direction for businesses that need presence, clarity and clean execution.",
+    "subtitle": "Design, development and digital direction for businesses that need presence, clarity and execution without obstacles.",
     "cta": "See work",
     "secondaryCta": "Talk about a project",
     "scroll": "Scroll"
@@ -122,7 +122,7 @@
   },
   "audience": {
     "eyebrow": "Who we work with",
-    "title": "Made for teams that need to look professional before explaining everything.",
+    "title": "Made to communicate professionalism from the very first glance.",
     "subtitle": "We work with businesses that want to turn an idea, brand or service into a clear and credible digital presence.",
     "items": [
       {
@@ -150,9 +150,9 @@
   "about": {
     "eyebrow": "About",
     "title": "Design with intent. Code with precision.",
-    "p1": "ATS Studio is Alexandre Terras Simões' new digital design and development studio, rooted in the city of Guarda. We work with founders, local businesses and teams who want more than a good-looking page — they want a clear, memorable digital presence built to grow.",
-    "p2": "Every project starts with an honest conversation. We define what the brand needs to communicate, design the experience, then build it in clean, fast, maintainable code.",
-    "p3": "Small by choice. Close to the client, always.",
+    "p1": "ATS Studio is a digital design and development studio created by Alexandre Terras Simões in Guarda.\n\nWe work with founders, local businesses and teams looking for more than a website — they are looking for a clear, consistent digital presence prepared to grow.",
+    "p2": "Every project starts with a direct conversation. We define goals, structure the experience and develop fast, functional solutions that are easy to maintain.",
+    "p3": "Small by choice. Close to the client by principle.",
     "skills": "Stack & tools",
     "skillsList": [
       "Figma",
