@@ -131,12 +131,6 @@ export default function Navbar({ locale, dict }: Props) {
           >
             {locale.toUpperCase()} ↗
           </Link>
-          <Link
-            href={`/${locale}#contact`}
-            className="rounded-full bg-flame text-ink px-5 py-2.5 text-sm font-medium hover:bg-paper transition-colors"
-          >
-            {dict.nav.letsTalk}
-          </Link>
         </div>
 
         <button

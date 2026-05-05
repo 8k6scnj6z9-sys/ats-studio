@@ -24,7 +24,7 @@ export default async function HomePage(props: PageProps<"/[locale]">) {
         <Services dict={dict} />
         <Audience dict={dict} />
         <About dict={dict} />
-        <Process dict={dict} />
+        <Process locale={locale as Locale} dict={dict} />
         <Contact dict={dict} />
       </main>
       <Footer locale={locale as Locale} dict={dict} />

@@ -1,11 +1,12 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
-import type { Dictionary } from "@/lib/i18n";
+import type { Dictionary, Locale } from "@/lib/i18n";
 
-type Props = { dict: Dictionary };
+type Props = { dict: Dictionary; locale: Locale };
 
-export default function Process({ dict }: Props) {
+export default function Process({ dict, locale }: Props) {
   return (
     <section
       id="process"
@@ -51,33 +52,38 @@ export default function Process({ dict }: Props) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, delay: i * 0.08 }}
-              className="group grid grid-cols-1 md:grid-cols-12 gap-5 border-b border-ink/15 py-8 md:py-10 hover:text-flame transition-colors"
+              className="border-b border-ink/15"
             >
-              <span className="md:col-span-2 font-mono text-xs text-flame">{step.id}</span>
-              <h3 className="md:col-span-5 h-display text-4xl md:text-6xl">
-                {step.title}
-              </h3>
-              <div className="md:col-span-4">
-                <p className="text-sm md:text-base text-ink/60 max-w-xl group-hover:text-ink/75">
-                  {step.description}
-                </p>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {step.outputs.map((output) => (
-                    <span
-                      key={output}
-                      className="rounded-full border border-ink/15 px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-ink/50"
-                    >
-                      {output}
-                    </span>
-                  ))}
-                </div>
-              </div>
-              <span
-                aria-hidden
-                className="md:col-span-1 justify-self-start md:justify-self-end text-3xl text-ink/35 group-hover:text-flame group-hover:translate-x-2 transition-all"
+              <Link
+                href={`/${locale}/process/${step.slug}`}
+                className="group grid grid-cols-1 md:grid-cols-12 gap-5 py-8 md:py-10 hover:text-flame transition-colors"
               >
-                →
-              </span>
+                <span className="md:col-span-2 font-mono text-xs text-flame">{step.id}</span>
+                <h3 className="md:col-span-5 h-display text-4xl md:text-6xl">
+                  {step.title}
+                </h3>
+                <div className="md:col-span-4">
+                  <p className="text-sm md:text-base text-ink/60 max-w-xl group-hover:text-ink/75">
+                    {step.description}
+                  </p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {step.outputs.map((output) => (
+                      <span
+                        key={output}
+                        className="rounded-full border border-ink/15 px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-ink/50"
+                      >
+                        {output}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                <span
+                  aria-hidden
+                  className="md:col-span-1 justify-self-start md:justify-self-end text-3xl text-ink/35 group-hover:text-flame group-hover:translate-x-2 transition-all"
+                >
+                  →
+                </span>
+              </Link>
             </motion.div>
           ))}
         </div>

@@ -151,6 +151,7 @@ export default async function LocaleLayout(props: LayoutProps<"/[locale]">) {
       "https://www.instagram.com/atstudioagency/",
       "https://www.linkedin.com/in/alexandre-sim%C3%B5es-a4aaba407/",
       "https://www.behance.net/atstudioagency",
+      "https://www.facebook.com/profile.php?id=61589157155371",
     ],
     description: dict.meta.description,
     serviceType: [

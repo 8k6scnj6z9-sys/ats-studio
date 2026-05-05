@@ -26,8 +26,7 @@
     "services": "Serviços",
     "about": "Sobre",
     "process": "Processo",
-    "contact": "Contacto",
-    "letsTalk": "Falar com o estúdio"
+    "contact": "Contacto"
   },
   "hero": {
     "eyebrow": "Estúdio digital · Guarda",
@@ -199,11 +198,25 @@
     "eyebrow": "Processo",
     "title": "Como trabalhamos.",
     "subtitle": "Quatro fases. Sem mistério, sem fluff.",
+    "stepLabel": "Passo",
+    "details": "Detalhes",
+    "deliverables": "O que entregamos",
+    "back": "Voltar ao processo",
+    "next": "Próximo passo",
     "steps": [
       {
         "id": "01",
+        "slug": "discovery",
         "title": "Descoberta",
         "description": "Briefing, pesquisa, alinhamento de objetivos e definição de sucesso.",
+        "longDescription": "Antes de qualquer pixel, paramos para perceber o negócio, o público e o que distingue a marca. É a fase em que se transforma uma ideia vaga num plano concreto, com objetivos mensuráveis e direção clara para todas as decisões que se seguem.",
+        "details": [
+          "Workshop de briefing com decisores",
+          "Auditoria do site, marca e presença atual",
+          "Análise de concorrência e referências",
+          "Definição de objetivos e métricas de sucesso",
+          "Mapa de stakeholders e fluxo de aprovações"
+        ],
         "outputs": [
           "Brief",
           "Mapa de objetivos",
@@ -212,8 +225,17 @@
       },
       {
         "id": "02",
+        "slug": "design",
         "title": "Design",
         "description": "Wireframes, mood boards, identidade e protótipos navegáveis.",
+        "longDescription": "Traduzimos a estratégia em decisões visuais — direção de arte, tipografia, sistema de componentes e protótipos que já dão para clicar. O objetivo é validar a experiência antes de uma única linha de código ser escrita.",
+        "details": [
+          "Sitemap e arquitetura de informação",
+          "Wireframes de baixa fidelidade",
+          "Direção de arte e mood boards",
+          "Design system e componentes reutilizáveis",
+          "Protótipo navegável para validação"
+        ],
         "outputs": [
           "Sitemap",
           "Wireframes",
@@ -222,8 +244,17 @@
       },
       {
         "id": "03",
+        "slug": "development",
         "title": "Desenvolvimento",
         "description": "Build em código limpo, testes, performance e acessibilidade.",
+        "longDescription": "Construímos com Next.js, foco em performance e acessibilidade desde o primeiro commit. CMS, integrações e analytics ligados, sem deixar dívida técnica para o cliente herdar.",
+        "details": [
+          "Implementação frontend componente a componente",
+          "Integração com CMS, formulários e dados",
+          "Otimização de performance (Core Web Vitals)",
+          "Acessibilidade (WCAG) e SEO técnico",
+          "Ambiente de staging com revisões iterativas"
+        ],
         "outputs": [
           "Frontend",
           "CMS/dados",
@@ -232,8 +263,17 @@
       },
       {
         "id": "04",
+        "slug": "launch",
         "title": "Lançamento",
         "description": "Deploy, formação, documentação e suporte contínuo.",
+        "longDescription": "Pôr no ar é só metade do trabalho. Cuidamos do deploy, formação da equipa, documentação e ficamos disponíveis para iterar com base em dados reais — não em suposições.",
+        "details": [
+          "Deploy em produção (Vercel ou equivalente)",
+          "Configuração de domínio, DNS e analytics",
+          "Formação da equipa e documentação prática",
+          "Monitorização inicial e ajustes pós-lançamento",
+          "Plano de suporte e evolução contínua"
+        ],
         "outputs": [
           "Deploy",
           "Formação",
@@ -280,6 +320,10 @@
       "behance": {
         "label": "Behance",
         "url": "https://www.behance.net/atstudioagency"
+      },
+      "facebook": {
+        "label": "Facebook",
+        "url": "https://www.facebook.com/profile.php?id=61589157155371"
       }
     }
   },

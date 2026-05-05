@@ -25,8 +25,7 @@
     "services": "Services",
     "about": "About",
     "process": "Process",
-    "contact": "Contact",
-    "letsTalk": "Let's talk"
+    "contact": "Contact"
   },
   "hero": {
     "eyebrow": "Digital studio · Guarda",
@@ -198,11 +197,25 @@
     "eyebrow": "Process",
     "title": "How we work.",
     "subtitle": "Four phases. No mystery, no fluff.",
+    "stepLabel": "Step",
+    "details": "Details",
+    "deliverables": "What we deliver",
+    "back": "Back to process",
+    "next": "Next step",
     "steps": [
       {
         "id": "01",
+        "slug": "discovery",
         "title": "Discovery",
         "description": "Briefing, research, goal alignment and definition of success.",
+        "longDescription": "Before any pixel, we stop to understand the business, the audience and what makes the brand stand out. This is the phase that turns a vague idea into a concrete plan, with measurable goals and clear direction for every decision that follows.",
+        "details": [
+          "Briefing workshop with decision makers",
+          "Audit of the current site, brand and presence",
+          "Competitive landscape and reference review",
+          "Definition of objectives and success metrics",
+          "Stakeholder map and approval flow"
+        ],
         "outputs": [
           "Brief",
           "Goal map",
@@ -211,8 +224,17 @@
       },
       {
         "id": "02",
+        "slug": "design",
         "title": "Design",
         "description": "Wireframes, mood boards, identity and clickable prototypes.",
+        "longDescription": "We translate strategy into visual decisions — art direction, typography, a component system and prototypes you can actually click. The goal is to validate the experience before a single line of code is written.",
+        "details": [
+          "Sitemap and information architecture",
+          "Low-fidelity wireframes",
+          "Art direction and mood boards",
+          "Design system and reusable components",
+          "Clickable prototype for validation"
+        ],
         "outputs": [
           "Sitemap",
           "Wireframes",
@@ -221,8 +243,17 @@
       },
       {
         "id": "03",
+        "slug": "development",
         "title": "Development",
         "description": "Clean-code build, testing, performance and accessibility.",
+        "longDescription": "We build with Next.js, with performance and accessibility in mind from the first commit. CMS, integrations and analytics wired up, with no technical debt left behind for the client to inherit.",
+        "details": [
+          "Component-by-component frontend implementation",
+          "CMS, forms and data integrations",
+          "Performance tuning (Core Web Vitals)",
+          "Accessibility (WCAG) and technical SEO",
+          "Staging environment with iterative reviews"
+        ],
         "outputs": [
           "Frontend",
           "CMS/data",
@@ -231,8 +262,17 @@
       },
       {
         "id": "04",
+        "slug": "launch",
         "title": "Launch",
         "description": "Deploy, training, documentation and ongoing support.",
+        "longDescription": "Going live is only half the work. We handle deployment, team training, documentation and stay available to iterate based on real data — not assumptions.",
+        "details": [
+          "Production deploy (Vercel or equivalent)",
+          "Domain, DNS and analytics setup",
+          "Team training and practical documentation",
+          "Initial monitoring and post-launch tweaks",
+          "Support and continuous evolution plan"
+        ],
         "outputs": [
           "Deploy",
           "Training",
@@ -279,6 +319,10 @@
       "behance": {
         "label": "Behance",
         "url": "https://www.behance.net/atstudioagency"
+      },
+      "facebook": {
+        "label": "Facebook",
+        "url": "https://www.facebook.com/profile.php?id=61589157155371"
       }
     }
   },

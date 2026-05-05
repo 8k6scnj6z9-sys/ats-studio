@@ -42,5 +42,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   );
 
-  return [...staticRoutes, ...projectRoutes];
+  const processSlugs = ["discovery", "design", "development", "launch"];
+  const processRoutes = locales.flatMap((locale) =>
+    processSlugs.map((slug) => ({
+      url: `${siteUrl}/${locale}/process/${slug}`,
+      lastModified: now,
+      changeFrequency: "yearly" as const,
+      priority: 0.5,
+    }))
+  );
+
+  return [...staticRoutes, ...projectRoutes, ...processRoutes];
 }
