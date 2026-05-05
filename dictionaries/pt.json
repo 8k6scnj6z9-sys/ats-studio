@@ -226,7 +226,7 @@
         "id": "02",
         "slug": "design",
         "title": "Design",
-        "description": "Wireframes, mood boards, identidade e protótipos navegáveis.",
+        "description": "Sitemap, direção de arte, paletes e protótipos navegáveis para validar antes do código.",
         "longDescription": "Traduzimos a estratégia em decisões visuais, direção de arte, tipografia, sistema de componentes e protótipos que já dão para clicar. O objetivo é validar a experiência antes de uma única linha de código ser escrita.",
         "details": [
           "Sitemap",
@@ -246,7 +246,7 @@
         "id": "03",
         "slug": "development",
         "title": "Desenvolvimento",
-        "description": "Build em código limpo, testes, performance e acessibilidade.",
+        "description": "Construímos um site rápido, acessível e bonito, pronto para crescer com o negócio.",
         "longDescription": "Construímos um site rápido, acessível e bonito, focado em quem o vai usar. Cada detalhe é pensado para causar boa impressão, transmitir confiança e estar pronto a crescer com o negócio.",
         "details": [
           "Construção do site página a página",
@@ -265,7 +265,7 @@
         "id": "04",
         "slug": "launch",
         "title": "Lançamento",
-        "description": "Deploy, formação, documentação e suporte contínuo.",
+        "description": "Deploy, documentação, formação caso haja CMS e acompanhamento depois de ir para o ar.",
         "longDescription": "Pôr no ar é só metade do trabalho. Cuidamos do deploy, da formação da equipa caso haja CMS, da documentação, e ficamos disponíveis para iterar com base em dados reais, não em suposições.",
         "details": [
           "Deploy em produção",

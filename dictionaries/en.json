@@ -225,7 +225,7 @@
         "id": "02",
         "slug": "design",
         "title": "Design",
-        "description": "Wireframes, mood boards, identity and clickable prototypes.",
+        "description": "Sitemap, art direction, palettes and clickable prototypes to validate before any code is written.",
         "longDescription": "We translate strategy into visual decisions, art direction, typography, a component system and prototypes you can actually click. The goal is to validate the experience before a single line of code is written.",
         "details": [
           "Sitemap",
@@ -245,7 +245,7 @@
         "id": "03",
         "slug": "development",
         "title": "Development",
-        "description": "Clean-code build, testing, performance and accessibility.",
+        "description": "We build a fast, accessible and beautiful site, ready to grow with the business.",
         "longDescription": "We build a fast, accessible and beautiful site, focused on the people who will actually use it. Every detail is shaped to make a strong first impression, build trust and stay ready to grow with the business.",
         "details": [
           "Page-by-page site build",
@@ -264,7 +264,7 @@
         "id": "04",
         "slug": "launch",
         "title": "Launch",
-        "description": "Deploy, training, documentation and ongoing support.",
+        "description": "Deploy, documentation, team training if there's a CMS and follow-up after going live.",
         "longDescription": "Going live is only half the work. We handle deployment, team training if there's a CMS, documentation, and we stay available to iterate based on real data, not assumptions.",
         "details": [
           "Production deploy",
