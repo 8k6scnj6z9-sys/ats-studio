@@ -67,7 +67,7 @@ export default async function ProcessStepPage(
 
   return (
     <>
-      <Navbar locale={locale as Locale} dict={dict} />
+      <Navbar locale={locale as Locale} dict={dict} solid />
       <main className="relative z-10 pt-28 md:pt-36 bg-paper text-ink">
         <div className="mx-auto max-w-[1600px] px-5 md:px-10 pb-24 md:pb-40">
           <Link

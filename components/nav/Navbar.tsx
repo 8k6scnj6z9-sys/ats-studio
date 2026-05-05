@@ -10,9 +10,10 @@ import type { Locale, Dictionary } from "@/lib/i18n";
 type Props = {
   locale: Locale;
   dict: Dictionary;
+  solid?: boolean;
 };
 
-export default function Navbar({ locale, dict }: Props) {
+export default function Navbar({ locale, dict, solid = false }: Props) {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -87,7 +88,7 @@ export default function Navbar({ locale, dict }: Props) {
   return (
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
-        scrolled
+        scrolled || solid
           ? "backdrop-blur-md bg-ink/60 border-b border-line"
           : "border-b border-transparent"
       }`}
