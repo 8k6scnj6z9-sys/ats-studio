@@ -6,6 +6,7 @@ const defaultLocale = "pt";
 
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
+  if (pathname === "/studio" || pathname.startsWith("/studio/")) return;
   const hasLocale = locales.some(
     (l) => pathname === `/${l}` || pathname.startsWith(`/${l}/`)
   );
