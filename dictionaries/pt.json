@@ -214,8 +214,7 @@
           "Workshop de briefing com decisores",
           "Auditoria do site, marca e presença atual",
           "Análise de concorrência e referências",
-          "Definição de objetivos e métricas de sucesso",
-          "Mapa de stakeholders e fluxo de aprovações"
+          "Definição de objetivos e métricas de sucesso"
         ],
         "outputs": [
           "Brief",
@@ -228,13 +227,14 @@
         "slug": "design",
         "title": "Design",
         "description": "Wireframes, mood boards, identidade e protótipos navegáveis.",
-        "longDescription": "Traduzimos a estratégia em decisões visuais — direção de arte, tipografia, sistema de componentes e protótipos que já dão para clicar. O objetivo é validar a experiência antes de uma única linha de código ser escrita.",
+        "longDescription": "Traduzimos a estratégia em decisões visuais, direção de arte, tipografia, sistema de componentes e protótipos que já dão para clicar. O objetivo é validar a experiência antes de uma única linha de código ser escrita.",
         "details": [
-          "Sitemap e arquitetura de informação",
-          "Wireframes de baixa fidelidade",
-          "Direção de arte e mood boards",
-          "Design system e componentes reutilizáveis",
-          "Protótipo navegável para validação"
+          "Sitemap",
+          "Protótipo navegável",
+          "Direção de arte",
+          "Aprovação de design",
+          "Paletes",
+          "Funcionalidades necessárias"
         ],
         "outputs": [
           "Sitemap",
@@ -247,18 +247,18 @@
         "slug": "development",
         "title": "Desenvolvimento",
         "description": "Build em código limpo, testes, performance e acessibilidade.",
-        "longDescription": "Construímos com Next.js, foco em performance e acessibilidade desde o primeiro commit. CMS, integrações e analytics ligados, sem deixar dívida técnica para o cliente herdar.",
+        "longDescription": "Construímos um site rápido, acessível e bonito, focado em quem o vai usar. Cada detalhe é pensado para causar boa impressão, transmitir confiança e estar pronto a crescer com o negócio.",
         "details": [
-          "Implementação frontend componente a componente",
+          "Construção do site página a página",
           "Integração com CMS, formulários e dados",
-          "Otimização de performance (Core Web Vitals)",
-          "Acessibilidade (WCAG) e SEO técnico",
-          "Ambiente de staging com revisões iterativas"
+          "Foco em velocidade e desempenho",
+          "Acessibilidade e visibilidade nos motores de busca",
+          "Ambiente de pré-visualização com revisões iterativas"
         ],
         "outputs": [
-          "Frontend",
-          "CMS/dados",
-          "Performance"
+          "Protótipo final para revisão",
+          "CMS se assim ficar acordado",
+          "Website todo funcional"
         ]
       },
       {
@@ -266,13 +266,13 @@
         "slug": "launch",
         "title": "Lançamento",
         "description": "Deploy, formação, documentação e suporte contínuo.",
-        "longDescription": "Pôr no ar é só metade do trabalho. Cuidamos do deploy, formação da equipa, documentação e ficamos disponíveis para iterar com base em dados reais — não em suposições.",
+        "longDescription": "Pôr no ar é só metade do trabalho. Cuidamos do deploy, da formação da equipa caso haja CMS, da documentação, e ficamos disponíveis para iterar com base em dados reais, não em suposições.",
         "details": [
-          "Deploy em produção (Vercel ou equivalente)",
+          "Deploy em produção",
           "Configuração de domínio, DNS e analytics",
-          "Formação da equipa e documentação prática",
+          "Formação da equipa caso haja CMS e documentação prática",
           "Monitorização inicial e ajustes pós-lançamento",
-          "Plano de suporte e evolução contínua"
+          "Conversações sobre manutenção"
         ],
         "outputs": [
           "Deploy",

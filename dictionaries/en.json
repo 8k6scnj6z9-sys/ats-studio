@@ -213,8 +213,7 @@
           "Briefing workshop with decision makers",
           "Audit of the current site, brand and presence",
           "Competitive landscape and reference review",
-          "Definition of objectives and success metrics",
-          "Stakeholder map and approval flow"
+          "Definition of objectives and success metrics"
         ],
         "outputs": [
           "Brief",
@@ -227,13 +226,14 @@
         "slug": "design",
         "title": "Design",
         "description": "Wireframes, mood boards, identity and clickable prototypes.",
-        "longDescription": "We translate strategy into visual decisions — art direction, typography, a component system and prototypes you can actually click. The goal is to validate the experience before a single line of code is written.",
+        "longDescription": "We translate strategy into visual decisions, art direction, typography, a component system and prototypes you can actually click. The goal is to validate the experience before a single line of code is written.",
         "details": [
-          "Sitemap and information architecture",
-          "Low-fidelity wireframes",
-          "Art direction and mood boards",
-          "Design system and reusable components",
-          "Clickable prototype for validation"
+          "Sitemap",
+          "Clickable prototype",
+          "Art direction",
+          "Design approval",
+          "Palettes",
+          "Required functionality"
         ],
         "outputs": [
           "Sitemap",
@@ -246,18 +246,18 @@
         "slug": "development",
         "title": "Development",
         "description": "Clean-code build, testing, performance and accessibility.",
-        "longDescription": "We build with Next.js, with performance and accessibility in mind from the first commit. CMS, integrations and analytics wired up, with no technical debt left behind for the client to inherit.",
+        "longDescription": "We build a fast, accessible and beautiful site, focused on the people who will actually use it. Every detail is shaped to make a strong first impression, build trust and stay ready to grow with the business.",
         "details": [
-          "Component-by-component frontend implementation",
+          "Page-by-page site build",
           "CMS, forms and data integrations",
-          "Performance tuning (Core Web Vitals)",
-          "Accessibility (WCAG) and technical SEO",
-          "Staging environment with iterative reviews"
+          "Focus on speed and performance",
+          "Accessibility and search engine visibility",
+          "Preview environment with iterative reviews"
         ],
         "outputs": [
-          "Frontend",
-          "CMS/data",
-          "Performance"
+          "Final prototype for review",
+          "CMS if agreed",
+          "Fully functional website"
         ]
       },
       {
@@ -265,13 +265,13 @@
         "slug": "launch",
         "title": "Launch",
         "description": "Deploy, training, documentation and ongoing support.",
-        "longDescription": "Going live is only half the work. We handle deployment, team training, documentation and stay available to iterate based on real data — not assumptions.",
+        "longDescription": "Going live is only half the work. We handle deployment, team training if there's a CMS, documentation, and we stay available to iterate based on real data, not assumptions.",
         "details": [
-          "Production deploy (Vercel or equivalent)",
+          "Production deploy",
           "Domain, DNS and analytics setup",
-          "Team training and practical documentation",
+          "Team training if there's a CMS, with practical documentation",
           "Initial monitoring and post-launch tweaks",
-          "Support and continuous evolution plan"
+          "Conversations about maintenance"
         ],
         "outputs": [
           "Deploy",
