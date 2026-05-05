@@ -2,14 +2,14 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { projects } from "@/lib/projects";
+import type { Project } from "@/lib/projects";
 import type { Locale, Dictionary } from "@/lib/i18n";
 import SectionHeader from "@/components/ui/SectionHeader";
 import ProjectMockup from "@/components/mockups/ProjectMockup";
 
-type Props = { locale: Locale; dict: Dictionary };
+type Props = { locale: Locale; dict: Dictionary; projects: Project[] };
 
-export default function Work({ locale, dict }: Props) {
+export default function Work({ locale, dict, projects }: Props) {
   return (
     <section
       id="work"
@@ -42,7 +42,7 @@ function ProjectRow({
   dict,
   reverse,
 }: {
-  project: (typeof projects)[number];
+  project: Project;
   locale: Locale;
   dict: Dictionary;
   reverse?: boolean;

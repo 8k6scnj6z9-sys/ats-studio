@@ -42,6 +42,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# local exports (carousel images, promo material, etc.)
+/instagram-export/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

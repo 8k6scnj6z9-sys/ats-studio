@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { hasLocale, getDictionary, type Locale } from "@/lib/i18n";
+import { getProjects } from "@/lib/projects";
 import Navbar from "@/components/nav/Navbar";
 import Hero from "@/components/sections/Hero";
 import Work from "@/components/sections/Work";
@@ -14,13 +15,14 @@ export default async function HomePage(props: PageProps<"/[locale]">) {
   const { locale } = await props.params;
   if (!hasLocale(locale)) notFound();
   const dict = await getDictionary(locale as Locale);
+  const projects = await getProjects();
 
   return (
     <>
       <Navbar locale={locale as Locale} dict={dict} />
       <main className="relative z-10">
         <Hero locale={locale as Locale} dict={dict} />
-        <Work locale={locale as Locale} dict={dict} />
+        <Work locale={locale as Locale} dict={dict} projects={projects} />
         <Services dict={dict} />
         <Audience dict={dict} />
         <About dict={dict} />

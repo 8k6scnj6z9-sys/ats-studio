@@ -1,10 +1,11 @@
 import type { MetadataRoute } from "next";
-import { projects } from "@/lib/projects";
+import { getProjects } from "@/lib/projects";
 import { locales } from "@/lib/i18n";
 
 const siteUrl = "https://atstudio.pt";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const projects = await getProjects();
   const now = new Date();
   const staticRoutes = locales.flatMap((locale) => [
     {

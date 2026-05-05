@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Fraunces, Inter, JetBrains_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
-import "../globals.css";
+import "../../globals.css";
 import { hasLocale, getDictionary, locales, type Locale } from "@/lib/i18n";
 import SmoothScroll from "@/components/ui/SmoothScroll";
 import CustomCursor from "@/components/ui/CustomCursor";

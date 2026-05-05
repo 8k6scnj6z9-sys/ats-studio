@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { hasLocale, getDictionary, type Locale } from "@/lib/i18n";
-import { projects, getProject } from "@/lib/projects";
+import { getProject, getProjects, getProjectSlugs } from "@/lib/projects";
 import Navbar from "@/components/nav/Navbar";
 import Footer from "@/components/sections/Footer";
 import ProjectMockup from "@/components/mockups/ProjectMockup";
@@ -10,8 +10,9 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export async function generateStaticParams() {
   const locales: Locale[] = ["pt", "en"];
+  const slugs = await getProjectSlugs();
   return locales.flatMap((locale) =>
-    projects.map((p) => ({ locale, slug: p.slug }))
+    slugs.map((slug) => ({ locale, slug }))
   );
 }
 
@@ -20,7 +21,7 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const { locale, slug } = await props.params;
   if (!hasLocale(locale)) return {};
-  const project = getProject(slug);
+  const project = await getProject(slug);
   if (!project) return {};
 
   const typedLocale = locale as Locale;
@@ -63,10 +64,13 @@ export default async function ProjectPage(
 ) {
   const { locale, slug } = await props.params;
   if (!hasLocale(locale)) notFound();
-  const project = getProject(slug);
+  const project = await getProject(slug);
   if (!project) notFound();
 
-  const dict = await getDictionary(locale as Locale);
+  const [dict, projects] = await Promise.all([
+    getDictionary(locale as Locale),
+    getProjects(),
+  ]);
   const cats = project.categories[locale as Locale];
   const role = project.role[locale as Locale];
   const tagline = project.tagline[locale as Locale];
