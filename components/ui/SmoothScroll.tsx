@@ -12,6 +12,7 @@ export default function SmoothScroll() {
       anchors: true,
       touchMultiplier: 1.4,
     });
+    (window as unknown as { __lenis?: Lenis }).__lenis = lenis;
 
     const refreshScrollBounds = () => lenis.resize();
     const refreshFrames = [100, 350, 900, 1600].map((delay) =>
