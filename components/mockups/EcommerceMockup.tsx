@@ -79,9 +79,9 @@ export default function EcommerceMockup() {
                 Torrefação artesanal em Guimarães. Grão fresco entregue em 48h.
               </p>
             </div>
-            <button className="self-start mt-6 rounded-full bg-[#C9461C] text-[#FAFAF7] px-4 py-2 text-[10px] tracking-widest uppercase">
+            <div className="self-start mt-6 rounded-full bg-[#C9461C] text-[#FAFAF7] px-4 py-2 text-[10px] tracking-widest uppercase">
               Comprar agora →
-            </button>
+            </div>
           </div>
           <div className="w-1/2 relative bg-gradient-to-br from-[#2a1f17] to-[#0F0A07] border-l border-white/10 overflow-hidden">
             <div className="absolute inset-0 grid place-items-center">

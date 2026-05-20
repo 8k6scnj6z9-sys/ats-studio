@@ -1,14 +1,17 @@
 import type { MetadataRoute } from "next";
 import { getProjects } from "@/lib/projects";
 import { getProcessStepSlugs } from "@/lib/process";
+import { getResources } from "@/lib/resources";
 import { locales } from "@/lib/i18n";
 
 const siteUrl = "https://atstudio.pt";
+const portalUrl = "https://portal.atstudio.pt";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const [projects, processSlugs] = await Promise.all([
+  const [projects, processSlugs, resources] = await Promise.all([
     getProjects(),
     getProcessStepSlugs(),
+    getResources(),
   ]);
   const now = new Date();
   const staticRoutes = locales.flatMap((locale) => [
@@ -36,6 +39,48 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "yearly" as const,
       priority: 0.3,
     },
+    {
+      url: `${siteUrl}/${locale}/cookies`,
+      lastModified: now,
+      changeFrequency: "yearly" as const,
+      priority: 0.3,
+    },
+    {
+      url: `${siteUrl}/${locale}/about`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${siteUrl}/${locale}/faq`,
+      lastModified: now,
+      changeFrequency: "yearly" as const,
+      priority: 0.45,
+    },
+    {
+      url: `${siteUrl}/${locale}/diagnostico`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: locale === "pt" ? 0.8 : 0.45,
+      alternates: {
+        languages: {
+          "pt-PT": `${siteUrl}/pt/diagnostico`,
+          en: `${siteUrl}/en/diagnostico`,
+        },
+      },
+    },
+    {
+      url: `${siteUrl}/${locale}/recursos`,
+      lastModified: now,
+      changeFrequency: "weekly" as const,
+      priority: locale === "pt" ? 0.75 : 0.45,
+      alternates: {
+        languages: {
+          "pt-PT": `${siteUrl}/pt/recursos`,
+          en: `${siteUrl}/en/recursos`,
+        },
+      },
+    },
   ]);
 
   const projectRoutes = locales.flatMap((locale) =>
@@ -56,5 +101,39 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }))
   );
 
-  return [...staticRoutes, ...projectRoutes, ...processRoutes];
+  const resourceRoutes = locales.flatMap((locale) =>
+    resources.map((resource) => ({
+      url: `${siteUrl}/${locale}/recursos/${resource.slug}`,
+      lastModified: resource.date ? new Date(resource.date) : now,
+      changeFrequency: "monthly" as const,
+      priority: locale === "pt" ? 0.65 : 0.4,
+      alternates: {
+        languages: {
+          "pt-PT": `${siteUrl}/pt/recursos/${resource.slug}`,
+          en: `${siteUrl}/en/recursos/${resource.slug}`,
+        },
+      },
+    }))
+  );
+
+  const portalRoutes = locales.map((locale) => ({
+    url: `${portalUrl}/${locale}/login`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.35,
+    alternates: {
+      languages: {
+        "pt-PT": `${portalUrl}/pt/login`,
+        en: `${portalUrl}/en/login`,
+      },
+    },
+  }));
+
+  return [
+    ...staticRoutes,
+    ...projectRoutes,
+    ...processRoutes,
+    ...resourceRoutes,
+    ...portalRoutes,
+  ];
 }

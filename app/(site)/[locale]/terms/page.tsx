@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import Navbar from "@/components/nav/Navbar";
 import Footer from "@/components/sections/Footer";
 import { getDictionary, hasLocale, locales, type Locale } from "@/lib/i18n";
-import { legalContent } from "../legal-content";
+import { getLegalPage } from "@/lib/legal-pages";
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -15,10 +15,10 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const { locale } = await props.params;
   if (!hasLocale(locale)) return {};
-  const content = legalContent[locale].terms;
+  const content = await getLegalPage(locale as Locale, "terms");
 
   return {
-    title: `${content.title} — ATS Studio`,
+    title: `${content.title} - ATS Studio`,
     description: content.intro,
     alternates: {
       canonical: `https://atstudio.pt/${locale}/terms`,
@@ -30,12 +30,15 @@ export default async function TermsPage(props: PageProps<"/[locale]/terms">) {
   const { locale } = await props.params;
   if (!hasLocale(locale)) notFound();
 
-  const dict = await getDictionary(locale as Locale);
-  const content = legalContent[locale as Locale].terms;
+  const typedLocale = locale as Locale;
+  const [dict, content] = await Promise.all([
+    getDictionary(typedLocale),
+    getLegalPage(typedLocale, "terms"),
+  ]);
 
   return (
     <>
-      <Navbar locale={locale as Locale} dict={dict} />
+      <Navbar locale={typedLocale} dict={dict} solid />
       <main className="relative z-10 mx-auto max-w-[1100px] px-5 md:px-10 pt-36 md:pt-48 pb-24 md:pb-36">
         <Link
           href={`/${locale}`}
@@ -72,7 +75,7 @@ export default async function TermsPage(props: PageProps<"/[locale]/terms">) {
           ))}
         </div>
       </main>
-      <Footer locale={locale as Locale} dict={dict} />
+      <Footer locale={typedLocale} dict={dict} />
     </>
   );
 }

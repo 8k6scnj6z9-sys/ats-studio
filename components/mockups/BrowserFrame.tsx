@@ -13,6 +13,7 @@ export default function BrowserFrame({
 }: Props) {
   return (
     <div
+      aria-hidden
       className={`overflow-hidden rounded-lg border border-white/10 shadow-2xl bg-ash-2 ${className}`}
     >
       <div className="flex items-center gap-2 px-4 py-3 bg-ash border-b border-white/10">

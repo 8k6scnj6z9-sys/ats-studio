@@ -54,6 +54,7 @@ export default function About({ dict }: Props) {
                         width={420}
                         height={150}
                         className="h-auto w-48 md:w-56 object-contain"
+                        loading="eager"
                       />
                     </div>
                   </div>
@@ -107,9 +108,9 @@ export default function About({ dict }: Props) {
             <div>
               <p className="h-eyebrow mb-4">{dict.about.skills}</p>
               <ul className="flex flex-wrap gap-2">
-                {dict.about.skillsList.map((s) => (
+                {dict.about.skillsList.map((s, index) => (
                   <li
-                    key={s}
+                    key={`${s}-${index}`}
                     className="rounded-full border border-line px-3 py-1.5 text-xs font-mono text-paper/80"
                   >
                     {s}

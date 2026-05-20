@@ -3,12 +3,13 @@
 import { useState, FormEvent } from "react";
 import { motion } from "framer-motion";
 import type { Dictionary } from "@/lib/i18n";
+import type { SocialLink } from "@/lib/site-settings";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
-type Props = { dict: Dictionary };
+type Props = { dict: Dictionary; socialLinks: SocialLink[] };
 type Status = "idle" | "sending" | "success" | "error";
 
-export default function Contact({ dict }: Props) {
+export default function Contact({ dict, socialLinks }: Props) {
   const [status, setStatus] = useState<Status>("idle");
 
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -19,6 +20,8 @@ export default function Contact({ dict }: Props) {
       name: formData.get("name"),
       email: formData.get("email"),
       message: formData.get("message"),
+      website: formData.get("website"),
+      privacyConsent: formData.get("privacyConsent") === "on",
     };
     try {
       const res = await fetch("/api/contact", {
@@ -87,9 +90,9 @@ export default function Contact({ dict }: Props) {
 
           <ScrollReveal delay={0.25}>
             <div className="mt-10 flex flex-wrap gap-x-8 gap-y-4 text-sm">
-              {Object.entries(c.social).map(([k, social]) => (
+              {socialLinks.map((social) => (
                 <a
-                  key={k}
+                  key={`${social.label}-${social.url}`}
                   href={social.url}
                   target="_blank"
                   rel="noreferrer"
@@ -110,8 +113,18 @@ export default function Contact({ dict }: Props) {
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.7 }}
             onSubmit={onSubmit}
-            className="rounded-xl md:rounded-2xl border border-line p-6 md:p-8 bg-ash"
+            className="relative rounded-xl md:rounded-2xl border border-line p-6 md:p-8 bg-ash"
           >
+            <div aria-hidden="true" className="absolute left-[-9999px] top-auto h-px w-px overflow-hidden">
+              <label htmlFor="contact-website">Website</label>
+              <input
+                id="contact-website"
+                name="website"
+                type="text"
+                tabIndex={-1}
+                autoComplete="off"
+              />
+            </div>
             <Field
               id="name"
               label={f.name}
@@ -141,6 +154,16 @@ export default function Contact({ dict }: Props) {
                 className="w-full bg-transparent border-b border-line py-3 text-base text-paper placeholder:text-smoke/60 focus:outline-none focus:border-flame resize-none"
               />
             </div>
+
+            <label className="mb-6 flex items-start gap-3 text-sm leading-relaxed text-smoke">
+              <input
+                name="privacyConsent"
+                type="checkbox"
+                required
+                className="mt-1 h-4 w-4 accent-flame"
+              />
+              <span>{f.consent}</span>
+            </label>
 
             <button
               type="submit"

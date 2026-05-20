@@ -60,17 +60,25 @@ export default function Navbar({ locale, dict, solid = false }: Props) {
   const links: { href: string; label: string }[] = [
     { href: `/${locale}#work`, label: dict.nav.work },
     { href: `/${locale}#services`, label: dict.nav.services },
-    { href: `/${locale}#about`, label: dict.nav.about },
+    { href: `/${locale}/about`, label: dict.nav.about },
     { href: `/${locale}#process`, label: dict.nav.process },
+    { href: `/${locale}/diagnostico`, label: dict.nav.diagnostic },
+    { href: `/${locale}/recursos`, label: dict.nav.resources },
     { href: `/${locale}#contact`, label: dict.nav.contact },
   ];
+
+  const isHomePath = pathname === `/${locale}` || pathname === `/${locale}/`;
+
+  const getMobileHref = (href: string) =>
+    !isHomePath && href.startsWith(`/${locale}#`) ? `/${locale}` : href;
 
   const handleMobileLink = (
     href: string,
     event: MouseEvent<HTMLAnchorElement>
   ) => {
     const hash = href.split("#")[1];
-    if (!hash || !href.startsWith(`/${locale}#`)) {
+
+    if (!hash || !href.startsWith(`/${locale}#`) || !isHomePath) {
       setOpen(false);
       return;
     }
@@ -96,8 +104,8 @@ export default function Navbar({ locale, dict, solid = false }: Props) {
       <nav className="mx-auto max-w-[1600px] px-5 md:px-10 h-18 md:h-24 flex items-center justify-between">
         <Link
           href={`/${locale}`}
+          onClick={() => setOpen(false)}
           className="flex items-center gap-4 z-50"
-          aria-label="ATS Studio"
         >
           <Image
             src="/logos/logo-mark-white.png"
@@ -135,6 +143,7 @@ export default function Navbar({ locale, dict, solid = false }: Props) {
         </div>
 
         <button
+          type="button"
           aria-label="Menu"
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
@@ -159,10 +168,10 @@ export default function Navbar({ locale, dict, solid = false }: Props) {
               animate={{ y: 0 }}
               exit={{ y: "-100%" }}
               transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              className="md:hidden fixed inset-0 z-40 bg-ink flex flex-col justify-center px-6 overflow-hidden overscroll-none touch-none"
-              onTouchMove={(event) => event.preventDefault()}
+              data-lenis-prevent
+              className="md:hidden fixed inset-0 z-40 flex h-dvh flex-col overflow-y-auto overscroll-contain bg-ink px-6 pb-8 pt-28"
             >
-              <ul className="flex flex-col gap-6">
+              <ul className="flex flex-1 flex-col justify-center gap-3">
                 {links.map((l, i) => (
                   <motion.li
                     key={l.href}
@@ -171,16 +180,16 @@ export default function Navbar({ locale, dict, solid = false }: Props) {
                     transition={{ delay: 0.2 + i * 0.05 }}
                   >
                     <Link
-                      href={l.href}
-                      onClick={(event) => handleMobileLink(l.href, event)}
-                      className="font-display text-5xl text-paper hover:text-flame"
+                      href={getMobileHref(l.href)}
+                      onClick={(event) => handleMobileLink(getMobileHref(l.href), event)}
+                      className="font-display text-[clamp(2.4rem,11vw,4rem)] leading-[0.95] text-paper hover:text-flame"
                     >
                       {l.label}
                     </Link>
                   </motion.li>
                 ))}
               </ul>
-              <div className="mt-12 flex items-center gap-6 text-sm">
+              <div className="mt-8 flex shrink-0 flex-wrap items-center gap-5 pb-2 text-sm">
                 <Link
                   href={otherPath}
                   onClick={() => setOpen(false)}

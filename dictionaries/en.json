@@ -1,10 +1,10 @@
 {
   "meta": {
     "title": "ATS Studio — Web design, development and branding in Guarda",
-    "description": "ATS Studio creates websites, web apps, visual identity and digital experiences for brands, local businesses and companies that want to grow online with clarity, performance and premium design.",
+    "description": "ATS Studio creates websites, web apps, visual identity and digital experiences for brands, local businesses and companies that need a clear, professional and efficient online presence.",
     "siteName": "ATS Studio",
-    "shareTitle": "ATS Studio — Websites, apps and digital brands with presence",
-    "shareDescription": "Alexandre Terras Simões digital studio in Guarda. Web design, development, branding, UI/UX and digital direction for businesses that want to be taken seriously online.",
+    "shareTitle": "ATS Studio — Professional websites, apps and digital brands",
+    "shareDescription": "Alexandre Terras Simões digital studio in Guarda. Web design, development, branding, UI/UX and digital direction for businesses that value clarity, trust and careful execution.",
     "keywords": [
       "ATS Studio",
       "AT Studio",
@@ -25,13 +25,15 @@
     "services": "Services",
     "about": "About",
     "process": "Process",
+    "diagnostic": "Diagnostic",
+    "resources": "Resources",
     "contact": "Contact"
   },
   "hero": {
     "eyebrow": "Digital studio · Guarda",
     "title": "ATS Studio",
-    "statement": "From Guarda for brands that want to be taken seriously online.",
-    "subtitle": "Design, development and digital direction for businesses that need presence, clarity and execution without obstacles.",
+    "statement": "From Guarda for brands that need a professional digital presence.",
+    "subtitle": "Design, development and digital direction for businesses looking for clarity, trust and a well-structured online experience.",
     "cta": "See work",
     "secondaryCta": "Talk about a project",
     "scroll": "Scroll"
@@ -44,6 +46,125 @@
     "Motion",
     "Design Systems"
   ],
+  "diagnosticInvite": {
+    "eyebrow": "Free diagnostic",
+    "title": "Is your website helping or holding the business back?",
+    "description": "Test your website in a few seconds and get a simple read on performance, SEO, accessibility and trust signals.",
+    "cta": "Test my website",
+    "note": "Initial automated analysis. Useful for understanding priorities before a complete manual evaluation.",
+    "metrics": [
+      {
+        "value": "04",
+        "label": "Areas"
+      },
+      {
+        "value": "100",
+        "label": "Score"
+      },
+      {
+        "value": "3",
+        "label": "Priorities"
+      }
+    ]
+  },
+  "diagnosticPage": {
+    "metadata": {
+      "title": "Free Digital Diagnostic | ATS Studio",
+      "description": "Analyze your website and discover opportunities to improve performance, SEO, accessibility and conversion with ATS Studio."
+    },
+    "eyebrow": "Digital Diagnostic",
+    "title": "Free Digital Diagnostic",
+    "subtitle": "Find out in a few seconds whether your website is ready to build trust, attract clients and represent your business well.",
+    "supportCopy": "We analyze technical, visual and strategic signals on your website: performance, basic SEO, accessibility, contact clarity, structure and digital trust.",
+    "form": {
+      "fields": {
+        "url": "Website URL",
+        "urlPlaceholder": "company.com",
+        "name": "Name",
+        "namePlaceholder": "Your name",
+        "email": "Email",
+        "emailPlaceholder": "client@email.com",
+        "businessType": "Business type / sector",
+        "businessTypePlaceholder": "Restaurant, clinic, shop, services..."
+      },
+      "submit": "Generate diagnostic",
+      "submitting": "Analyzing...",
+      "consent": "I agree that ATS Studio may use this data to generate the diagnostic and reply about the result.",
+      "privacyNote": "We use this data only to generate the diagnostic and allow a follow-up about the result.",
+      "idleEyebrow": "Result",
+      "idleDescription": "After the analysis, you will see an overall score, four reading areas and direct recommendations to improve your digital presence.",
+      "errors": {
+        "missing_fields": "Fill in the website URL and email to continue.",
+        "invalid_fields": "Check the form fields before continuing.",
+        "invalid_email": "Check that the email address is correct.",
+        "invalid_url": "Invalid URL or blocked for security reasons.",
+        "rate_limited": "Too many requests were made. Please try again in a few minutes.",
+        "website_inaccessible": "We could not access the website. Check that it is online.",
+        "analysis_unavailable": "The analysis is temporarily unavailable. Please try again shortly."
+      }
+    },
+    "loading": {
+      "title": "Diagnostic in progress",
+      "messages": [
+        "Analyzing website structure...",
+        "Checking performance and SEO...",
+        "Preparing recommendations..."
+      ]
+    },
+    "results": {
+      "overallLabel": "Overall score",
+      "scoreSuffix": "out of 100",
+      "scores": {
+        "performance": "Performance",
+        "seo": "SEO",
+        "accessibility": "Accessibility",
+        "conversion": "Trust/Conversion"
+      },
+      "issuesTitle": "Main issues",
+      "recommendationsTitle": "Priority recommendations",
+      "ctaTitle": "Want to turn this diagnostic into an action plan?",
+      "ctaDescription": "ATS Studio can turn these signals into clear direction for design, development and digital presence.",
+      "ctaButton": "Talk to ATS Studio",
+      "disclaimer": "This diagnostic is an initial automated analysis. For design, strategy and development decisions, we recommend a complete manual evaluation.",
+      "badges": {
+        "high": "High",
+        "medium": "Medium",
+        "low": "Low"
+      }
+    }
+  },
+  "resourcesPage": {
+    "metadata": {
+      "title": "Resource Center | ATS Studio",
+      "description": "Practical guides about websites, branding, content and digital presence for businesses that want to grow with more clarity."
+    },
+    "eyebrow": "Editorial center",
+    "title": "Resource Center",
+    "subtitle": "Practical guides to help your business make better decisions about websites, branding, content and digital presence.",
+    "supportCopy": "Before investing in a website or a new visual identity, some decisions make a real difference. We have gathered simple, direct and useful guides to help you prepare your project with more clarity.",
+    "primaryCta": "Run Digital Diagnostic",
+    "secondaryCta": "Talk to ATS Studio",
+    "gridEyebrow": "Practical guides",
+    "gridTitle": "Start with the right topic.",
+    "readArticle": "Read guide",
+    "intermediate": {
+      "title": "Not sure where to start?",
+      "text": "If your current website does not represent your business well, if you are launching a new brand or if you want to understand what to improve first, ATS Studio's Digital Diagnostic can give you an initial direction.",
+      "label": "Analyze my website"
+    },
+    "final": {
+      "title": "Want to turn these ideas into a real plan?",
+      "text": "ATS Studio helps businesses create websites, identities and digital experiences with clarity, structure and attention to detail.",
+      "label": "Talk about my project"
+    },
+    "article": {
+      "back": "Back to resources",
+      "published": "Published",
+      "contents": "In this guide",
+      "checklist": "Checklist",
+      "related": "Related resources"
+    }
+  },
   "work": {
     "eyebrow": "Selected work",
     "title": "Concept studies.",
@@ -90,7 +211,7 @@
       {
         "id": "02",
         "title": "Web Development",
-        "description": "Static sites, web apps, e-commerce, and performance to the edge.",
+        "description": "Static sites, web apps, e-commerce and implementation focused on performance.",
         "tags": [
           "Next.js",
           "Shopify",
@@ -149,7 +270,7 @@
   "about": {
     "eyebrow": "About",
     "title": "Design with intent. Code with precision.",
-    "p1": "ATS Studio is a digital design and development studio created by Alexandre Terras Simões in Guarda.\n\nWe work with entrepreneurs, local businesses and teams looking for more than a website — they are looking for a clear, consistent digital presence prepared to grow.",
+    "p1": "ATS Studio is a digital design and development studio created by Alexandre Terras Simões in Guarda.\n\nWe work with entrepreneurs, local businesses and teams looking for more than a website — they are looking for a clear, consistent digital presence prepared to evolve.",
     "p2": "Every project starts with a direct conversation. We define goals, structure the experience and develop fast, functional solutions that are easy to maintain.",
     "p3": "Small by choice. Close to the client by principle.",
     "skills": "Stack & tools",
@@ -176,7 +297,7 @@
       "location": "Guarda, Portugal",
       "focus": "Websites, apps and digital identities",
       "availability": "Selected projects · 2026",
-      "note": "Visual strategy, UX and code brought together into a clear, fast digital presence built to grow.",
+      "note": "Visual strategy, UX and code brought together into a clear, fast digital presence prepared to evolve.",
       "metrics": [
         {
           "value": "01",
@@ -196,7 +317,7 @@
   "process": {
     "eyebrow": "Process",
     "title": "How we work.",
-    "subtitle": "Four phases. No mystery, no fluff.",
+    "subtitle": "Four phases with clear goals, deliverables and communication.",
     "stepLabel": "Step",
     "details": "Details",
     "deliverables": "What we deliver",
@@ -206,7 +327,7 @@
   "contact": {
     "eyebrow": "Contact",
     "title": "Got an idea? Let's talk.",
-    "subtitle": "Drop us an email — we reply within 24h on business days.",
+    "subtitle": "Drop us an email — we reply with context and next steps on business days.",
     "email": "geral@atstudio.pt",
     "projectTypes": {
       "title": "Where we can start",
@@ -223,6 +344,7 @@
       "emailPlaceholder": "you@email.com",
       "message": "Message",
       "messagePlaceholder": "Tell us about your project...",
+      "consent": "I agree that ATS Studio may use this data to reply to my request.",
       "submit": "Send message",
       "sending": "Sending...",
       "success": "Message sent. We'll be in touch soon.",

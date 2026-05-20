@@ -26,6 +26,7 @@ export default function Marquee({
 
   return (
     <div
+      aria-hidden
       className={`relative w-full overflow-hidden border-y border-line py-6 ${className}`}
     >
       <div

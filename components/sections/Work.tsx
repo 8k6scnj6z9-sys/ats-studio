@@ -63,9 +63,13 @@ function ProjectRow({
     >
       <Link
         href={`/${locale}/work/${project.slug}`}
+        aria-label={`${dict.work.viewProject}: ${project.name}`}
         className="lg:col-span-7 group block"
       >
-        <div className="relative overflow-hidden rounded-lg md:rounded-xl">
+        <div
+          aria-hidden
+          className="relative overflow-hidden rounded-lg md:rounded-xl"
+        >
           <div className="transition-transform duration-700 ease-out group-hover:scale-[1.025] group-hover:-rotate-[0.35deg]">
             <ProjectMockup project={project} locale={locale} />
           </div>
@@ -86,16 +90,21 @@ function ProjectRow({
           </span>
         </div>
 
-        <h3 className="h-display text-4xl md:text-6xl group-hover:text-flame">
-          {project.name}
+        <h3 className="h-display text-4xl md:text-6xl">
+          <Link
+            href={`/${locale}/work/${project.slug}`}
+            className="transition-colors hover:text-flame"
+          >
+            {project.name}
+          </Link>
         </h3>
 
         <p className="text-smoke text-base md:text-lg max-w-md">{tagline}</p>
 
         <div className="flex flex-wrap gap-2">
-          {cats.map((c) => (
+          {cats.map((c, index) => (
             <span
-              key={c}
+              key={`${project.slug}-${c}-${index}`}
               className="rounded-full border border-line text-paper/80 px-3 py-1 text-xs font-mono"
             >
               {c}
@@ -105,7 +114,7 @@ function ProjectRow({
 
         <Link
           href={`/${locale}/work/${project.slug}`}
-          className="group inline-flex items-center gap-3 mt-2 text-sm text-paper hover:text-flame"
+          className="group inline-flex items-center gap-3 mt-2 text-sm text-paper hover:text-flame focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame focus-visible:ring-offset-4 focus-visible:ring-offset-ink"
         >
           <span className="block w-12 h-px bg-paper group-hover:bg-flame transition-colors" />
           {dict.work.viewProject} →

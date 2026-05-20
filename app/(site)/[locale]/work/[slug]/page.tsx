@@ -76,6 +76,48 @@ export default async function ProjectPage(
   const tagline = project.tagline[locale as Locale];
   const description = project.description[locale as Locale];
   const status = project.status[locale as Locale];
+  const caseStudy =
+    locale === "pt"
+      ? {
+          goals: "Objetivos do projeto",
+          beforeAfter: "Antes / depois",
+          results: "Resultados esperados",
+          technologies: "Tecnologias e abordagem",
+          before: "Presenca inicial com oportunidades de clarificar mensagem, hierarquia visual e percurso do utilizador.",
+          after: "Sistema digital mais consistente, com narrativa clara, interface cuidada e base tecnica preparada para evoluir.",
+          goalsList: [
+            "Aumentar credibilidade da marca",
+            "Organizar conteudo e prioridades",
+            "Melhorar leitura em mobile",
+            "Criar uma experiencia coerente do primeiro contacto a conversao",
+          ],
+          resultsList: [
+            "Direcao visual mais profissional",
+            "Arquitetura de informacao mais clara",
+            "Componentes reutilizaveis para crescimento futuro",
+            "Base preparada para SEO tecnico e medicao com consentimento",
+          ],
+        }
+      : {
+          goals: "Project goals",
+          beforeAfter: "Before / after",
+          results: "Expected results",
+          technologies: "Technologies and approach",
+          before: "Initial presence with opportunities to clarify messaging, visual hierarchy and user journey.",
+          after: "A more consistent digital system with clear narrative, refined interface and a technical base prepared to evolve.",
+          goalsList: [
+            "Increase brand credibility",
+            "Organize content and priorities",
+            "Improve mobile readability",
+            "Create a coherent experience from first contact to conversion",
+          ],
+          resultsList: [
+            "More professional visual direction",
+            "Clearer information architecture",
+            "Reusable components for future growth",
+            "Base prepared for technical SEO and consent-based measurement",
+          ],
+        };
 
   const idx = projects.findIndex((p) => p.slug === project.slug);
   const next = projects[(idx + 1) % projects.length];
@@ -115,7 +157,9 @@ export default async function ProjectPage(
 
           <div className="mt-16 md:mt-24">
             <ScrollReveal>
-              <ProjectMockup project={project} locale={locale as Locale} />
+              <div aria-hidden>
+                <ProjectMockup project={project} locale={locale as Locale} />
+              </div>
             </ScrollReveal>
           </div>
 
@@ -151,7 +195,79 @@ export default async function ProjectPage(
             </div>
           </div>
 
-          <div className="mt-24 md:mt-40 border-t border-line pt-10">
+          <div className="mt-20 md:mt-28 border-t border-line pt-10 md:pt-14">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16">
+              <section className="lg:col-span-4">
+                <h2 className="font-display text-4xl md:text-5xl">
+                  {caseStudy.goals}
+                </h2>
+                <ul className="mt-6 space-y-3">
+                  {caseStudy.goalsList.map((item) => (
+                    <li key={item} className="flex gap-3 text-sm text-paper/72">
+                      <span aria-hidden className="mt-2 h-px w-5 shrink-0 bg-flame" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+
+              <section className="lg:col-span-4">
+                <h2 className="font-display text-4xl md:text-5xl">
+                  {caseStudy.beforeAfter}
+                </h2>
+                <div className="mt-6 grid gap-4">
+                  <div className="border border-line bg-ash p-5">
+                    <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-smoke">
+                      Before
+                    </p>
+                    <p className="mt-3 text-sm leading-relaxed text-paper/70">
+                      {caseStudy.before}
+                    </p>
+                  </div>
+                  <div className="border border-line bg-paper p-5 text-ink">
+                    <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-ink/45">
+                      After
+                    </p>
+                    <p className="mt-3 text-sm leading-relaxed text-ink/65">
+                      {caseStudy.after}
+                    </p>
+                  </div>
+                </div>
+              </section>
+
+              <section className="lg:col-span-4">
+                <h2 className="font-display text-4xl md:text-5xl">
+                  {caseStudy.results}
+                </h2>
+                <ul className="mt-6 space-y-3">
+                  {caseStudy.resultsList.map((item) => (
+                    <li key={item} className="flex gap-3 text-sm text-paper/72">
+                      <span aria-hidden className="mt-2 h-px w-5 shrink-0 bg-flame" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            </div>
+
+            <section className="mt-14 border-t border-line pt-8">
+              <h2 className="font-display text-4xl md:text-5xl">
+                {caseStudy.technologies}
+              </h2>
+              <div className="mt-6 flex flex-wrap gap-2">
+                {[...cats, ...role].map((item, index) => (
+                  <span
+                    key={`${project.slug}-${item}-${index}`}
+                    className="rounded-full border border-line px-3 py-1.5 font-mono text-xs text-paper/78"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </section>
+          </div>
+
+          <div className="mt-24 mb-20 border-t border-line pt-10 md:mt-40 md:mb-28">
             <Link
               href={`/${locale}/work/${next.slug}`}
               className="group flex items-center justify-between gap-6"

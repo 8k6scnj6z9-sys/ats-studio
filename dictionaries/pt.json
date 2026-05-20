@@ -1,10 +1,10 @@
 {
   "meta": {
     "title": "ATS Studio — Web design, desenvolvimento e branding na Guarda",
-    "description": "ATS Studio cria websites, web apps, identidade visual e experiências digitais para marcas, negócios locais e empresas que querem crescer online com clareza, performance e design premium.",
+    "description": "ATS Studio cria websites, web apps, identidade visual e experiências digitais para marcas, negócios locais e empresas que precisam de uma presença online clara, profissional e eficiente.",
     "siteName": "ATS Studio",
-    "shareTitle": "ATS Studio — Websites, apps e marcas digitais com presença",
-    "shareDescription": "Estúdio digital de Alexandre Terras Simões, na Guarda. Web design, desenvolvimento, branding, UI/UX e direção digital para negócios que querem ser levados a sério online.",
+    "shareTitle": "ATS Studio — Websites, apps e marcas digitais profissionais",
+    "shareDescription": "Estúdio digital de Alexandre Terras Simões, na Guarda. Web design, desenvolvimento, branding, UI/UX e direção digital para negócios que valorizam clareza, confiança e execução cuidada.",
     "keywords": [
       "ATS Studio",
       "AT Studio",
@@ -26,13 +26,15 @@
     "services": "Serviços",
     "about": "Sobre",
     "process": "Processo",
+    "diagnostic": "Diagnóstico",
+    "resources": "Recursos",
     "contact": "Contacto"
   },
   "hero": {
     "eyebrow": "Estúdio digital · Guarda",
     "title": "ATS Studio",
-    "statement": "Da Guarda para marcas que querem ser levadas a sério online.",
-    "subtitle": "Design, desenvolvimento e direção digital para negócios que precisam de presença, clareza e execução sem entraves.",
+    "statement": "Da Guarda para marcas que precisam de uma presença digital profissional.",
+    "subtitle": "Design, desenvolvimento e direção digital para negócios que procuram clareza, confiança e uma experiência online bem estruturada.",
     "cta": "Ver trabalho",
     "secondaryCta": "Falar sobre um projeto",
     "scroll": "Desliza"
@@ -45,6 +47,125 @@
     "Motion",
     "Design Systems"
   ],
+  "diagnosticInvite": {
+    "eyebrow": "Diagnóstico gratuito",
+    "title": "O teu website está a ajudar ou a travar o negócio?",
+    "description": "Testa o teu website em poucos segundos e recebe uma leitura simples sobre performance, SEO, acessibilidade e sinais de confiança.",
+    "cta": "Testar o meu website",
+    "note": "Análise automática inicial. Útil para perceber prioridades antes de avançar para uma avaliação manual completa.",
+    "metrics": [
+      {
+        "value": "04",
+        "label": "Áreas"
+      },
+      {
+        "value": "100",
+        "label": "Score"
+      },
+      {
+        "value": "3",
+        "label": "Prioridades"
+      }
+    ]
+  },
+  "diagnosticPage": {
+    "metadata": {
+      "title": "Diagnóstico Digital Gratuito | ATS Studio",
+      "description": "Analisa o teu website e descobre oportunidades de melhoria em performance, SEO, acessibilidade e conversão com a ATS Studio."
+    },
+    "eyebrow": "Diagnóstico Digital",
+    "title": "Diagnóstico Digital Gratuito",
+    "subtitle": "Descobre em poucos segundos se o teu website está preparado para gerar confiança, atrair clientes e representar bem o teu negócio.",
+    "supportCopy": "Analisamos sinais técnicos, visuais e estratégicos do teu website: performance, SEO básico, acessibilidade, clareza de contacto, estrutura e confiança digital.",
+    "form": {
+      "fields": {
+        "url": "URL do website",
+        "urlPlaceholder": "empresa.pt",
+        "name": "Nome",
+        "namePlaceholder": "O teu nome",
+        "email": "Email",
+        "emailPlaceholder": "cliente@email.pt",
+        "businessType": "Tipo de negócio / setor",
+        "businessTypePlaceholder": "Restaurante, clínica, loja, serviços..."
+      },
+      "submit": "Gerar diagnóstico",
+      "submitting": "A analisar...",
+      "consent": "Aceito que a ATS Studio use estes dados para gerar o diagnóstico e responder sobre o resultado.",
+      "privacyNote": "Usamos estes dados apenas para gerar o diagnóstico e permitir contacto posterior sobre o resultado.",
+      "idleEyebrow": "Resultado",
+      "idleDescription": "Depois da análise, vais ver uma pontuação geral, quatro áreas de leitura e recomendações diretas para melhorar a presença digital.",
+      "errors": {
+        "missing_fields": "Preenche o URL e o email para avançar.",
+        "invalid_fields": "Confirma os campos do formulário antes de continuar.",
+        "invalid_email": "Confirma se o email está correto.",
+        "invalid_url": "URL inválido ou bloqueado por segurança.",
+        "rate_limited": "Foram feitos demasiados pedidos. Tenta novamente dentro de alguns minutos.",
+        "website_inaccessible": "Não foi possível aceder ao website. Confirma se está online.",
+        "analysis_unavailable": "Análise temporariamente indisponível. Tenta novamente dentro de momentos."
+      }
+    },
+    "loading": {
+      "title": "Diagnóstico em curso",
+      "messages": [
+        "A analisar estrutura do website...",
+        "A verificar performance e SEO...",
+        "A preparar recomendações..."
+      ]
+    },
+    "results": {
+      "overallLabel": "Score geral",
+      "scoreSuffix": "em 100",
+      "scores": {
+        "performance": "Performance",
+        "seo": "SEO",
+        "accessibility": "Acessibilidade",
+        "conversion": "Confiança/Conversão"
+      },
+      "issuesTitle": "Principais problemas",
+      "recommendationsTitle": "Recomendações prioritárias",
+      "ctaTitle": "Queres transformar este diagnóstico num plano de ação?",
+      "ctaDescription": "A ATS Studio pode transformar estes sinais numa direção clara de design, desenvolvimento e presença digital.",
+      "ctaButton": "Falar com a ATS Studio",
+      "disclaimer": "Este diagnóstico é uma análise automática inicial. Para decisões de design, estratégia e desenvolvimento, recomendamos uma avaliação manual completa.",
+      "badges": {
+        "high": "Alta",
+        "medium": "Média",
+        "low": "Baixa"
+      }
+    }
+  },
+  "resourcesPage": {
+    "metadata": {
+      "title": "Centro de Recursos | ATS Studio",
+      "description": "Guias práticos sobre websites, branding, conteúdo e presença digital para negócios que querem crescer com mais clareza."
+    },
+    "eyebrow": "Centro editorial",
+    "title": "Centro de Recursos",
+    "subtitle": "Guias práticos para ajudares o teu negócio a tomar melhores decisões sobre websites, branding, conteúdo e presença digital.",
+    "supportCopy": "Antes de investir num website ou numa nova identidade visual, há decisões que fazem toda a diferença. Reunimos aqui guias simples, diretos e úteis para te ajudar a preparar melhor o teu projeto.",
+    "primaryCta": "Fazer Diagnóstico Digital",
+    "secondaryCta": "Falar com a ATS Studio",
+    "gridEyebrow": "Guias práticos",
+    "gridTitle": "Começa pelo tema certo.",
+    "readArticle": "Ler guia",
+    "intermediate": {
+      "title": "Não sabes por onde começar?",
+      "text": "Se o teu website atual não representa bem o teu negócio, se estás a lançar uma nova marca ou se queres perceber o que melhorar primeiro, o Diagnóstico Digital da ATS Studio pode dar-te uma primeira direção.",
+      "label": "Analisar o meu website"
+    },
+    "final": {
+      "title": "Queres transformar estas ideias num plano real?",
+      "text": "A ATS Studio ajuda negócios a criar websites, identidades e experiências digitais com clareza, estrutura e atenção ao detalhe.",
+      "label": "Falar sobre o meu projeto"
+    },
+    "article": {
+      "back": "Voltar aos recursos",
+      "published": "Publicado",
+      "contents": "Neste guia",
+      "checklist": "Checklist",
+      "related": "Recursos relacionados"
+    }
+  },
   "work": {
     "eyebrow": "Trabalho selecionado",
     "title": "Estudos conceptuais.",
@@ -91,7 +212,7 @@
       {
         "id": "02",
         "title": "Web Development",
-        "description": "Sites estáticos, web apps, e-commerce e performance no limite.",
+        "description": "Sites estáticos, web apps, e-commerce e implementação focada em desempenho.",
         "tags": [
           "Next.js",
           "Shopify",
@@ -150,7 +271,7 @@
   "about": {
     "eyebrow": "Sobre",
     "title": "Design com intenção. Código com precisão.",
-    "p1": "A ATS Studio é um estúdio de design e desenvolvimento digital criado por Alexandre Terras Simões, na Guarda.\n\nTrabalhamos com empresários, negócios locais e equipas que procuram mais do que um website — procuram uma presença digital clara, consistente e preparada para crescer.",
+    "p1": "A ATS Studio é um estúdio de design e desenvolvimento digital criado por Alexandre Terras Simões, na Guarda.\n\nTrabalhamos com empresários, negócios locais e equipas que procuram mais do que um website — procuram uma presença digital clara, consistente e preparada para evoluir.",
     "p2": "Cada projeto começa com uma conversa direta. Definimos objetivos, estruturamos a experiência e desenvolvemos soluções rápidas, funcionais e fáceis de manter.",
     "p3": "Pequeno por opção. Próximo do cliente por princípio.",
     "skills": "Stack & ferramentas",
@@ -177,7 +298,7 @@
       "location": "Guarda, Portugal",
       "focus": "Websites, apps e identidades digitais",
       "availability": "Projetos selecionados · 2026",
-      "note": "Estratégia visual, UX e código reunidos numa presença digital clara, rápida e preparada para crescer.",
+      "note": "Estratégia visual, UX e código reunidos numa presença digital clara, rápida e preparada para evoluir.",
       "metrics": [
         {
           "value": "01",
@@ -197,7 +318,7 @@
   "process": {
     "eyebrow": "Processo",
     "title": "Como trabalhamos.",
-    "subtitle": "Quatro fases. Sem mistério, sem fluff.",
+    "subtitle": "Quatro fases com objetivos, entregáveis e comunicação clara.",
     "stepLabel": "Passo",
     "details": "Detalhes",
     "deliverables": "O que entregamos",
@@ -207,7 +328,7 @@
   "contact": {
     "eyebrow": "Contacto",
     "title": "Tens uma ideia? Vamos falar.",
-    "subtitle": "Escreve-nos um email — respondemos em menos de 24h em dias úteis.",
+    "subtitle": "Escreve-nos um email — respondemos com contexto e próximos passos em dias úteis.",
     "email": "geral@atstudio.pt",
     "projectTypes": {
       "title": "Por onde podemos começar",
@@ -224,6 +345,7 @@
       "emailPlaceholder": "tu@email.com",
       "message": "Mensagem",
       "messagePlaceholder": "Conta-nos sobre o teu projeto...",
+      "consent": "Aceito que a ATS Studio use estes dados para responder ao meu pedido.",
       "submit": "Enviar mensagem",
       "sending": "A enviar...",
       "success": "Mensagem enviada. Em breve entraremos em contacto.",

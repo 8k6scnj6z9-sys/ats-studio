@@ -6,6 +6,9 @@ import { hasLocale, getDictionary, locales, type Locale } from "@/lib/i18n";
 import SmoothScroll from "@/components/ui/SmoothScroll";
 import CustomCursor from "@/components/ui/CustomCursor";
 import ScrollProgress from "@/components/ui/ScrollProgress";
+import CookieConsent from "@/components/privacy/CookieConsent";
+import { company } from "@/lib/site-content";
+import { getSiteSettings } from "@/lib/site-settings";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -26,7 +29,7 @@ const mono = JetBrains_Mono({
   display: "swap",
 });
 
-const siteUrl = "https://atstudio.pt";
+const siteUrl = company.siteUrl;
 
 export const viewport: Viewport = {
   themeColor: "#ff5a1f",
@@ -52,8 +55,8 @@ export async function generateMetadata(
     title: dict.meta.title,
     description: dict.meta.description,
     applicationName: dict.meta.siteName,
-    authors: [{ name: "Alexandre Terras Simões", url: siteUrl }],
-    creator: "Alexandre Terras Simões",
+    authors: [{ name: company.founder, url: siteUrl }],
+    creator: company.founder,
     publisher: "ATS Studio",
     category: "web design and development",
     keywords: dict.meta.keywords,
@@ -78,11 +81,10 @@ export async function generateMetadata(
     },
     icons: {
       icon: [
-        { url: "/favicon.ico", type: "image/x-icon", sizes: "32x32" },
-        { url: "/favicon.png", type: "image/png" },
+        { url: "/favicon2.png", type: "image/png", sizes: "192x192" },
       ],
-      shortcut: ["/favicon.ico"],
-      apple: [{ url: "/favicon.png", type: "image/png" }],
+      shortcut: ["/favicon2.png"],
+      apple: [{ url: "/favicon2.png", type: "image/png", sizes: "192x192" }],
     },
     manifest: "/manifest.webmanifest",
     openGraph: {
@@ -101,9 +103,9 @@ export async function generateMetadata(
           alt: "ATS Studio — web design, development and branding",
         },
         {
-          url: "/favicon.png",
-          width: 512,
-          height: 512,
+          url: "/favicon2.png",
+          width: 192,
+          height: 192,
           alt: "ATS Studio icon",
         },
       ],
@@ -121,38 +123,37 @@ export default async function LocaleLayout(props: LayoutProps<"/[locale]">) {
   const { locale } = await props.params;
   if (!hasLocale(locale)) notFound();
   const typedLocale = locale as Locale;
-  const dict = await getDictionary(typedLocale);
+  const [dict, siteSettings] = await Promise.all([
+    getDictionary(typedLocale),
+    getSiteSettings(),
+  ]);
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    name: "ATS Studio",
+    name: company.name,
     alternateName: "AT Studio",
     url: siteUrl,
-    logo: `${siteUrl}/favicon.png`,
+    logo: `${siteUrl}/favicon2.png`,
     image: `${siteUrl}/og-image.png`,
     founder: {
       "@type": "Person",
-      name: "Alexandre Terras Simões",
+      name: company.founder,
       jobTitle: "Founder, Designer and Developer",
       address: {
         "@type": "PostalAddress",
-        addressLocality: "Guarda",
-        addressCountry: "PT",
+        addressLocality: company.addressLocality,
+        addressCountry: company.addressCountry,
       },
     },
-    email: "geral@atstudio.pt",
-    areaServed: ["Portugal", "Guarda"],
+    email: company.email,
+    ...(company.phone ? { telephone: company.phone } : {}),
+    areaServed: ["Portugal", "Guarda", "European Union"],
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Guarda",
-      addressCountry: "PT",
+      addressLocality: company.addressLocality,
+      addressCountry: company.addressCountry,
     },
-    sameAs: [
-      "https://www.instagram.com/atstudioagency/",
-      "https://www.linkedin.com/in/alexandre-sim%C3%B5es-a4aaba407/",
-      "https://www.behance.net/atstudioagency",
-      "https://www.facebook.com/profile.php?id=61589157155371",
-    ],
+    sameAs: siteSettings.socialLinks.map((social) => social.url),
     description: dict.meta.description,
     serviceType: [
       "Web design",
@@ -166,6 +167,7 @@ export default async function LocaleLayout(props: LayoutProps<"/[locale]">) {
   return (
     <html
       lang={locale}
+      data-scroll-behavior="smooth"
       className={`${fraunces.variable} ${inter.variable} ${mono.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-ink text-paper grain">
@@ -177,6 +179,11 @@ export default async function LocaleLayout(props: LayoutProps<"/[locale]">) {
         <ScrollProgress />
         <CustomCursor />
         {props.children}
+        <CookieConsent
+          locale={typedLocale}
+          gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}
+          metaPixelId={process.env.NEXT_PUBLIC_META_PIXEL_ID}
+        />
       </body>
     </html>
   );

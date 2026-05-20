@@ -37,7 +37,7 @@ export default function Hero({ locale, dict }: Props) {
         >
           <span className="md:col-span-3 text-flame">{dict.hero.eyebrow}</span>
           <span className="hidden md:block md:col-span-4">Web development / design</span>
-          <span className="hidden md:block md:col-span-5 text-right">Portfolio concept edition · 2026</span>
+          <span className="hidden md:block md:col-span-5 text-right">Professional digital studio · 2026</span>
         </motion.div>
 
         <h1 className="h-display text-[5.7rem] sm:text-[8rem] md:text-[11rem] lg:text-[14rem] xl:text-[16rem] leading-[0.78] text-balance">
@@ -90,13 +90,21 @@ export default function Hero({ locale, dict }: Props) {
           </div>
 
           <div className="md:col-span-5 flex flex-col sm:flex-row md:justify-end items-start md:items-end gap-4">
-            <Link href={`/${locale}#work`}>
+            <Link
+              href={`/${locale}#work`}
+              className="inline-block rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame focus-visible:ring-offset-4 focus-visible:ring-offset-ink"
+            >
               <MagneticButton
-                aria-label={dict.hero.cta}
-                className="group flex items-center gap-3 rounded-full border border-line px-6 py-4 text-sm hover:bg-paper hover:text-ink transition-colors"
+                as="span"
+                className="group flex items-center gap-3 rounded-full border border-line px-6 py-4 text-sm transition-colors hover:bg-paper hover:text-ink"
               >
                 <span>{dict.hero.cta}</span>
-                <span className="inline-block transition-transform group-hover:translate-x-1">↓</span>
+                <span
+                  aria-hidden
+                  className="inline-block transition-transform group-hover:translate-x-1"
+                >
+                  ↓
+                </span>
               </MagneticButton>
             </Link>
             <Link
