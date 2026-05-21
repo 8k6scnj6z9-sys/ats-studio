@@ -26,8 +26,9 @@ export default function CustomCursor() {
     };
 
     const onOver = (e: MouseEvent) => {
-      const target = e.target as HTMLElement | null;
-      const interactive = target?.closest(
+      const target = e.target;
+      const element = target instanceof Element ? target : null;
+      const interactive = element?.closest(
         'a, button, [role="button"], [data-cursor="hover"], input, textarea, label'
       );
       targetScale = interactive ? 2.6 : 1;
