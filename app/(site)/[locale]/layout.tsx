@@ -30,6 +30,7 @@ const mono = JetBrains_Mono({
 });
 
 const siteUrl = company.siteUrl;
+const googleAnalyticsId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? "G-WZEM8YLYT3";
 
 export const viewport: Viewport = {
   themeColor: "#ff5a1f",
@@ -181,7 +182,7 @@ export default async function LocaleLayout(props: LayoutProps<"/[locale]">) {
         {props.children}
         <CookieConsent
           locale={typedLocale}
-          gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}
+          gaId={googleAnalyticsId}
           metaPixelId={process.env.NEXT_PUBLIC_META_PIXEL_ID}
         />
       </body>

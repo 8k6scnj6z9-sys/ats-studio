@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 import type { Locale } from "@/lib/i18n";
 import { cookieContent } from "@/lib/site-content";
@@ -21,6 +22,7 @@ const STORAGE_KEY = "ats_cookie_consent_v1";
 
 export default function CookieConsent({ locale, gaId, metaPixelId }: Props) {
   const copy = cookieContent[locale];
+  const pathname = usePathname();
   const [consent, setConsent] = useState<Consent | null>(null);
   const [visible, setVisible] = useState(false);
   const [preferencesOpen, setPreferencesOpen] = useState(false);
@@ -42,6 +44,17 @@ export default function CookieConsent({ locale, gaId, metaPixelId }: Props) {
   useEffect(() => {
     if (consent?.analytics) loadTracking({ gaId, metaPixelId });
   }, [consent?.analytics, gaId, metaPixelId]);
+
+  useEffect(() => {
+    if (!consent?.analytics || !gaId || !window.gtag) return;
+
+    const pagePath = `${pathname}${window.location.search}`;
+    window.gtag("event", "page_view", {
+      page_path: pagePath,
+      page_location: window.location.href,
+      page_title: document.title,
+    });
+  }, [consent?.analytics, gaId, pathname]);
 
   const saveConsent = (allowAnalytics: boolean) => {
     const next: Consent = {
@@ -210,7 +223,7 @@ function loadTracking({
       window.dataLayer?.push(args);
     };
     window.gtag("js", new Date());
-    window.gtag("config", gaId, { anonymize_ip: true });
+    window.gtag("config", gaId, { anonymize_ip: true, send_page_view: false });
   }
 
   if (metaPixelId && !document.querySelector(`script[data-ats-meta="${metaPixelId}"]`)) {
