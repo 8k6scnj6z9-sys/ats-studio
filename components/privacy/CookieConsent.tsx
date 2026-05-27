@@ -42,8 +42,9 @@ export default function CookieConsent({ locale, gaId, metaPixelId }: Props) {
   }, []);
 
   useEffect(() => {
-    if (consent?.analytics) loadTracking({ gaId, metaPixelId });
-  }, [consent?.analytics, gaId, metaPixelId]);
+    updateGoogleConsent(consent?.analytics ?? false);
+    if (consent?.analytics) loadTracking({ metaPixelId });
+  }, [consent?.analytics, metaPixelId]);
 
   useEffect(() => {
     if (!consent?.analytics || !gaId || !window.gtag) return;
@@ -67,7 +68,8 @@ export default function CookieConsent({ locale, gaId, metaPixelId }: Props) {
     setAnalytics(allowAnalytics);
     setVisible(false);
     setPreferencesOpen(false);
-    if (allowAnalytics) loadTracking({ gaId, metaPixelId });
+    updateGoogleConsent(allowAnalytics);
+    if (allowAnalytics) loadTracking({ metaPixelId });
   };
 
   return (
@@ -205,27 +207,10 @@ function getInitialConsentState(): {
 }
 
 function loadTracking({
-  gaId,
   metaPixelId,
 }: {
-  gaId?: string;
   metaPixelId?: string;
 }) {
-  if (gaId && !document.querySelector(`script[data-ats-ga="${gaId}"]`)) {
-    const gaScript = document.createElement("script");
-    gaScript.async = true;
-    gaScript.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(gaId)}`;
-    gaScript.dataset.atsGa = gaId;
-    document.head.appendChild(gaScript);
-
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = (...args: unknown[]) => {
-      window.dataLayer?.push(args);
-    };
-    window.gtag("js", new Date());
-    window.gtag("config", gaId, { anonymize_ip: true, send_page_view: false });
-  }
-
   if (metaPixelId && !document.querySelector(`script[data-ats-meta="${metaPixelId}"]`)) {
     const script = document.createElement("script");
     script.dataset.atsMeta = metaPixelId;
@@ -243,6 +228,18 @@ function loadTracking({
     `;
     document.head.appendChild(script);
   }
+}
+
+function updateGoogleConsent(allowAnalytics: boolean) {
+  if (!window.gtag) return;
+
+  const analyticsConsent = allowAnalytics ? "granted" : "denied";
+  window.gtag("consent", "update", {
+    ad_storage: "denied",
+    ad_user_data: "denied",
+    ad_personalization: "denied",
+    analytics_storage: analyticsConsent,
+  });
 }
 
 declare global {
