@@ -1,4 +1,5 @@
 import { sanityClient } from "./sanity";
+import { CONTENT_REVALIDATE_SECONDS } from "@/lib/cache";
 
 export type ProcessStep = {
   id: string;
@@ -24,7 +25,7 @@ export async function getProcessSteps(): Promise<ProcessStep[]> {
   return sanityClient.fetch<ProcessStep[]>(
     `*[_type == "processStep"] | order(id asc) { ${STEP_FIELDS} }`,
     {},
-    { next: { revalidate: 60, tags: ["processStep"] } },
+    { next: { revalidate: CONTENT_REVALIDATE_SECONDS, tags: ["processStep"] } },
   );
 }
 
@@ -36,7 +37,7 @@ export async function getProcessStep(
     { slug },
     {
       next: {
-        revalidate: 60,
+        revalidate: CONTENT_REVALIDATE_SECONDS,
         tags: ["processStep", `processStep:${slug}`],
       },
     },
@@ -48,6 +49,6 @@ export async function getProcessStepSlugs(): Promise<string[]> {
   return sanityClient.fetch<string[]>(
     `*[_type == "processStep" && defined(slug.current)] | order(id asc).slug.current`,
     {},
-    { next: { revalidate: 60, tags: ["processStep"] } },
+    { next: { revalidate: CONTENT_REVALIDATE_SECONDS, tags: ["processStep"] } },
   );
 }

@@ -6,6 +6,9 @@ import { locales } from "@/lib/i18n";
 
 const siteUrl = "https://atstudio.pt";
 const portalUrl = "https://portal.atstudio.pt";
+const siteLastModified = "2026-06-11";
+
+export const revalidate = 21600;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const [projects, processSlugs, resources] = await Promise.all([
@@ -13,11 +16,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     getProcessStepSlugs(),
     getResources(),
   ]);
-  const now = new Date();
   const staticRoutes = locales.flatMap((locale) => [
     {
       url: `${siteUrl}/${locale}`,
-      lastModified: now,
+      lastModified: siteLastModified,
       changeFrequency: "weekly" as const,
       priority: locale === "pt" ? 1 : 0.9,
       alternates: {
@@ -29,37 +31,37 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     {
       url: `${siteUrl}/${locale}/privacy`,
-      lastModified: now,
+      lastModified: siteLastModified,
       changeFrequency: "yearly" as const,
       priority: 0.3,
     },
     {
       url: `${siteUrl}/${locale}/terms`,
-      lastModified: now,
+      lastModified: siteLastModified,
       changeFrequency: "yearly" as const,
       priority: 0.3,
     },
     {
       url: `${siteUrl}/${locale}/cookies`,
-      lastModified: now,
+      lastModified: siteLastModified,
       changeFrequency: "yearly" as const,
       priority: 0.3,
     },
     {
       url: `${siteUrl}/${locale}/about`,
-      lastModified: now,
+      lastModified: siteLastModified,
       changeFrequency: "monthly" as const,
       priority: 0.7,
     },
     {
       url: `${siteUrl}/${locale}/faq`,
-      lastModified: now,
+      lastModified: siteLastModified,
       changeFrequency: "yearly" as const,
       priority: 0.45,
     },
     {
       url: `${siteUrl}/${locale}/diagnostico`,
-      lastModified: now,
+      lastModified: siteLastModified,
       changeFrequency: "monthly" as const,
       priority: locale === "pt" ? 0.8 : 0.45,
       alternates: {
@@ -71,7 +73,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     {
       url: `${siteUrl}/${locale}/recursos`,
-      lastModified: now,
+      lastModified: siteLastModified,
       changeFrequency: "weekly" as const,
       priority: locale === "pt" ? 0.75 : 0.45,
       alternates: {
@@ -86,7 +88,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const projectRoutes = locales.flatMap((locale) =>
     projects.map((project) => ({
       url: `${siteUrl}/${locale}/work/${project.slug}`,
-      lastModified: now,
+      lastModified: siteLastModified,
       changeFrequency: "monthly" as const,
       priority: 0.65,
     }))
@@ -95,7 +97,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const processRoutes = locales.flatMap((locale) =>
     processSlugs.map((slug) => ({
       url: `${siteUrl}/${locale}/process/${slug}`,
-      lastModified: now,
+      lastModified: siteLastModified,
       changeFrequency: "yearly" as const,
       priority: 0.5,
     }))
@@ -104,7 +106,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const resourceRoutes = locales.flatMap((locale) =>
     resources.map((resource) => ({
       url: `${siteUrl}/${locale}/recursos/${resource.slug}`,
-      lastModified: resource.date ? new Date(resource.date) : now,
+      lastModified: resource.date ?? siteLastModified,
       changeFrequency: "monthly" as const,
       priority: locale === "pt" ? 0.65 : 0.4,
       alternates: {
@@ -118,7 +120,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const portalRoutes = locales.map((locale) => ({
     url: `${portalUrl}/${locale}/login`,
-    lastModified: now,
+    lastModified: siteLastModified,
     changeFrequency: "monthly" as const,
     priority: 0.35,
     alternates: {
