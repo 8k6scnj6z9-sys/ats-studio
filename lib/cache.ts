@@ -1,2 +1,0 @@
-export const CONTENT_REVALIDATE_SECONDS = 60 * 60 * 6;
-

@@ -8,8 +8,6 @@ const siteUrl = "https://atstudio.pt";
 const portalUrl = "https://portal.atstudio.pt";
 const siteLastModified = "2026-06-11";
 
-export const revalidate = 21600;
-
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const [projects, processSlugs, resources] = await Promise.all([
     getProjects(),

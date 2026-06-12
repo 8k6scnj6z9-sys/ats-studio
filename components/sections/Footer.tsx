@@ -7,7 +7,7 @@ import { getSiteSettings } from "@/lib/site-settings";
 type Props = { locale: Locale; dict: Dictionary };
 
 export default async function Footer({ locale, dict }: Props) {
-  const year = new Date().getFullYear();
+  const year = 2026;
   const content = footerContent[locale];
   const { socialLinks } = await getSiteSettings();
 
@@ -92,11 +92,6 @@ export default async function Footer({ locale, dict }: Props) {
               <Link href={`/${locale}/faq`} className="hover:text-flame">
                 {content.faq}
               </Link>
-            </li>
-            <li>
-              <a href={company.complaintBookUrl} target="_blank" rel="noreferrer" className="hover:text-flame">
-                {content.complaints}
-              </a>
             </li>
           </ul>
         </div>

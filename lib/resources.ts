@@ -1,5 +1,4 @@
 import { sanityClient } from "@/lib/sanity";
-import { CONTENT_REVALIDATE_SECONDS } from "@/lib/cache";
 import type { Locale } from "@/lib/i18n";
 
 export type ResourceSection = {
@@ -1153,7 +1152,7 @@ async function getSanityResources() {
   const data = await sanityClient.fetch<SanityResource[]>(
     `*[_type == "resource" && defined(slug.current)] | order(order asc) { ${RESOURCE_FIELDS} }`,
     {},
-    { next: { revalidate: CONTENT_REVALIDATE_SECONDS, tags: ["resource"] } },
+    { next: { tags: ["resource"] } },
   );
 
   return data.map(normalizeSanityResource).filter((item): item is Resource => Boolean(item));
@@ -1173,7 +1172,7 @@ export async function getResource(slug: string): Promise<Resource | undefined> {
     const data = await sanityClient.fetch<SanityResource | null>(
       `*[_type == "resource" && slug.current == $slug][0] { ${RESOURCE_FIELDS} }`,
       { slug },
-      { next: { revalidate: CONTENT_REVALIDATE_SECONDS, tags: ["resource", `resource:${slug}`] } },
+      { next: { tags: ["resource", `resource:${slug}`] } },
     );
     const resource = data ? normalizeSanityResource(data) : null;
     if (resource) return resource;
@@ -1189,7 +1188,7 @@ export async function getResourceSlugs(): Promise<string[]> {
     const sanitySlugs = await sanityClient.fetch<string[]>(
       `*[_type == "resource" && defined(slug.current)].slug.current`,
       {},
-      { next: { revalidate: CONTENT_REVALIDATE_SECONDS, tags: ["resource"] } },
+      { next: { tags: ["resource"] } },
     );
     return Array.from(new Set([...fallbackResources.map((resource) => resource.slug), ...sanitySlugs]));
   } catch {

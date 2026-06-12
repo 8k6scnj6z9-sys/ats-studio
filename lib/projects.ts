@@ -1,5 +1,4 @@
 import { sanityClient } from "./sanity";
-import { CONTENT_REVALIDATE_SECONDS } from "@/lib/cache";
 import type { SanityImage } from "./sanity";
 
 export type Project = {
@@ -38,7 +37,7 @@ export async function getProjects(): Promise<Project[]> {
   return sanityClient.fetch<Project[]>(
     `*[_type == "project"] | order(index asc) { ${PROJECT_FIELDS} }`,
     {},
-    { next: { revalidate: CONTENT_REVALIDATE_SECONDS, tags: ["project"] } },
+    { next: { tags: ["project"] } },
   );
 }
 
@@ -46,7 +45,7 @@ export async function getProject(slug: string): Promise<Project | undefined> {
   const data = await sanityClient.fetch<Project | null>(
     `*[_type == "project" && slug.current == $slug][0] { ${PROJECT_FIELDS} }`,
     { slug },
-    { next: { revalidate: CONTENT_REVALIDATE_SECONDS, tags: ["project", `project:${slug}`] } },
+    { next: { tags: ["project", `project:${slug}`] } },
   );
   return data ?? undefined;
 }
@@ -55,6 +54,6 @@ export async function getProjectSlugs(): Promise<string[]> {
   return sanityClient.fetch<string[]>(
     `*[_type == "project" && defined(slug.current)].slug.current`,
     {},
-    { next: { revalidate: CONTENT_REVALIDATE_SECONDS, tags: ["project"] } },
+    { next: { tags: ["project"] } },
   );
 }

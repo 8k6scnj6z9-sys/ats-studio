@@ -16,11 +16,17 @@ type Props = {
   locale: Locale;
   gaId?: string;
   metaPixelId?: string;
+  portalTrackerWebsiteId?: string;
 };
 
 const STORAGE_KEY = "ats_cookie_consent_v1";
 
-export default function CookieConsent({ locale, gaId, metaPixelId }: Props) {
+export default function CookieConsent({
+  locale,
+  gaId,
+  metaPixelId,
+  portalTrackerWebsiteId,
+}: Props) {
   const copy = cookieContent[locale];
   const pathname = usePathname();
   const [consent, setConsent] = useState<Consent | null>(null);
@@ -28,7 +34,10 @@ export default function CookieConsent({ locale, gaId, metaPixelId }: Props) {
   const [preferencesOpen, setPreferencesOpen] = useState(false);
   const [analytics, setAnalytics] = useState(false);
 
-  const hasTracking = useMemo(() => Boolean(gaId || metaPixelId), [gaId, metaPixelId]);
+  const hasTracking = useMemo(
+    () => Boolean(gaId || metaPixelId || portalTrackerWebsiteId),
+    [gaId, metaPixelId, portalTrackerWebsiteId],
+  );
 
   useEffect(() => {
     const id = window.setTimeout(() => {
@@ -43,8 +52,8 @@ export default function CookieConsent({ locale, gaId, metaPixelId }: Props) {
 
   useEffect(() => {
     updateGoogleConsent(consent?.analytics ?? false);
-    if (consent?.analytics) loadTracking({ metaPixelId });
-  }, [consent?.analytics, metaPixelId]);
+    if (consent?.analytics) loadTracking({ metaPixelId, portalTrackerWebsiteId });
+  }, [consent?.analytics, metaPixelId, portalTrackerWebsiteId]);
 
   useEffect(() => {
     if (!consent?.analytics || !gaId || !window.gtag) return;
@@ -69,7 +78,7 @@ export default function CookieConsent({ locale, gaId, metaPixelId }: Props) {
     setVisible(false);
     setPreferencesOpen(false);
     updateGoogleConsent(allowAnalytics);
-    if (allowAnalytics) loadTracking({ metaPixelId });
+    if (allowAnalytics) loadTracking({ metaPixelId, portalTrackerWebsiteId });
   };
 
   return (
@@ -208,8 +217,10 @@ function getInitialConsentState(): {
 
 function loadTracking({
   metaPixelId,
+  portalTrackerWebsiteId,
 }: {
   metaPixelId?: string;
+  portalTrackerWebsiteId?: string;
 }) {
   if (metaPixelId && !document.querySelector(`script[data-ats-meta="${metaPixelId}"]`)) {
     const script = document.createElement("script");
@@ -226,6 +237,18 @@ function loadTracking({
       fbq('init', '${metaPixelId}');
       fbq('track', 'PageView');
     `;
+    document.head.appendChild(script);
+  }
+
+  if (
+    portalTrackerWebsiteId &&
+    !document.querySelector(`script[data-ats-portal-tracker="${portalTrackerWebsiteId}"]`)
+  ) {
+    const script = document.createElement("script");
+    script.src = "https://portal.atstudio.pt/tracker.js";
+    script.defer = true;
+    script.dataset.websiteId = portalTrackerWebsiteId;
+    script.dataset.atsPortalTracker = portalTrackerWebsiteId;
     document.head.appendChild(script);
   }
 }

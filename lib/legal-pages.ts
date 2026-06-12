@@ -1,6 +1,5 @@
 import { legalContent, type LegalContent, type LegalPageKind } from "@/lib/legal-content";
 import { sanityClient } from "@/lib/sanity";
-import { CONTENT_REVALIDATE_SECONDS } from "@/lib/cache";
 import type { Locale } from "@/lib/i18n";
 
 export type { LegalContent, LegalPageKind };
@@ -50,7 +49,7 @@ export async function getLegalPage(
     const data = await sanityClient.fetch<SanityLegalPage | null>(
       `*[_type == "legalPage" && kind == $kind][0] { ${LEGAL_FIELDS} }`,
       { kind },
-      { next: { revalidate: CONTENT_REVALIDATE_SECONDS, tags: legalTags(kind) } },
+      { next: { tags: legalTags(kind) } },
     );
     const content = data?.content?.[locale];
     if (isCompleteLegalContent(content)) return content;

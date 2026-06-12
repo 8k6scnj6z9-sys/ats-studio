@@ -1,5 +1,4 @@
 import { sanityClient } from "@/lib/sanity";
-import { CONTENT_REVALIDATE_SECONDS } from "@/lib/cache";
 import { company } from "@/lib/site-content";
 
 export type SocialLink = {
@@ -51,7 +50,7 @@ export async function getSiteSettings(): Promise<SiteSettings> {
         socialLinks[]{ label, url }
       }`,
       {},
-      { next: { revalidate: CONTENT_REVALIDATE_SECONDS, tags: ["siteSettings"] } },
+      { next: { tags: ["siteSettings"] } },
     );
     const socialLinks = normalizeSocialLinks(data?.socialLinks);
     if (socialLinks.length) return { socialLinks };

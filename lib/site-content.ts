@@ -41,7 +41,6 @@ export const company = {
   addressLocality: "Guarda",
   addressCountry: "PT",
   siteUrl: "https://atstudio.pt",
-  complaintBookUrl: "https://www.livroreclamacoes.pt/Inicio/",
   social: {
     instagram: "https://www.instagram.com/atstudioagency/",
     linkedin: "https://www.linkedin.com/in/alexandre-sim%C3%B5es-a4aaba407/",
@@ -62,7 +61,6 @@ export const footerContent = {
     cookies: "Política de Cookies",
     faq: "Perguntas Frequentes",
     resources: "Centro de Recursos",
-    complaints: "Livro de Reclamações",
     rights: "Todos os direitos reservados.",
   },
   en: {
@@ -77,7 +75,6 @@ export const footerContent = {
     cookies: "Cookie Policy",
     faq: "FAQ",
     resources: "Resource Center",
-    complaints: "Complaints Book",
     rights: "All rights reserved.",
   },
 } satisfies Record<Locale, Record<string, string>>;
@@ -296,7 +293,7 @@ export const cookieContent = {
   pt: {
     bannerTitle: "Privacidade e cookies",
     bannerText:
-      "Usamos cookies essenciais para o site funcionar. Analytics e Meta Pixel só são ativados com o teu consentimento.",
+      "Usamos cookies essenciais para o site funcionar. Analytics, medição interna e Meta Pixel só são ativados com o teu consentimento.",
     accept: "Aceitar",
     reject: "Rejeitar",
     preferences: "Preferências",
@@ -305,13 +302,13 @@ export const cookieContent = {
     essential: "Essenciais",
     essentialText: "Necessários para segurança, navegação e funcionamento do website.",
     analytics: "Analytics e medição",
-    analyticsText: "Ajuda-nos a compreender visitas e desempenho. Inclui Google Analytics e Meta Pixel quando configurados.",
+    analyticsText: "Ajuda-nos a compreender visitas e desempenho. Inclui Google Analytics, medição interna ATS Studio e Meta Pixel quando configurados.",
     policy: "Política de Cookies",
   },
   en: {
     bannerTitle: "Privacy and cookies",
     bannerText:
-      "We use essential cookies for the site to work. Analytics and Meta Pixel are enabled only with your consent.",
+      "We use essential cookies for the site to work. Analytics, internal measurement and Meta Pixel are enabled only with your consent.",
     accept: "Accept",
     reject: "Reject",
     preferences: "Preferences",
@@ -320,7 +317,7 @@ export const cookieContent = {
     essential: "Essential",
     essentialText: "Required for security, navigation and website operation.",
     analytics: "Analytics and measurement",
-    analyticsText: "Helps us understand visits and performance. Includes Google Analytics and Meta Pixel when configured.",
+    analyticsText: "Helps us understand visits and performance. Includes Google Analytics, ATS Studio internal measurement and Meta Pixel when configured.",
     policy: "Cookie Policy",
   },
 } satisfies Record<Locale, Record<string, string>>;

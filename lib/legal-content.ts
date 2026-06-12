@@ -49,17 +49,17 @@ export const legalContent: Record<
           ],
         },
         {
-          title: "Cookies, analytics e Meta Pixel",
+          title: "Cookies, analytics, medicao interna e Meta Pixel",
           body: [
             "Cookies essenciais podem ser usados para seguranca, navegacao e gravacao das preferencias de consentimento.",
-            "Google Analytics e Meta Pixel, quando configurados, apenas sao carregados depois de o utilizador aceitar cookies de analytics/medicao no banner de consentimento.",
+            "Google Analytics, medicao interna ATS Studio e Meta Pixel, quando configurados, apenas sao carregados depois de o utilizador aceitar cookies de analytics/medicao no banner de consentimento.",
             "Estas ferramentas podem ajudar a medir visitas, origem de trafego, desempenho de campanhas e interacoes gerais com o website.",
           ],
         },
         {
           title: "Servicos terceiros",
           body: [
-            "O website pode usar Vercel para alojamento, Sanity para conteudo, Resend ou fornecedor equivalente para email transacional, Google Analytics para medicao e Meta Pixel para publicidade e medicao, sempre de acordo com as configuracoes ativas.",
+            "O website pode usar Vercel para alojamento, Sanity para conteudo, Resend ou fornecedor equivalente para email transacional, Google Analytics, ATS Studio Portal Analytics para medicao interna e Meta Pixel para publicidade e medicao, sempre de acordo com as configuracoes ativas.",
             "Estes fornecedores tratam dados na medida necessaria para prestar os seus servicos, podendo ter politicas de privacidade proprias e infraestrutura localizada fora de Portugal.",
           ],
         },
@@ -184,9 +184,9 @@ export const legalContent: Record<
           ],
         },
         {
-          title: "Analytics e Meta Pixel",
+          title: "Analytics, medicao interna e Meta Pixel",
           body: [
-            "Google Analytics e Meta Pixel, quando configurados, so sao carregados depois de o utilizador aceitar a categoria de analytics/medicao.",
+            "Google Analytics, medicao interna ATS Studio e Meta Pixel, quando configurados, so sao carregados depois de o utilizador aceitar a categoria de analytics/medicao.",
             "Se o utilizador rejeitar ou nao responder ao banner, estes scripts nao sao inseridos na pagina.",
           ],
         },
@@ -235,17 +235,17 @@ export const legalContent: Record<
           ],
         },
         {
-          title: "Cookies, analytics and Meta Pixel",
+          title: "Cookies, analytics, internal measurement and Meta Pixel",
           body: [
             "Essential cookies may be used for security, navigation and storing consent preferences.",
-            "Google Analytics and Meta Pixel, when configured, are loaded only after the user accepts analytics/measurement cookies in the consent banner.",
+            "Google Analytics, ATS Studio internal measurement and Meta Pixel, when configured, are loaded only after the user accepts analytics/measurement cookies in the consent banner.",
             "These tools may help measure visits, traffic source, campaign performance and general website interactions.",
           ],
         },
         {
           title: "Third-party services",
           body: [
-            "The website may use Vercel for hosting, Sanity for content, Resend or an equivalent provider for transactional email, Google Analytics for measurement and Meta Pixel for advertising measurement, according to active configuration.",
+            "The website may use Vercel for hosting, Sanity for content, Resend or an equivalent provider for transactional email, Google Analytics, ATS Studio Portal Analytics for internal measurement and Meta Pixel for advertising measurement, according to active configuration.",
             "These providers process data only as needed to provide their services and may have their own privacy policies and infrastructure outside Portugal.",
           ],
         },
@@ -370,9 +370,9 @@ export const legalContent: Record<
           ],
         },
         {
-          title: "Analytics and Meta Pixel",
+          title: "Analytics, internal measurement and Meta Pixel",
           body: [
-            "Google Analytics and Meta Pixel, when configured, load only after the user accepts the analytics/measurement category.",
+            "Google Analytics, ATS Studio internal measurement and Meta Pixel, when configured, load only after the user accepts the analytics/measurement category.",
             "If the user rejects or does not respond to the banner, these scripts are not inserted into the page.",
           ],
         },
