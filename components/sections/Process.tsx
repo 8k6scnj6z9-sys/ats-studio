@@ -30,7 +30,7 @@ export default function Process({ dict, locale, steps }: Props) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.35 }}
             transition={{ duration: 0.8, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
-            className="h-display mt-6 text-5xl md:text-7xl lg:text-8xl text-balance text-ink"
+            className="h-display mt-6 text-[2.5rem] sm:text-5xl md:text-7xl lg:text-8xl text-balance text-ink"
           >
             {dict.process.title}
           </motion.h2>

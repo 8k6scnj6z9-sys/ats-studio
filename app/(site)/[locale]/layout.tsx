@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from "next";
-import { Fraunces, Inter, JetBrains_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
 import "../../globals.css";
 import { hasLocale, getDictionary, locales, type Locale } from "@/lib/i18n";
@@ -9,28 +8,11 @@ import ScrollProgress from "@/components/ui/ScrollProgress";
 import CookieConsent from "@/components/privacy/CookieConsent";
 import { company } from "@/lib/site-content";
 import { getSiteSettings } from "@/lib/site-settings";
-
-const fraunces = Fraunces({
-  subsets: ["latin"],
-  variable: "--font-fraunces",
-  display: "swap",
-  axes: ["opsz", "SOFT"],
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
-const mono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-jbmono",
-  display: "swap",
-});
+import { fontVariables } from "@/lib/fonts";
 
 const siteUrl = company.siteUrl;
 const portalAnalyticsWebsiteId = process.env.NEXT_PUBLIC_PORTAL_ANALYTICS_WEBSITE_ID ?? "atstudio-pt";
+const umamiWebsiteId = process.env.UMAMI_WEBSITE_ID ?? "daa9ba78-b2a2-4f7a-a684-e15399a698a9";
 
 export const viewport: Viewport = {
   themeColor: "#ff5a1f",
@@ -172,8 +154,18 @@ export default async function LocaleLayout(props: LayoutProps<"/[locale]">) {
     <html
       lang={locale}
       data-scroll-behavior="smooth"
-      className={`${fraunces.variable} ${inter.variable} ${mono.variable} h-full antialiased`}
+      className={`${fontVariables} h-full antialiased`}
+      // The pre-paint consent script adds a class to <html>.
+      suppressHydrationWarning
     >
+      <head>
+        <script
+          // Hides the cookie banner before first paint when a choice is already stored.
+          dangerouslySetInnerHTML={{
+            __html: `try{localStorage.getItem("ats_cookie_consent_v1")&&document.documentElement.classList.add("ats-consent")}catch(e){}`,
+          }}
+        />
+      </head>
       <body className="min-h-full bg-ink text-paper grain">
         <script
           type="application/ld+json"
@@ -186,6 +178,7 @@ export default async function LocaleLayout(props: LayoutProps<"/[locale]">) {
         <CookieConsent
           locale={typedLocale}
           portalTrackerWebsiteId={portalAnalyticsWebsiteId}
+          umamiWebsiteId={umamiWebsiteId}
         />
       </body>
     </html>

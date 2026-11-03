@@ -19,6 +19,7 @@ const publicPath: Partial<Record<EntryType, (key: string) => string>> = {
   project: (key) => `/pt/work/${key}`,
   processStep: (key) => `/pt/process/${key}`,
   resource: (key) => `/pt/recursos/${key}`,
+  servicePage: (key) => `/pt/servicos/${key}`,
   legalPage: (key) => `/pt/${key}`,
   siteSettings: () => "/pt",
 };
@@ -72,7 +73,7 @@ export default async function AdminHome() {
                     </p>
                   </div>
                   <div className="flex items-center gap-1 text-sm">
-                    {type !== "resource" && !singleton && (
+                    {type !== "resource" && type !== "servicePage" && !singleton && (
                       <>
                         <form action={moveEntryAction.bind(null, type, entry.key, -1)}>
                           <button disabled={index === 0} aria-label="Subir" className="rounded px-2 py-1 hover:bg-ash disabled:opacity-30">↑</button>

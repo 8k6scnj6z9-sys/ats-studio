@@ -20,11 +20,16 @@ export type Project = {
   }>;
   projectUrl?: string;
   projectKind?: "concept" | "product";
+  metrics?: Array<{ value: string; label: { pt: string; en: string } }>;
+  features?: { pt: ProjectFeature[]; en: ProjectFeature[] };
+  stack?: string[];
   caseStudy?: {
     pt: ProjectCaseStudy;
     en: ProjectCaseStudy;
   };
 };
+
+type ProjectFeature = { title: string; text: string };
 
 type ProjectCaseStudy = {
   goals: string[];

@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { getProjects } from "@/lib/projects";
 import { getProcessStepSlugs } from "@/lib/process";
 import { getResources } from "@/lib/resources";
+import { getServicePages } from "@/lib/service-pages";
 import { locales } from "@/lib/i18n";
 
 export const dynamic = "force-dynamic";
@@ -11,10 +12,11 @@ const portalUrl = "https://portal.atstudio.pt";
 const siteLastModified = "2026-06-11";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const [projects, processSlugs, resources] = await Promise.all([
+  const [projects, processSlugs, resources, services] = await Promise.all([
     getProjects(),
     getProcessStepSlugs(),
     getResources(),
+    getServicePages(),
   ]);
   const staticRoutes = locales.flatMap((locale) => [
     {
@@ -118,6 +120,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }))
   );
 
+  const serviceRoutes = locales.flatMap((locale) =>
+    services.map((service) => ({
+      url: `${siteUrl}/${locale}/servicos/${service.slug}`,
+      lastModified: siteLastModified,
+      changeFrequency: "monthly" as const,
+      priority: locale === "pt" ? 0.85 : 0.5,
+      alternates: {
+        languages: {
+          "pt-PT": `${siteUrl}/pt/servicos/${service.slug}`,
+          en: `${siteUrl}/en/servicos/${service.slug}`,
+        },
+      },
+    }))
+  );
+
   const portalRoutes = locales.map((locale) => ({
     url: `${portalUrl}/${locale}/login`,
     lastModified: siteLastModified,
@@ -136,6 +153,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...projectRoutes,
     ...processRoutes,
     ...resourceRoutes,
+    ...serviceRoutes,
     ...portalRoutes,
   ];
 }

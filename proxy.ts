@@ -38,5 +38,5 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/((?!api|_next|admin|media|logos|.*\\..*).*)"],
+  matcher: ["/((?!api|_next|admin|media|u/|logos|.*\\..*).*)"],
 };

@@ -81,7 +81,21 @@ export default async function ProjectPage(
   const tagline = project.tagline[locale as Locale];
   const description = project.description[locale as Locale];
   const status = project.status[locale as Locale];
-  const projectCaseStudy = project.caseStudy?.[locale as Locale];
+  const typedLocale = locale as Locale;
+  const projectCaseStudy = project.caseStudy?.[typedLocale];
+  const features = project.features?.[typedLocale];
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    name: project.name,
+    description: project.description[typedLocale],
+    url: `https://atstudio.pt/${typedLocale}/work/${project.slug}`,
+    inLanguage: typedLocale === "pt" ? "pt-PT" : "en",
+    dateCreated: project.year,
+    ...(project.localImage ? { image: `https://atstudio.pt${project.localImage}` } : {}),
+    ...(project.projectUrl ? { sameAs: project.projectUrl } : {}),
+    creator: { "@type": "Organization", name: "ATS Studio", url: "https://atstudio.pt" },
+  };
   const caseStudy =
     locale === "pt"
       ? {
@@ -142,6 +156,10 @@ export default async function ProjectPage(
   return (
     <>
       <Navbar locale={locale as Locale} dict={dict} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }}
+      />
       <main className="relative z-10 pt-28 md:pt-36">
         <div className="mx-auto max-w-[1600px] px-5 md:px-10">
           <Link
@@ -160,7 +178,7 @@ export default async function ProjectPage(
             </div>
             <div className="lg:col-span-9">
               <ScrollReveal>
-                <h1 className="h-display text-6xl md:text-8xl lg:text-9xl text-balance">
+                <h1 className="h-display text-5xl sm:text-6xl md:text-8xl lg:text-9xl text-balance break-words">
                   {project.name}
                 </h1>
               </ScrollReveal>
@@ -177,9 +195,22 @@ export default async function ProjectPage(
                     rel="noreferrer"
                     className="mt-8 inline-flex items-center gap-3 border border-line px-5 py-3 text-sm text-paper transition-colors hover:border-flame hover:text-flame focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame focus-visible:ring-offset-4 focus-visible:ring-offset-ink"
                   >
-                    {locale === "pt" ? "Conhecer o ATSAutarquia" : "Explore ATSAutarquia"}
+                    {locale === "pt" ? `Visitar o ${project.name}` : `Visit ${project.name}`}
                     <span aria-hidden>↗</span>
                   </a>
+                </ScrollReveal>
+              ) : null}
+              {project.metrics?.length ? (
+                <ScrollReveal delay={0.15}>
+                  <dl className="mt-10 grid grid-cols-2 gap-6 border-t border-line pt-8 sm:grid-cols-4">
+                    {project.metrics.map((metric) => (
+                      <div key={metric.label.pt}>
+                        <dt className="sr-only">{metric.label[typedLocale]}</dt>
+                        <dd className="font-display text-4xl md:text-5xl text-paper">{metric.value}</dd>
+                        <dd className="mt-2 text-sm text-smoke">{metric.label[typedLocale]}</dd>
+                      </div>
+                    ))}
+                  </dl>
                 </ScrollReveal>
               ) : null}
             </div>
@@ -227,6 +258,24 @@ export default async function ProjectPage(
                   </ScrollReveal>
                 ))}
               </div>
+            </section>
+          ) : null}
+
+          {features?.length ? (
+            <section className="mt-16 md:mt-24" aria-labelledby="project-features-title">
+              <ScrollReveal>
+                <h2 id="project-features-title" className="font-display text-4xl md:text-6xl">
+                  {locale === "pt" ? "O que construímos." : "What we built."}
+                </h2>
+              </ScrollReveal>
+              <ul className="mt-8 grid grid-cols-1 gap-px overflow-hidden rounded-lg border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
+                {features.map((feature) => (
+                  <li key={feature.title} className="bg-ink p-6">
+                    <h3 className="font-medium text-paper">{feature.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-paper/65">{feature.text}</p>
+                  </li>
+                ))}
+              </ul>
             </section>
           ) : null}
 
@@ -285,7 +334,7 @@ export default async function ProjectPage(
                 <div className="mt-6 grid gap-4">
                   <div className="border border-line bg-ash p-5">
                     <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-smoke">
-                      Before
+                      {locale === "pt" ? "Antes" : "Before"}
                     </p>
                     <p className="mt-3 text-sm leading-relaxed text-paper/70">
                       {caseStudy.before}
@@ -293,7 +342,7 @@ export default async function ProjectPage(
                   </div>
                   <div className="border border-line bg-paper p-5 text-ink">
                     <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-ink/65">
-                      After
+                      {locale === "pt" ? "Depois" : "After"}
                     </p>
                     <p className="mt-3 text-sm leading-relaxed text-ink/65">
                       {caseStudy.after}
@@ -322,7 +371,7 @@ export default async function ProjectPage(
                 {caseStudy.technologies}
               </h2>
               <div className="mt-6 flex flex-wrap gap-2">
-                {[...cats, ...role].map((item, index) => (
+                {(project.stack?.length ? project.stack : [...cats, ...role]).map((item, index) => (
                   <span
                     key={`${project.slug}-${item}-${index}`}
                     className="rounded-full border border-line px-3 py-1.5 font-mono text-xs text-paper/78"
@@ -333,6 +382,32 @@ export default async function ProjectPage(
               </div>
             </section>
           </div>
+
+          <section className="mt-20 md:mt-28 rounded-xl border border-line bg-ash p-8 md:p-14" aria-labelledby="project-cta-title">
+            <p className="h-eyebrow">{locale === "pt" ? "Próximo projeto" : "Next project"}</p>
+            <h2 id="project-cta-title" className="mt-4 font-display text-4xl md:text-6xl text-balance max-w-3xl">
+              {locale === "pt" ? "Tens uma ideia para uma plataforma assim?" : "Have an idea for a platform like this?"}
+            </h2>
+            <p className="mt-5 max-w-2xl text-paper/70">
+              {locale === "pt"
+                ? "Desenhamos, desenvolvemos e alojamos produtos digitais completos, do primeiro esboço à operação diária. Conta-nos o que queres construir e respondemos com próximos passos em dias úteis."
+                : "We design, build and host complete digital products, from the first sketch to day-to-day operation. Tell us what you want to build and we reply with next steps within business days."}
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link
+                href={`/${locale}#contact`}
+                className="rounded-full bg-flame px-6 py-3 text-sm font-medium text-ink transition-colors hover:bg-paper focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame focus-visible:ring-offset-4 focus-visible:ring-offset-ash"
+              >
+                {locale === "pt" ? "Falar sobre o meu projeto" : "Talk about my project"}
+              </Link>
+              <Link
+                href={`/${locale}/diagnostico`}
+                className="rounded-full border border-line px-6 py-3 text-sm text-paper transition-colors hover:border-flame hover:text-flame focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame focus-visible:ring-offset-4 focus-visible:ring-offset-ash"
+              >
+                {locale === "pt" ? "Diagnóstico digital gratuito" : "Free digital diagnosis"}
+              </Link>
+            </div>
+          </section>
 
           {next ? (
             <div className="mt-24 mb-20 border-t border-line pt-10 md:mt-40 md:mb-28">

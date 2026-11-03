@@ -14,6 +14,7 @@ type Consent = {
 type Props = {
   locale: Locale;
   portalTrackerWebsiteId?: string;
+  umamiWebsiteId?: string;
 };
 
 const STORAGE_KEY = "ats_cookie_consent_v1";
@@ -21,14 +22,17 @@ const STORAGE_KEY = "ats_cookie_consent_v1";
 export default function CookieConsent({
   locale,
   portalTrackerWebsiteId,
+  umamiWebsiteId,
 }: Props) {
   const copy = cookieContent[locale];
   const [consent, setConsent] = useState<Consent | null>(null);
-  const [visible, setVisible] = useState(false);
+  // Rendered on the server so it paints with the page; returning visitors are hidden by the
+  // `ats-consent` class set before paint in the layout, and the effect below syncs the state.
+  const [visible, setVisible] = useState(true);
   const [preferencesOpen, setPreferencesOpen] = useState(false);
   const [analytics, setAnalytics] = useState(false);
 
-  const hasTracking = Boolean(portalTrackerWebsiteId);
+  const hasTracking = Boolean(portalTrackerWebsiteId || umamiWebsiteId);
 
   useEffect(() => {
     const id = window.setTimeout(() => {
@@ -42,8 +46,8 @@ export default function CookieConsent({
   }, []);
 
   useEffect(() => {
-    if (consent?.analytics) loadTracking(portalTrackerWebsiteId);
-  }, [consent?.analytics, portalTrackerWebsiteId]);
+    if (consent?.analytics) loadTracking(portalTrackerWebsiteId, umamiWebsiteId);
+  }, [consent?.analytics, portalTrackerWebsiteId, umamiWebsiteId]);
 
   const saveConsent = (allowAnalytics: boolean) => {
     const next: Consent = {
@@ -56,7 +60,7 @@ export default function CookieConsent({
     setAnalytics(allowAnalytics);
     setVisible(false);
     setPreferencesOpen(false);
-    if (allowAnalytics) loadTracking(portalTrackerWebsiteId);
+    if (allowAnalytics) loadTracking(portalTrackerWebsiteId, umamiWebsiteId);
   };
 
   return (
@@ -64,7 +68,7 @@ export default function CookieConsent({
       {visible && (
         <section
           aria-label={copy.bannerTitle}
-          className="fixed inset-x-4 bottom-4 z-[70] mx-auto max-w-5xl rounded-lg border border-line bg-ash/95 p-4 shadow-2xl shadow-black/40 backdrop-blur-md md:inset-x-8 md:p-5"
+          className="ats-cookie-banner fixed inset-x-4 bottom-4 z-[70] mx-auto max-w-5xl rounded-lg border border-line bg-ash/95 p-4 shadow-2xl shadow-black/40 backdrop-blur-md md:inset-x-8 md:p-5"
         >
           <div className="grid gap-4 md:grid-cols-[1fr_auto] md:items-center">
             <div>
@@ -193,7 +197,17 @@ function getInitialConsentState(): {
   }
 }
 
-function loadTracking(portalTrackerWebsiteId?: string) {
+function loadTracking(portalTrackerWebsiteId?: string, umamiWebsiteId?: string) {
+  // Umami: cookieless, self-hosted; requests go to /u/* on this domain (see next.config rewrites).
+  if (umamiWebsiteId && !document.querySelector("script[data-ats-umami]")) {
+    const script = document.createElement("script");
+    script.src = "/u/script.js";
+    script.defer = true;
+    script.dataset.websiteId = umamiWebsiteId;
+    script.dataset.atsUmami = "1";
+    document.head.appendChild(script);
+  }
+
   if (
     portalTrackerWebsiteId &&
     !document.querySelector(`script[data-ats-portal-tracker="${portalTrackerWebsiteId}"]`)

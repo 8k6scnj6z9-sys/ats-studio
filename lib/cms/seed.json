@@ -129,6 +129,246 @@
       }
     },
     {
+      "key": "boraprova",
+      "data": {
+        "slug": "boraprova",
+        "name": "BoraProva",
+        "year": "2026",
+        "categories": {
+          "pt": [
+            "Produto digital",
+            "Plataforma web e PWA",
+            "Desporto"
+          ],
+          "en": [
+            "Digital product",
+            "Web platform and PWA",
+            "Sports"
+          ]
+        },
+        "tagline": {
+          "pt": "As provas desportivas de Portugal num só sítio, por modalidade, local e data.",
+          "en": "Portugal's sports events in one place, by sport, location and date."
+        },
+        "description": {
+          "pt": "A ATS Studio concebeu, desenvolveu e opera o BoraProva, a plataforma que reúne provas e eventos desportivos de todo o país. O catálogo é atualizado automaticamente a partir de calendários de organizadores e federações, com deteção de duplicados e revisão humana nos casos ambíguos. Atletas encontram a próxima prova em segundos, recebem alertas perto de si e guardam as datas no calendário. Organizadores ganham um painel próprio para gerir e promover os seus eventos.",
+          "en": "ATS Studio designed, built and operates BoraProva, the platform that brings together sports events from across Portugal. The catalogue updates itself from organiser and federation calendars, with duplicate detection and human review for ambiguous cases. Athletes find their next event in seconds, get alerts near them and save dates to their calendar. Organisers get their own dashboard to manage and promote their events."
+        },
+        "role": {
+          "pt": [
+            "Conceito e produto",
+            "Marca e UX/UI",
+            "Desenvolvimento full-stack",
+            "Automação de dados",
+            "SEO e operação"
+          ],
+          "en": [
+            "Concept and product",
+            "Brand and UX/UI",
+            "Full-stack development",
+            "Data automation",
+            "SEO and operations"
+          ]
+        },
+        "status": {
+          "pt": "Produto ativo",
+          "en": "Live product"
+        },
+        "palette": [
+          "#F45B22",
+          "#101923",
+          "#FFF5EE",
+          "#DDE2E9"
+        ],
+        "localImage": "/work/boraprova-website.webp",
+        "imageAlt": {
+          "pt": "Página inicial do BoraProva com pesquisa por modalidade, local e data",
+          "en": "BoraProva homepage with search by sport, location and date"
+        },
+        "galleryImages": [
+          {
+            "src": "/work/boraprova-mapa.webp",
+            "alt": {
+              "pt": "Mapa de eventos desportivos do BoraProva com agrupamento por zona",
+              "en": "BoraProva sports events map with clustering by area"
+            },
+            "caption": {
+              "pt": "Mapa de provas e perto de mim",
+              "en": "Events map and near me"
+            }
+          },
+          {
+            "src": "/work/boraprova-evento.webp",
+            "alt": {
+              "pt": "Página de um evento no BoraProva com data, local e contagem decrescente",
+              "en": "BoraProva event page with date, location and countdown"
+            },
+            "caption": {
+              "pt": "Ficha de cada prova",
+              "en": "Every event's page"
+            }
+          },
+          {
+            "src": "/work/boraprova-regiao.webp",
+            "alt": {
+              "pt": "Listagem de eventos desportivos da região Centro no BoraProva",
+              "en": "BoraProva listing of sports events in the Centro region"
+            },
+            "caption": {
+              "pt": "Páginas por região e modalidade",
+              "en": "Pages by region and sport"
+            }
+          }
+        ],
+        "projectUrl": "https://www.boraprova.pt",
+        "projectKind": "product",
+        "metrics": [
+          {
+            "value": "900+",
+            "label": {
+              "pt": "eventos no catálogo",
+              "en": "events in the catalogue"
+            }
+          },
+          {
+            "value": "37",
+            "label": {
+              "pt": "modalidades",
+              "en": "sports"
+            }
+          },
+          {
+            "value": "20",
+            "label": {
+              "pt": "distritos e regiões autónomas",
+              "en": "districts and autonomous regions"
+            }
+          },
+          {
+            "value": "PWA",
+            "label": {
+              "pt": "instalável, com notificações",
+              "en": "installable, with notifications"
+            }
+          }
+        ],
+        "features": {
+          "pt": [
+            {
+              "title": "Pesquisa que entende o atleta",
+              "text": "Por modalidade, distrito, concelho e data, sem acentos nem ordem de palavras a atrapalhar."
+            },
+            {
+              "title": "Mapa e perto de mim",
+              "text": "Provas agrupadas no mapa e pesquisa num raio de 10 a 100 km a partir da localização."
+            },
+            {
+              "title": "Alertas e calendário",
+              "text": "Notificações push, aviso de inscrições a fechar e calendário subscrito no telemóvel."
+            },
+            {
+              "title": "Catálogo automático",
+              "text": "Importação de calendários com deteção de duplicados e revisão humana quando há dúvidas."
+            },
+            {
+              "title": "Painel do organizador",
+              "text": "Visualizações, cliques na inscrição e edição dos dados do evento, com aprovação."
+            },
+            {
+              "title": "Destaques e campanhas",
+              "text": "Promoção de eventos e marcas nas listagens, com pagamento online integrado."
+            },
+            {
+              "title": "SEO programático",
+              "text": "Páginas indexáveis por modalidade, região, distrito e concelho, com dados estruturados."
+            },
+            {
+              "title": "Alojamento próprio",
+              "text": "Servidor em Portugal, base de dados e media locais e backups externos verificados."
+            }
+          ],
+          "en": [
+            {
+              "title": "Search that gets athletes",
+              "text": "By sport, district, municipality and date, regardless of accents or word order."
+            },
+            {
+              "title": "Map and near me",
+              "text": "Events clustered on a map and search within 10 to 100 km of your location."
+            },
+            {
+              "title": "Alerts and calendar",
+              "text": "Push notifications, registration closing reminders and a subscribable phone calendar."
+            },
+            {
+              "title": "Self-updating catalogue",
+              "text": "Calendar imports with duplicate detection and human review when in doubt."
+            },
+            {
+              "title": "Organiser dashboard",
+              "text": "Views, registration clicks and event editing, subject to approval."
+            },
+            {
+              "title": "Featured listings and campaigns",
+              "text": "Event and brand promotion in listings, with integrated online payment."
+            },
+            {
+              "title": "Programmatic SEO",
+              "text": "Indexable pages by sport, region, district and municipality, with structured data."
+            },
+            {
+              "title": "Self-hosted",
+              "text": "Server in Portugal, local database and media, and verified off-site backups."
+            }
+          ]
+        },
+        "stack": [
+          "Next.js 16",
+          "TypeScript",
+          "SQLite + Drizzle",
+          "MapLibre + OpenStreetMap",
+          "PWA + Web Push",
+          "Better Auth",
+          "easypay",
+          "Coolify (alojamento próprio)"
+        ],
+        "caseStudy": {
+          "pt": {
+            "goals": [
+              "Reunir num só sítio provas dispersas por dezenas de calendários",
+              "Encontrar a próxima prova por modalidade, local e data em segundos",
+              "Manter o catálogo atualizado sem trabalho manual diário",
+              "Dar aos organizadores uma forma simples de promover os seus eventos"
+            ],
+            "before": "As provas estavam espalhadas por sites de organizadores, federações, agregadores e redes sociais, com datas repetidas, links desatualizados e pouca informação por região.",
+            "after": "Uma plataforma única, rápida em mobile, com catálogo automático, mapa, alertas e páginas por modalidade e região, que se atualiza sozinha e é revista quando há dúvidas.",
+            "results": [
+              "Mais de 900 eventos catalogados e atualizados automaticamente",
+              "37 modalidades e páginas por região, distrito e concelho indexáveis",
+              "Organizadores com painel próprio para gerir e promover as suas provas",
+              "Operação própria em Portugal, com backups externos verificados"
+            ]
+          },
+          "en": {
+            "goals": [
+              "Bring together events scattered across dozens of calendars",
+              "Find the next event by sport, location and date in seconds",
+              "Keep the catalogue current without daily manual work",
+              "Give organisers a simple way to promote their events"
+            ],
+            "before": "Events were spread across organiser sites, federations, aggregators and social media, with duplicated dates, outdated links and little information by region.",
+            "after": "One platform, fast on mobile, with a self-updating catalogue, map, alerts and pages by sport and region, reviewed by a person when in doubt.",
+            "results": [
+              "Over 900 events catalogued and updated automatically",
+              "37 sports and indexable pages by region, district and municipality",
+              "Organisers with their own dashboard to manage and promote events",
+              "Self-operated in Portugal, with verified off-site backups"
+            ]
+          }
+        }
+      }
+    },
+    {
       "key": "norte-coffee",
       "data": {
         "slug": "norte-coffee",
@@ -1561,6 +1801,442 @@
             "url": "https://www.tiktok.com/@atstudio.pt"
           }
         ]
+      }
+    }
+  ],
+  "servicePage": [
+    {
+      "key": "websites-guarda",
+      "data": {
+        "slug": "websites-guarda",
+        "order": 1,
+        "serviceType": "Web design and website development",
+        "areaServed": [
+          "Guarda",
+          "Beiras e Serra da Estrela",
+          "Portugal"
+        ],
+        "content": {
+          "pt": {
+            "eyebrow": "Websites na Guarda",
+            "title": "Criação de websites profissionais na Guarda.",
+            "seoTitle": "Criação de websites na Guarda | ATS Studio",
+            "seoDescription": "Websites profissionais feitos na Guarda: design à medida, rápidos em mobile, preparados para o Google e fáceis de atualizar. Pede proposta à ATS Studio.",
+            "intro": "Somos um estúdio digital da Guarda. Desenhamos e desenvolvemos websites à medida para empresas, profissionais e instituições da região e de todo o país, com foco em clareza, velocidade e contactos.",
+            "benefits": [
+              {
+                "title": "Design à medida",
+                "text": "Nada de templates genéricos: a identidade e a mensagem do teu negócio definem o website."
+              },
+              {
+                "title": "Rápido em mobile",
+                "text": "A maior parte das visitas chega pelo telemóvel. Otimizamos imagens, fontes e código para carregar depressa."
+              },
+              {
+                "title": "Preparado para o Google",
+                "text": "Estrutura, títulos, dados estruturados e sitemap pensados desde o início para pesquisas locais."
+              },
+              {
+                "title": "Fácil de atualizar",
+                "text": "Gestor de conteúdos próprio para mudares textos, imagens e páginas sem depender de ninguém."
+              },
+              {
+                "title": "Conformidade e confiança",
+                "text": "Políticas de privacidade e cookies, consentimento e boas práticas de segurança incluídos."
+              },
+              {
+                "title": "Contacto próximo",
+                "text": "Reuniões presenciais na Guarda ou por videochamada, com um interlocutor único do início ao fim."
+              }
+            ],
+            "deliverables": [
+              "Estratégia de conteúdos e estrutura de páginas",
+              "Design responsivo para desktop, tablet e mobile",
+              "Desenvolvimento em PT e EN quando necessário",
+              "Formulários de contacto com proteção antispam",
+              "SEO técnico e configuração para pesquisa local",
+              "Alojamento, HTTPS e cópias de segurança",
+              "Formação para gerir os conteúdos",
+              "Acompanhamento depois do lançamento"
+            ],
+            "proofTitle": "",
+            "proofText": "",
+            "faq": [
+              {
+                "question": "Quanto tempo demora a fazer um website?",
+                "answer": "Depende do âmbito e de os conteúdos estarem prontos. Um website institucional costuma levar algumas semanas; no primeiro contacto damos-te um calendário realista."
+              },
+              {
+                "question": "Só trabalham com empresas da Guarda?",
+                "answer": "Não. Estamos na Guarda e gostamos de reunir presencialmente com clientes da região, mas trabalhamos com clientes de todo o país e do estrangeiro."
+              },
+              {
+                "question": "Posso atualizar o website sozinho?",
+                "answer": "Sim. Os websites incluem um gestor de conteúdos para editares textos, imagens e páginas, e mostramos-te como usá-lo."
+              },
+              {
+                "question": "O alojamento e o domínio estão incluídos?",
+                "answer": "Podemos tratar do alojamento, do HTTPS e das cópias de segurança. O domínio pode ficar em teu nome; ajudamos-te a registá-lo ou a ligá-lo."
+              }
+            ],
+            "ctaTitle": "Vamos criar o teu website?",
+            "ctaText": "Conta-nos o que fazes e o que precisas. Respondemos com perguntas certas, um calendário e uma proposta clara."
+          },
+          "en": {
+            "eyebrow": "Websites in Guarda",
+            "title": "Professional website design in Guarda, Portugal.",
+            "seoTitle": "Website design in Guarda, Portugal | ATS Studio",
+            "seoDescription": "Professional websites made in Guarda, Portugal: custom design, fast on mobile, ready for Google and easy to update. Ask ATS Studio for a proposal.",
+            "intro": "We are a digital studio based in Guarda, Portugal. We design and build custom websites for businesses, professionals and institutions in the region and beyond, focused on clarity, speed and enquiries.",
+            "benefits": [
+              {
+                "title": "Custom design",
+                "text": "No generic templates: your brand and message shape the website."
+              },
+              {
+                "title": "Fast on mobile",
+                "text": "Most visits come from phones. We optimise images, fonts and code so pages load quickly."
+              },
+              {
+                "title": "Ready for Google",
+                "text": "Structure, titles, structured data and sitemap planned from day one for local search."
+              },
+              {
+                "title": "Easy to update",
+                "text": "A built-in content manager lets you change text, images and pages on your own."
+              },
+              {
+                "title": "Compliance and trust",
+                "text": "Privacy and cookie policies, consent and security best practices included."
+              },
+              {
+                "title": "Close contact",
+                "text": "Meetings in person in Guarda or by video call, with a single point of contact throughout."
+              }
+            ],
+            "deliverables": [
+              "Content strategy and page structure",
+              "Responsive design for desktop, tablet and mobile",
+              "Portuguese and English versions when needed",
+              "Contact forms with spam protection",
+              "Technical SEO and local search setup",
+              "Hosting, HTTPS and backups",
+              "Training to manage your content",
+              "Support after launch"
+            ],
+            "proofTitle": "",
+            "proofText": "",
+            "faq": [
+              {
+                "question": "How long does a website take?",
+                "answer": "It depends on the scope and on content being ready. An institutional website usually takes a few weeks; we give you a realistic timeline at first contact."
+              },
+              {
+                "question": "Do you only work with businesses in Guarda?",
+                "answer": "No. We are based in Guarda and enjoy meeting local clients in person, but we work with clients across Portugal and abroad."
+              },
+              {
+                "question": "Can I update the website myself?",
+                "answer": "Yes. Websites include a content manager to edit text, images and pages, and we show you how to use it."
+              },
+              {
+                "question": "Are hosting and domain included?",
+                "answer": "We can take care of hosting, HTTPS and backups. The domain can stay in your name; we help you register or connect it."
+              }
+            ],
+            "ctaTitle": "Shall we build your website?",
+            "ctaText": "Tell us what you do and what you need. We reply with the right questions, a timeline and a clear proposal."
+          }
+        }
+      }
+    },
+    {
+      "key": "plataforma-juntas-de-freguesia",
+      "data": {
+        "slug": "plataforma-juntas-de-freguesia",
+        "order": 2,
+        "serviceType": "Digital platform for local authorities",
+        "areaServed": [
+          "Portugal"
+        ],
+        "proofProject": "atsautarquia",
+        "content": {
+          "pt": {
+            "eyebrow": "Juntas de freguesia",
+            "title": "Plataforma digital para juntas e uniões de freguesia.",
+            "seoTitle": "Plataforma digital para juntas de freguesia | ATSAutarquia",
+            "seoDescription": "Website, área do cidadão e backoffice para juntas e uniões de freguesia numa só plataforma, com identidade própria, acessibilidade e segurança. Conhece o ATSAutarquia.",
+            "intro": "O ATSAutarquia junta o website institucional, a área do cidadão e o backoffice da junta numa só plataforma, com a identidade de cada freguesia e sem projetos informáticos longos.",
+            "benefits": [
+              {
+                "title": "Identidade própria",
+                "text": "Cada freguesia tem as suas cores, logótipo e domínio, com a mesma base técnica segura."
+              },
+              {
+                "title": "Atendimento digital",
+                "text": "Pedidos, ocorrências, marcações e contactos do cidadão tratados num só sítio."
+              },
+              {
+                "title": "Transparência",
+                "text": "Documentos, editais e avisos publicados de forma organizada e fácil de pesquisar."
+              },
+              {
+                "title": "Simples para a equipa",
+                "text": "Backoffice pensado para quem não é técnico, com perfis e permissões por utilizador."
+              },
+              {
+                "title": "Segurança e RGPD",
+                "text": "Isolamento entre organizações, autenticação reforçada e alojamento na União Europeia."
+              },
+              {
+                "title": "Sempre a evoluir",
+                "text": "Novos módulos e melhorias chegam a todas as freguesias sem custos de reconstrução."
+              }
+            ],
+            "deliverables": [
+              "Website institucional da freguesia",
+              "Área do cidadão com pedidos e ocorrências",
+              "Backoffice para a equipa da junta",
+              "Publicação de documentos e avisos",
+              "Domínio próprio e HTTPS",
+              "Migração de conteúdos existentes",
+              "Formação da equipa",
+              "Suporte e atualizações contínuas"
+            ],
+            "proofTitle": "ATSAutarquia, já em produção",
+            "proofText": "A plataforma que a ATS Studio desenvolve e opera para juntas e uniões de freguesia.",
+            "faq": [
+              {
+                "question": "A plataforma serve para uniões de freguesia?",
+                "answer": "Sim. O ATSAutarquia foi pensado para juntas e uniões de freguesia, com identidade e conteúdos próprios para cada organização."
+              },
+              {
+                "question": "Podemos manter o nosso domínio?",
+                "answer": "Sim. Ligamos a plataforma ao domínio atual da freguesia ou ajudamos a escolher um novo."
+              },
+              {
+                "question": "Os dados ficam onde?",
+                "answer": "A plataforma é alojada em servidores na União Europeia, com cópias de segurança e isolamento entre organizações."
+              },
+              {
+                "question": "A equipa precisa de conhecimentos técnicos?",
+                "answer": "Não. O backoffice foi feito para ser usado no dia a dia por equipas administrativas, e damos formação no arranque."
+              }
+            ],
+            "ctaTitle": "Queres ver o ATSAutarquia na tua freguesia?",
+            "ctaText": "Marcamos uma demonstração e mostramos como ficaria o portal da tua junta, com os vossos conteúdos e identidade."
+          },
+          "en": {
+            "eyebrow": "Parish councils",
+            "title": "Digital platform for Portuguese parish councils.",
+            "seoTitle": "Digital platform for parish councils | ATSAutarquia",
+            "seoDescription": "Website, citizen area and back office for Portuguese parish councils in one platform, with their own identity, accessibility and security. Meet ATSAutarquia.",
+            "intro": "ATSAutarquia brings together the institutional website, citizen area and council back office in one platform, with each parish's own identity and without long IT projects.",
+            "benefits": [
+              {
+                "title": "Own identity",
+                "text": "Each parish has its own colours, logo and domain on the same secure technical base."
+              },
+              {
+                "title": "Digital citizen services",
+                "text": "Requests, issue reports, appointments and contacts handled in one place."
+              },
+              {
+                "title": "Transparency",
+                "text": "Documents, notices and announcements published in an organised, searchable way."
+              },
+              {
+                "title": "Simple for the team",
+                "text": "A back office built for non-technical staff, with roles and permissions per user."
+              },
+              {
+                "title": "Security and GDPR",
+                "text": "Isolation between organisations, stronger authentication and hosting in the EU."
+              },
+              {
+                "title": "Always improving",
+                "text": "New modules and improvements reach every parish without rebuild costs."
+              }
+            ],
+            "deliverables": [
+              "Institutional parish website",
+              "Citizen area with requests and issue reports",
+              "Back office for the council team",
+              "Document and notice publishing",
+              "Own domain and HTTPS",
+              "Migration of existing content",
+              "Team training",
+              "Ongoing support and updates"
+            ],
+            "proofTitle": "ATSAutarquia, live in production",
+            "proofText": "The platform ATS Studio builds and operates for Portuguese parish councils.",
+            "faq": [
+              {
+                "question": "Does it work for merged parishes (uniões de freguesia)?",
+                "answer": "Yes. ATSAutarquia was designed for parish councils and merged parishes, each with its own identity and content."
+              },
+              {
+                "question": "Can we keep our domain?",
+                "answer": "Yes. We connect the platform to the parish's current domain or help choose a new one."
+              },
+              {
+                "question": "Where is the data stored?",
+                "answer": "The platform is hosted on servers in the European Union, with backups and isolation between organisations."
+              },
+              {
+                "question": "Does the team need technical skills?",
+                "answer": "No. The back office is made for everyday use by administrative staff, and we provide training at launch."
+              }
+            ],
+            "ctaTitle": "Want to see ATSAutarquia for your parish?",
+            "ctaText": "We schedule a demo and show how your council's portal would look, with your content and identity."
+          }
+        }
+      }
+    },
+    {
+      "key": "aplicacoes-web-saas",
+      "data": {
+        "slug": "aplicacoes-web-saas",
+        "order": 3,
+        "serviceType": "Web application and SaaS development",
+        "areaServed": [
+          "Portugal",
+          "European Union"
+        ],
+        "proofProject": "boraprova",
+        "content": {
+          "pt": {
+            "eyebrow": "Aplicações web e SaaS",
+            "title": "Desenvolvimento de aplicações web e plataformas SaaS.",
+            "seoTitle": "Desenvolvimento de aplicações web e SaaS | ATS Studio",
+            "seoDescription": "Da ideia ao produto em produção: aplicações web, PWA e plataformas SaaS com pagamentos, contas de utilizador, automação e alojamento próprio. Fala com a ATS Studio.",
+            "intro": "Desenhamos, desenvolvemos e operamos produtos digitais completos: da primeira versão útil ao produto em produção, com contas de utilizador, pagamentos, automação de dados e alojamento próprio.",
+            "benefits": [
+              {
+                "title": "Do esboço à produção",
+                "text": "Produto, design, desenvolvimento e operação na mesma equipa, sem perder contexto entre fases."
+              },
+              {
+                "title": "Primeira versão rápida",
+                "text": "Começamos pelo essencial que já gera valor e evoluímos com dados reais de utilização."
+              },
+              {
+                "title": "Pagamentos e contas",
+                "text": "Autenticação, perfis, permissões e pagamentos online integrados de forma segura."
+              },
+              {
+                "title": "Automação de dados",
+                "text": "Importação, limpeza e atualização automática de dados, com revisão humana quando é preciso."
+              },
+              {
+                "title": "Mobile e PWA",
+                "text": "Aplicações instaláveis no telemóvel, com notificações e boa experiência offline."
+              },
+              {
+                "title": "Alojamento e backups",
+                "text": "Servidores próprios na Europa, monitorização, cópias de segurança e restauro testado."
+              }
+            ],
+            "deliverables": [
+              "Definição do produto e das prioridades",
+              "Design de interface e protótipos",
+              "Desenvolvimento full-stack",
+              "Autenticação, perfis e permissões",
+              "Pagamentos online e faturação de apoio",
+              "Painéis de administração",
+              "SEO técnico e páginas indexáveis",
+              "Alojamento, backups e manutenção"
+            ],
+            "proofTitle": "BoraProva, produto em produção",
+            "proofText": "Mais de 900 eventos desportivos de Portugal, atualizados automaticamente, com mapa, alertas e painel do organizador.",
+            "faq": [
+              {
+                "question": "Por onde começamos?",
+                "answer": "Por uma conversa sobre o problema, os utilizadores e o que tem de existir na primeira versão. Daí sai um plano com fases e prioridades."
+              },
+              {
+                "question": "O código fica nosso?",
+                "answer": "Definimos no contrato a propriedade e o acesso ao código e aos dados. Podemos entregar o repositório ou operar o produto por ti."
+              },
+              {
+                "question": "Fazem também a manutenção?",
+                "answer": "Sim. Podemos alojar, monitorizar, fazer cópias de segurança e evoluir o produto depois do lançamento."
+              },
+              {
+                "question": "Trabalham com pagamentos online?",
+                "answer": "Sim. Integramos pagamentos online, como cartão, MB WAY e Multibanco, através de fornecedores certificados."
+              }
+            ],
+            "ctaTitle": "Tens uma ideia de produto?",
+            "ctaText": "Conta-nos o problema que queres resolver. Ajudamos-te a definir a primeira versão e a pô-la nas mãos dos utilizadores."
+          },
+          "en": {
+            "eyebrow": "Web apps and SaaS",
+            "title": "Web application and SaaS platform development.",
+            "seoTitle": "Web app and SaaS development | ATS Studio",
+            "seoDescription": "From idea to a live product: web apps, PWAs and SaaS platforms with payments, user accounts, automation and self-hosting. Talk to ATS Studio.",
+            "intro": "We design, build and operate complete digital products: from the first useful version to a live product, with user accounts, payments, data automation and self-hosting.",
+            "benefits": [
+              {
+                "title": "From sketch to production",
+                "text": "Product, design, development and operations in one team, with no context lost between phases."
+              },
+              {
+                "title": "Fast first version",
+                "text": "We start with the essentials that already create value and evolve with real usage data."
+              },
+              {
+                "title": "Payments and accounts",
+                "text": "Authentication, profiles, permissions and online payments integrated securely."
+              },
+              {
+                "title": "Data automation",
+                "text": "Automatic import, cleaning and updating of data, with human review when needed."
+              },
+              {
+                "title": "Mobile and PWA",
+                "text": "Installable apps with notifications and a good offline experience."
+              },
+              {
+                "title": "Hosting and backups",
+                "text": "Our own servers in Europe, monitoring, backups and tested restores."
+              }
+            ],
+            "deliverables": [
+              "Product definition and priorities",
+              "Interface design and prototypes",
+              "Full-stack development",
+              "Authentication, profiles and permissions",
+              "Online payments and billing support",
+              "Admin dashboards",
+              "Technical SEO and indexable pages",
+              "Hosting, backups and maintenance"
+            ],
+            "proofTitle": "BoraProva, a live product",
+            "proofText": "Over 900 sports events in Portugal, updated automatically, with a map, alerts and an organiser dashboard.",
+            "faq": [
+              {
+                "question": "Where do we start?",
+                "answer": "With a conversation about the problem, the users and what the first version must include. That becomes a plan with phases and priorities."
+              },
+              {
+                "question": "Do we own the code?",
+                "answer": "The contract defines ownership of and access to the code and data. We can hand over the repository or run the product for you."
+              },
+              {
+                "question": "Do you also maintain it?",
+                "answer": "Yes. We can host, monitor, back up and keep improving the product after launch."
+              },
+              {
+                "question": "Do you work with online payments?",
+                "answer": "Yes. We integrate online payments, such as cards, MB WAY and Multibanco, through certified providers."
+              }
+            ],
+            "ctaTitle": "Have a product idea?",
+            "ctaText": "Tell us the problem you want to solve. We help you define the first version and put it in users' hands."
+          }
+        }
       }
     }
   ]

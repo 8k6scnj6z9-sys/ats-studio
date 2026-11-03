@@ -22,7 +22,7 @@ export default function SectionHeader({
         </p>
       </ScrollReveal>
       <ScrollReveal delay={0.05}>
-        <h2 className="h-display mt-6 text-5xl md:text-7xl lg:text-8xl text-balance">
+        <h2 className="h-display mt-6 text-[2.5rem] sm:text-5xl md:text-7xl lg:text-8xl text-balance">
           {title}
         </h2>
       </ScrollReveal>

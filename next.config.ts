@@ -21,6 +21,13 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: __dirname,
   },
+  // Umami (self-hosted, umami.atstudio.pt) served first-party so the tracker needs no extra origin.
+  async rewrites() {
+    return [
+      { source: "/u/script.js", destination: "https://umami.atstudio.pt/script.js" },
+      { source: "/u/api/send", destination: "https://umami.atstudio.pt/api/send" },
+    ];
+  },
   async headers() {
     return [
       {

@@ -41,46 +41,29 @@ export default function Hero({ locale, dict }: Props) {
         </motion.div>
 
         <h1 className="h-display text-[5.7rem] sm:text-[8rem] md:text-[11rem] lg:text-[14rem] xl:text-[16rem] leading-[0.78] text-balance">
-          <motion.span
-            initial={{ opacity: 0, y: 110 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="block"
-          >
+          {/* CSS animations start at first paint, before hydration, so they don't delay LCP. */}
+          <span className="block hero-rise" style={{ animationDelay: "0.35s" }}>
             ATS
-          </motion.span>
-          <motion.span
-            initial={{ opacity: 0, y: 110 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
-            className="block pl-[0.32em] italic text-flame"
-          >
+          </span>
+          <span className="block pl-[0.32em] italic text-flame hero-rise" style={{ animationDelay: "0.45s" }}>
             Studio
-          </motion.span>
+          </span>
         </h1>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 1 }}
-          className="mt-10 md:mt-14 grid grid-cols-1 md:grid-cols-12 gap-8 md:items-end"
+        <div
+          className="mt-10 md:mt-14 grid grid-cols-1 md:grid-cols-12 gap-8 md:items-end hero-fade"
+          style={{ animationDelay: "1s" }}
         >
           <div className="md:col-span-7">
             <p className="max-w-3xl text-2xl md:text-5xl font-display leading-[1.02] text-pretty">
               {statement.map((word, i) => (
                 <span key={`${word}-${i}`} className="inline-block overflow-hidden align-bottom mr-[0.22em]">
-                  <motion.span
-                    initial={{ y: "105%" }}
-                    animate={{ y: 0 }}
-                    transition={{
-                      duration: 0.75,
-                      delay: 0.85 + i * 0.035,
-                      ease: [0.22, 1, 0.36, 1],
-                    }}
-                    className={`inline-block ${/presen|presence/i.test(word) ? "text-flame italic" : ""}`}
+                  <span
+                    className={`inline-block hero-word ${/presen|presence/i.test(word) ? "text-flame italic" : ""}`}
+                    style={{ animationDelay: `${0.85 + i * 0.035}s` }}
                   >
                     {word}
-                  </motion.span>
+                  </span>
                 </span>
               ))}
             </p>
@@ -115,7 +98,7 @@ export default function Hero({ locale, dict }: Props) {
               {dict.hero.secondaryCta}
             </Link>
           </div>
-        </motion.div>
+        </div>
       </div>
 
       {/* scroll indicator */}

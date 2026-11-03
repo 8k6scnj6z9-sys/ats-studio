@@ -22,9 +22,12 @@ export const entryTypes = {
       galleryImages: [{ src: "", alt: loc(""), caption: loc("") }],
       projectUrl: "",
       projectKind: "",
+      metrics: [{ value: "", label: loc("") }],
+      features: loc([{ title: "", text: "" }]),
+      stack: [""],
       caseStudy: loc({ goals: [""], before: "", after: "", results: [""] }),
     },
-    optional: ["localImage", "imageAlt", "galleryImages", "projectUrl", "projectKind", "caseStudy"],
+    optional: ["localImage", "imageAlt", "galleryImages", "projectUrl", "projectKind", "metrics", "features", "stack", "caseStudy"],
   },
   processStep: {
     label: "Processo",
@@ -63,6 +66,32 @@ export const entryTypes = {
     },
     optional: ["date", "relatedSlugs", "checklist"],
   },
+  servicePage: {
+    label: "Páginas de Serviço",
+    singleton: false,
+    shape: {
+      slug: "",
+      order: 0,
+      serviceType: "",
+      areaServed: [""],
+      proofProject: "",
+      content: loc({
+        eyebrow: "",
+        title: "",
+        seoTitle: "",
+        seoDescription: "",
+        intro: "",
+        benefits: [{ title: "", text: "" }],
+        deliverables: [""],
+        proofTitle: "",
+        proofText: "",
+        faq: [{ question: "", answer: "" }],
+        ctaTitle: "",
+        ctaText: "",
+      }),
+    },
+    optional: ["areaServed", "proofProject", "proofTitle", "proofText"],
+  },
   legalPage: {
     label: "Páginas Legais",
     singleton: true,
@@ -86,7 +115,8 @@ export const fieldLabels: Record<string, string> = {
   categories: "Categorias", role: "Papel da ATS", status: "Estado", palette: "Paleta (cores hex)",
   localImage: "Imagem principal", imageAlt: "Texto alternativo da imagem", galleryImages: "Galeria",
   src: "Imagem", alt: "Texto alternativo", caption: "Legenda", projectUrl: "URL do projeto",
-  projectKind: "Tipo de projeto", caseStudy: "Case study", goals: "Objetivos", before: "Antes",
+  projectKind: "Tipo de projeto", metrics: "Números em destaque", value: "Valor",
+  features: "O que construímos", stack: "Tecnologias", caseStudy: "Case study", goals: "Objetivos", before: "Antes",
   after: "Depois", results: "Resultados", id: "Número/ID", title: "Título",
   longDescription: "Descrição longa", details: "Detalhes", outputs: "Entregáveis", order: "Ordem",
   date: "Data (AAAA-MM-DD)", relatedSlugs: "Recursos relacionados (slugs)", content: "Conteúdo",
@@ -95,13 +125,16 @@ export const fieldLabels: Record<string, string> = {
   body: "Parágrafos", checklist: "Checklist", conclusion: "Conclusão", cta: "Chamada para ação",
   text: "Texto", label: "Etiqueta", href: "Ligação", eyebrow: "Sobretítulo", updated: "Data de atualização",
   socialLinks: "Redes sociais", url: "URL", pt: "Português", en: "English",
+  serviceType: "Tipo de serviço (schema.org)", areaServed: "Zonas servidas", proofProject: "Projeto de prova (slug)",
+  benefits: "Vantagens", deliverables: "O que inclui", proofTitle: "Título da prova", proofText: "Texto da prova",
+  faq: "Perguntas frequentes", question: "Pergunta", answer: "Resposta", ctaTitle: "Título do CTA", ctaText: "Texto do CTA",
 };
 
 export const imageFields = new Set(["localImage", "src"]);
 const linkFields = new Set(["url", "projectUrl", "href"]);
 // Titles and slugs drive URLs, cards and menus, so they can never be blank.
 const requiredText = new Set(["slug", "name", "title"]);
-const slugFields = new Set(["slug", "relatedSlugs"]);
+const slugFields = new Set(["slug", "relatedSlugs", "proofProject"]);
 const slugPattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const imagePattern = /^\/[\w\-./]+$/;
 const linkPattern = /^(https?:\/\/|\/|mailto:|tel:)/;

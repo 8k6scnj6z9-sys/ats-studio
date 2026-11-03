@@ -3,18 +3,19 @@ import Link from "next/link";
 import type { Locale, Dictionary } from "@/lib/i18n";
 import { company, footerContent } from "@/lib/site-content";
 import { getSiteSettings } from "@/lib/site-settings";
+import { getServicePages } from "@/lib/service-pages";
 
 type Props = { locale: Locale; dict: Dictionary };
 
 export default async function Footer({ locale, dict }: Props) {
   const year = 2026;
   const content = footerContent[locale];
-  const { socialLinks } = await getSiteSettings();
+  const [{ socialLinks }, services] = await Promise.all([getSiteSettings(), getServicePages()]);
 
   return (
     <footer className="relative border-t border-line bg-ash-2">
       <div className="mx-auto grid max-w-[1600px] grid-cols-1 gap-10 px-5 py-12 md:grid-cols-12 md:px-10 md:py-16">
-        <div className="md:col-span-5">
+        <div className="md:col-span-3">
           <Link href={`/${locale}`} className="inline-flex items-center gap-4">
             <Image
               src="/logos/logo-mark-white.png"
@@ -52,6 +53,23 @@ export default async function Footer({ locale, dict }: Props) {
             <li>{company.location}</li>
           </ul>
         </div>
+
+        {services.length > 0 && (
+          <div className="md:col-span-2">
+            <h2 className="font-mono text-xs uppercase tracking-[0.16em] text-smoke">
+              {content.services}
+            </h2>
+            <ul className="mt-4 space-y-3 text-sm text-paper/72">
+              {services.map((service) => (
+                <li key={service.slug}>
+                  <Link href={`/${locale}/servicos/${service.slug}`} className="hover:text-flame">
+                    {service.content[locale].eyebrow}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
 
         <div className="md:col-span-2">
           <h2 className="font-mono text-xs uppercase tracking-[0.16em] text-smoke">
