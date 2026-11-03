@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # Daily off-site backup of atstudio.pt (CMS database + uploaded media) to the EU R2 bucket.
 # Install on the VPS as /root/ats-backup/atstudio-backup.sh (700) and run from cron.
-# Needs: APP_UUID (Coolify app), /root/.config/ats-secrets/r2-backup-eu.env with
-# AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY and R2_ENDPOINT, and resend.env with RESEND_API_KEY.
+# Needs env APP_UUID (Coolify app), ALERT_TO and R2_ENDPOINT (EU R2 S3 endpoint), plus
+# /root/.config/ats-secrets/r2-backup-eu.env (AWS_* keys) and resend.env (RESEND_API_KEY).
 # --dry-run builds the archive but does not upload.
 set -euo pipefail
 
@@ -10,6 +10,7 @@ APP_UUID="${APP_UUID:?APP_UUID em falta}"
 BUCKET="s3://ats-supabase-backups-eu/atstudio-site"
 KEEP_DAYS=30
 ALERT_TO="${ALERT_TO:?ALERT_TO em falta}"
+R2_ENDPOINT="${R2_ENDPOINT:?R2_ENDPOINT em falta}"
 DRY_RUN=0; [[ "${1:-}" == "--dry-run" ]] && DRY_RUN=1
 
 stamp="$(date -u +%Y%m%dT%H%M%SZ)"
@@ -42,8 +43,8 @@ echo "$(date -Is) archive $archive $(stat -c %s "$work/$archive") bytes, entries
 if [[ $DRY_RUN -eq 1 ]]; then echo "dry-run: sem envio"; exit 0; fi
 
 aws() {
-  docker run --rm --env-file /root/.config/ats-secrets/r2-backup-eu.env -e AWS_DEFAULT_REGION=auto \
-    -v "$work:/work" amazon/aws-cli:2.27.0 --endpoint-url "$(grep '^R2_ENDPOINT=' /root/.config/ats-secrets/r2-backup-eu.env | cut -d= -f2-)" "$@"
+  docker run --rm --env-file /root/.config/ats-secrets/r2-backup-eu.env \
+    -v "$work:/work" amazon/aws-cli:2.27.0 --endpoint-url "$R2_ENDPOINT" "$@"
 }
 aws s3 cp "/work/$archive" "$BUCKET/$archive" --only-show-errors
 aws s3api head-object --bucket ats-supabase-backups-eu --key "atstudio-site/$archive" >/dev/null
