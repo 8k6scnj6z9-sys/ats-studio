@@ -9,7 +9,7 @@
     "lint": "eslint",
     "promo:vertical": "node scripts/generate-promo-vertical.mjs",
     "promo:website": "node scripts/generate-website-reel.mjs",
-    "test": "node --test lib/cms/*.test.ts"
+    "test": "node --test lib/**/*.test.ts"
   },
   "dependencies": {
     "@libsql/client": "^0.18.0",
