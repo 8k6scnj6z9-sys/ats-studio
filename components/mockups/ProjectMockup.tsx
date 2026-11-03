@@ -8,11 +8,30 @@ import type { Project } from "@/lib/projects";
 import type { Locale } from "@/lib/i18n";
 
 type Props = {
-  project: Pick<Project, "slug" | "image" | "imageAlt" | "name">;
+  project: Pick<Project, "slug" | "image" | "imageAlt" | "localImage" | "name">;
   locale?: Locale;
 };
 
 export default function ProjectMockup({ project, locale = "pt" }: Props) {
+  const alt =
+    (locale === "en" ? project.imageAlt?.en : project.imageAlt?.pt) ||
+    project.name;
+
+  if (project.localImage) {
+    return (
+      <div className="relative aspect-[4/3] w-full overflow-hidden bg-line">
+        <Image
+          src={project.localImage}
+          alt={alt}
+          fill
+          priority={project.slug === "atsautarquia"}
+          sizes="(min-width: 1024px) 60vw, 100vw"
+          className="object-cover"
+        />
+      </div>
+    );
+  }
+
   if (project.image) {
     const url = urlFor(project.image)
       .width(1600)
@@ -20,10 +39,6 @@ export default function ProjectMockup({ project, locale = "pt" }: Props) {
       .fit("crop")
       .auto("format")
       .url();
-    const alt =
-      (locale === "en"
-        ? project.imageAlt?.en
-        : project.imageAlt?.pt) || project.name;
     return (
       <div className="relative aspect-[4/3] w-full overflow-hidden bg-line">
         <Image
