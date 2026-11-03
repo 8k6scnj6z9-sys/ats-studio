@@ -93,14 +93,36 @@ export default async function Footer({ locale, dict }: Props) {
                 {content.faq}
               </Link>
             </li>
+            <li>
+              <a
+                href="https://www.livroreclamacoes.pt/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-flame"
+              >
+                {locale === "pt" ? "Livro de Reclamações" : "Complaints Book"}
+              </a>
+            </li>
           </ul>
+          <p className="mt-4 text-xs leading-relaxed text-paper/50">
+            Alexandre Terras Simões · NIF 234234903 · 6300 Guarda, Portugal
+          </p>
         </div>
       </div>
 
       <div className="border-t border-line">
         <div className="mx-auto flex max-w-[1600px] flex-col gap-3 px-5 py-5 font-mono text-[10px] uppercase tracking-[0.14em] text-smoke md:flex-row md:items-center md:justify-between md:px-10">
           <p>© {year} ATS Studio. {content.rights}</p>
-          <p>{dict.footer.built} · {locale.toUpperCase()}</p>
+          <p>
+            Powered by{" "}
+            <a
+              href="https://atstudio.pt"
+              className="transition-colors hover:text-flame"
+            >
+              ATS Studio
+            </a>{" "}
+            · {dict.footer.built} · {locale.toUpperCase()}
+          </p>
         </div>
       </div>
     </footer>
