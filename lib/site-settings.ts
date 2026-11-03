@@ -1,4 +1,4 @@
-import { sanityClient } from "@/lib/sanity";
+import { getEntry } from "@/lib/cms/db";
 import { company } from "@/lib/site-content";
 
 export type SocialLink = {
@@ -16,7 +16,7 @@ export const fallbackSocialLinks: SocialLink[] = [
   { label: "Facebook", url: company.social.facebook },
 ];
 
-type SanitySiteSettings = {
+type StoredSiteSettings = {
   socialLinks?: Partial<SocialLink>[];
 };
 
@@ -31,7 +31,7 @@ function isValidHttpUrl(value: string | undefined): value is string {
 }
 
 function normalizeSocialLinks(
-  links: SanitySiteSettings["socialLinks"],
+  links: StoredSiteSettings["socialLinks"],
 ): SocialLink[] {
   if (!Array.isArray(links)) return [];
 
@@ -44,19 +44,9 @@ function normalizeSocialLinks(
 }
 
 export async function getSiteSettings(): Promise<SiteSettings> {
-  try {
-    const data = await sanityClient.fetch<SanitySiteSettings | null>(
-      `*[_type == "siteSettings" && _id == "siteSettings"][0] {
-        socialLinks[]{ label, url }
-      }`,
-      {},
-      { next: { tags: ["siteSettings"] } },
-    );
-    const socialLinks = normalizeSocialLinks(data?.socialLinks);
-    if (socialLinks.length) return { socialLinks };
-  } catch {
-    // Keep global site details available if Sanity is unavailable.
-  }
+  const data = (await getEntry<StoredSiteSettings>("siteSettings", "siteSettings"))?.data;
+  const socialLinks = normalizeSocialLinks(data?.socialLinks);
+  if (socialLinks.length) return { socialLinks };
 
   return { socialLinks: fallbackSocialLinks };
 }

@@ -1,4 +1,4 @@
-import { sanityClient } from "./sanity";
+import { getEntry, listEntries } from "./cms/db";
 
 export type ProcessStep = {
   id: string;
@@ -10,43 +10,17 @@ export type ProcessStep = {
   outputs: { pt: string[]; en: string[] };
 };
 
-const STEP_FIELDS = `
-  id,
-  "slug": slug.current,
-  "title": { "pt": titlePt, "en": titleEn },
-  "description": { "pt": descriptionPt, "en": descriptionEn },
-  "longDescription": { "pt": longDescriptionPt, "en": longDescriptionEn },
-  "details": { "pt": detailsPt, "en": detailsEn },
-  "outputs": { "pt": outputsPt, "en": outputsEn }
-`;
-
 export async function getProcessSteps(): Promise<ProcessStep[]> {
-  return sanityClient.fetch<ProcessStep[]>(
-    `*[_type == "processStep"] | order(id asc) { ${STEP_FIELDS} }`,
-    {},
-    { next: { tags: ["processStep"] } },
-  );
+  const rows = await listEntries<ProcessStep>("processStep");
+  return rows.map((row) => row.data);
 }
 
 export async function getProcessStep(
   slug: string,
 ): Promise<ProcessStep | undefined> {
-  const data = await sanityClient.fetch<ProcessStep | null>(
-    `*[_type == "processStep" && slug.current == $slug][0] { ${STEP_FIELDS} }`,
-    { slug },
-    {
-      next: {
-        tags: ["processStep", `processStep:${slug}`],
-      },
-    },
-  );
-  return data ?? undefined;
+  return (await getEntry<ProcessStep>("processStep", slug))?.data;
 }
 
 export async function getProcessStepSlugs(): Promise<string[]> {
-  return sanityClient.fetch<string[]>(
-    `*[_type == "processStep" && defined(slug.current)] | order(id asc).slug.current`,
-    {},
-    { next: { tags: ["processStep"] } },
-  );
+  return (await getProcessSteps()).map((step) => step.slug);
 }

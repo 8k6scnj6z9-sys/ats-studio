@@ -1,4 +1,3 @@
-import * as Sentry from "@sentry/nextjs";
 import type { DiagnosticInput, DiagnosticResult } from "@/lib/diagnostico/types";
 
 const ATS_EMAIL = "geral@atstudio.pt";
@@ -109,10 +108,6 @@ export async function captureDiagnosticLead(input: DiagnosticInput, result: Diag
 async function sendDiagnosticEmails(input: DiagnosticInput, result: DiagnosticResult) {
   if (!process.env.RESEND_API_KEY) {
     console.error("[diagnostico] email provider is not configured");
-    Sentry.captureMessage("Diagnostic email provider is not configured", {
-      level: "warning",
-      extra: { score: result.scores.overall },
-    });
     return;
   }
 
@@ -143,10 +138,6 @@ async function sendDiagnosticEmails(input: DiagnosticInput, result: DiagnosticRe
           emailResult.reason instanceof Error
             ? emailResult.reason.message
             : "unknown_error",
-      });
-      Sentry.captureMessage("Diagnostic email send failed", {
-        level: "error",
-        extra: { type: index === 0 ? "visitor" : "internal" },
       });
     }
   });

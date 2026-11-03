@@ -4,6 +4,8 @@ import { getProcessStepSlugs } from "@/lib/process";
 import { getResources } from "@/lib/resources";
 import { locales } from "@/lib/i18n";
 
+export const dynamic = "force-dynamic";
+
 const siteUrl = "https://atstudio.pt";
 const portalUrl = "https://portal.atstudio.pt";
 const siteLastModified = "2026-06-11";

@@ -1,4 +1,3 @@
-import * as Sentry from "@sentry/nextjs";
 import { NextResponse } from "next/server";
 import { checkRateLimit } from "@/lib/security/rate-limit";
 
@@ -52,9 +51,6 @@ export async function POST(req: Request) {
 
     if (!process.env.RESEND_API_KEY) {
       console.error("[contact] email provider is not configured");
-      Sentry.captureMessage("Contact email provider is not configured", {
-        level: "warning",
-      });
       return NextResponse.json(
         { ok: false, error: "email_provider_not_configured" },
         { status: 500 }
@@ -86,16 +82,12 @@ export async function POST(req: Request) {
 
     if (!res.ok) {
       console.error("[contact] failed to send email", { status: res.status });
-      Sentry.captureMessage("Contact email send failed", {
-        level: "error",
-        extra: { status: res.status },
-      });
       return NextResponse.json({ ok: false, error: "send_failed" }, { status: 502 });
     }
 
     return NextResponse.json({ ok: true });
   } catch (error) {
-    Sentry.captureException(error);
+    console.error("[contact] unexpected error", error instanceof Error ? error.message : error);
     return NextResponse.json({ ok: false }, { status: 400 });
   }
 }
