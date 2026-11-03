@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Fraunces, Inter, JetBrains_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
-import Script from "next/script";
 import "../../globals.css";
 import { hasLocale, getDictionary, locales, type Locale } from "@/lib/i18n";
 import SmoothScroll from "@/components/ui/SmoothScroll";
@@ -31,13 +30,15 @@ const mono = JetBrains_Mono({
 });
 
 const siteUrl = company.siteUrl;
-const googleAnalyticsId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? "G-WZEM8YLYT3";
 const portalAnalyticsWebsiteId = process.env.NEXT_PUBLIC_PORTAL_ANALYTICS_WEBSITE_ID ?? "atstudio-pt";
 
 export const viewport: Viewport = {
   themeColor: "#ff5a1f",
   colorScheme: "dark",
 };
+
+// Content comes from the CMS database, so pages render per request and show edits immediately.
+export const dynamic = "force-dynamic";
 
 export async function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -174,33 +175,6 @@ export default async function LocaleLayout(props: LayoutProps<"/[locale]">) {
       className={`${fraunces.variable} ${inter.variable} ${mono.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-ink text-paper grain">
-        <Script id="google-consent-default" strategy="beforeInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('consent', 'default', {
-              ad_storage: 'denied',
-              ad_user_data: 'denied',
-              ad_personalization: 'denied',
-              analytics_storage: 'denied',
-              wait_for_update: 500
-            });
-          `}
-        </Script>
-        <Script
-          id="google-tag"
-          src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`}
-          strategy="beforeInteractive"
-        />
-        <Script id="google-analytics-config" strategy="afterInteractive">
-          {`
-            gtag('js', new Date());
-            gtag('config', '${googleAnalyticsId}', {
-              anonymize_ip: true,
-              send_page_view: false
-            });
-          `}
-        </Script>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
@@ -211,8 +185,6 @@ export default async function LocaleLayout(props: LayoutProps<"/[locale]">) {
         {props.children}
         <CookieConsent
           locale={typedLocale}
-          gaId={googleAnalyticsId}
-          metaPixelId={process.env.NEXT_PUBLIC_META_PIXEL_ID}
           portalTrackerWebsiteId={portalAnalyticsWebsiteId}
         />
       </body>

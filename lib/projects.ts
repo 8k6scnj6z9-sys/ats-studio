@@ -1,5 +1,4 @@
-import { sanityClient } from "./sanity";
-import type { SanityImage } from "./sanity";
+import { listEntries } from "./cms/db";
 
 export type Project = {
   slug: string;
@@ -12,48 +11,42 @@ export type Project = {
   role: { pt: string[]; en: string[] };
   status: { pt: string; en: string };
   palette: string[];
-  image: SanityImage | null;
-  imageAlt: { pt: string; en: string };
+  imageAlt?: { pt: string; en: string };
+  localImage?: string;
+  galleryImages?: Array<{
+    src: string;
+    alt: { pt: string; en: string };
+    caption: { pt: string; en: string };
+  }>;
+  projectUrl?: string;
+  projectKind?: "concept" | "product";
+  caseStudy?: {
+    pt: ProjectCaseStudy;
+    en: ProjectCaseStudy;
+  };
+};
+
+type ProjectCaseStudy = {
+  goals: string[];
+  before: string;
+  after: string;
+  results: string[];
 };
 
 export type ProjectSlug = string;
 
-const PROJECT_FIELDS = `
-  "slug": slug.current,
-  name,
-  index,
-  year,
-  palette,
-  image,
-  "imageAlt": { "pt": imageAltPt, "en": imageAltEn },
-  "categories": { "pt": categoriesPt, "en": categoriesEn },
-  "tagline": { "pt": taglinePt, "en": taglineEn },
-  "description": { "pt": descriptionPt, "en": descriptionEn },
-  "role": { "pt": rolePt, "en": roleEn },
-  "status": { "pt": statusPt, "en": statusEn }
-`;
-
 export async function getProjects(): Promise<Project[]> {
-  return sanityClient.fetch<Project[]>(
-    `*[_type == "project"] | order(index asc) { ${PROJECT_FIELDS} }`,
-    {},
-    { next: { tags: ["project"] } },
-  );
+  const rows = await listEntries<Project>("project");
+  // The index shown on the site follows the order set in /admin.
+  return rows.map((row, i) => ({ ...row.data, index: String(i + 1).padStart(2, "0") }));
 }
 
 export async function getProject(slug: string): Promise<Project | undefined> {
-  const data = await sanityClient.fetch<Project | null>(
-    `*[_type == "project" && slug.current == $slug][0] { ${PROJECT_FIELDS} }`,
-    { slug },
-    { next: { tags: ["project", `project:${slug}`] } },
-  );
-  return data ?? undefined;
+  const projects = await getProjects();
+  return projects.find((project) => project.slug === slug);
 }
 
 export async function getProjectSlugs(): Promise<string[]> {
-  return sanityClient.fetch<string[]>(
-    `*[_type == "project" && defined(slug.current)].slug.current`,
-    {},
-    { next: { tags: ["project"] } },
-  );
+  const projects = await getProjects();
+  return projects.map((project) => project.slug);
 }

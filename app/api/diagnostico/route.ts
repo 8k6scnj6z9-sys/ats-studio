@@ -1,7 +1,6 @@
 import { lookup } from "node:dns/promises";
 import net from "node:net";
 import { NextResponse } from "next/server";
-import * as Sentry from "@sentry/nextjs";
 import { analyzeHtml } from "@/lib/diagnostico/html";
 import { calculateDiagnostic } from "@/lib/diagnostico/scoring";
 import { captureDiagnosticLead } from "@/lib/diagnostico/leads";
@@ -298,7 +297,7 @@ export async function POST(req: Request) {
 
     return NextResponse.json(result);
   } catch (error) {
-    Sentry.captureException(error);
+    console.error("[diagnostico] analysis failed", error instanceof Error ? error.message : error);
     return jsonError("analysis_unavailable", 500);
   }
 }

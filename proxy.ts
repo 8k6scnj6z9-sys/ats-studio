@@ -6,7 +6,6 @@ const defaultLocale = "pt";
 
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
-  if (pathname === "/studio" || pathname.startsWith("/studio/")) return;
   if (pathname === "/diagnostico" || pathname === "/diagnostico/") {
     const url = request.nextUrl.clone();
     url.pathname = "/pt/diagnostico";
@@ -39,5 +38,5 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/((?!api|_next|studio|logos|.*\\..*).*)"],
+  matcher: ["/((?!api|_next|admin|media|logos|.*\\..*).*)"],
 };

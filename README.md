@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# atstudio.pt
 
-## Getting Started
+Website da ATS Studio (Next.js 16, PT/EN). Os conteúdos editáveis vivem num CMS próprio em `/admin`, com SQLite (libSQL + Drizzle) e imagens em disco. Não depende do Sanity nem da Vercel.
 
-First, run the development server:
+## Desenvolvimento
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
+npm test         # validação dos conteúdos e da seed
+npm run lint
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+A base de dados local fica em `data/cms.db` (ignorada pelo Git). Na primeira execução é criada e preenchida com `lib/cms/seed.json` (exportação do Sanity de 2026-11-03) e com as páginas legais de `lib/legal-content.ts`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Para entrar no `/admin` em local, define `ADMIN_PASSWORD_HASH` (gerado com `node scripts/hash-admin-password.mjs`) e `ADMIN_SESSION_SECRET` (32 caracteres ou mais) no ambiente. Ver `.env.example`.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## CMS
 
-## Learn More
+- `/admin`: projetos, processo, Centro de Recursos, páginas legais e definições do site (redes sociais), sempre em PT e EN.
+- "Publicar" grava na base de dados e a alteração fica logo visível no site, porque as páginas são renderizadas a cada pedido.
+- Imagens: PNG, JPEG, WebP ou AVIF até 8 MB, servidas em `/media/<hash>.<ext>`. Não se aceita SVG, porque pode conter scripts.
+- Formas e validação dos conteúdos em `lib/cms/schema.ts`. Para um campo novo, basta acrescentá-lo à forma e ao tipo usado pelo site.
 
-To learn more about Next.js, take a look at the following resources:
+## Produção (VPS Contabo, Coolify)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- O `Dockerfile` gera uma imagem standalone. Volume persistente em `/data`, com `cms.db` e `media/`. Health check em `/api/health`.
+- Variáveis de runtime no Coolify: `RESEND_API_KEY`, `CONTACT_FROM_EMAIL`, `PAGESPEED_API_KEY`, `ADMIN_PASSWORD_HASH` e `ADMIN_SESSION_SECRET`. Nunca as commitar.
+- Backup diário: `deploy/vps-backup.sh` (base de dados com `VACUUM INTO` e media) para o R2 EU, com retenção de 30 dias e alerta por email em caso de falha.
+- Restauro: extrair o arquivo, confirmar o `MANIFEST.sha256` e copiar `cms.db` e `media/` para o volume `/data`, com o contentor parado.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Rodapé: "Powered by ATS Studio", com ligação para https://atstudio.pt.

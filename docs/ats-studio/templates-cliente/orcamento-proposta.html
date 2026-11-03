@@ -1,10 +1,30 @@
 <!doctype html>
-<html lang="pt">
+<html lang="pt-PT">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Proposta / Orçamento - ATS Studio</title>
+    <title>Orçamento — União de Freguesias do Rochoso e Monte Margarida — ATS Studio</title>
     <link rel="stylesheet" href="./ats-document.css" />
+    <style>
+      .hero { grid-template-columns: 1fr 1fr; }
+      .meta-row { grid-template-columns: 1fr; gap: 4px; }
+      .price-box .label { color: #cccccc; margin-bottom: 10px; }
+      .price-box + .price-box { margin-top: 12px; }
+      .callout + p { margin-top: 16px; }
+      @media screen and (max-width: 820px) {
+        .page { width: 100%; margin: 0; padding: 28px 22px; }
+        .hero, .section-grid { grid-template-columns: 1fr; gap: 20px; }
+        .doc-header { gap: 16px; }
+        .brand { gap: 8px; }
+        .brand-name { font-size: 24px; }
+        .brand-mark { width: 40px; height: 40px; }
+        h1 { font-size: 48px; }
+        .footer-note { flex-wrap: wrap; }
+      }
+      @media print {
+        .section, .price-box, tr, .callout { break-inside: avoid; }
+      }
+    </style>
   </head>
   <body>
     <main class="page">
@@ -16,18 +36,18 @@
           </div>
           <div class="doc-type">
             Proposta / Orçamento<br />
-            Ref. ATS-[000]
+            Ref. ATS-[006]
           </div>
         </header>
 
         <section class="hero">
           <div>
-            <h1>Presença digital <span class="accent">com direção.</span></h1>
+            <h1>Uma freguesia <span class="accent">mais próxima.</span></h1>
           </div>
           <aside class="meta-panel">
-            <div class="meta-row"><span class="label">Cliente</span><span>[Nome do cliente]</span></div>
-            <div class="meta-row"><span class="label">Projeto</span><span>[Nome do projeto]</span></div>
-            <div class="meta-row"><span class="label">Data</span><span>[Data]</span></div>
+            <div class="meta-row"><span class="label">Cliente</span><span>União de Freguesias do Rochoso e Monte Margarida</span></div>
+            <div class="meta-row"><span class="label">Projeto</span><span>Website institucional</span></div>
+            <div class="meta-row"><span class="label">Data</span><span>15/09/2026</span></div>
             <div class="meta-row"><span class="label">Validade</span><span>15 dias</span></div>
           </aside>
         </section>
@@ -36,8 +56,16 @@
           <div class="section-number">01 / Contexto</div>
           <div>
             <h2>O desafio</h2>
-            <p>[Resumo do que o cliente precisa: problema atual, objetivo comercial e oportunidade digital.]</p>
-            <p class="muted">Exemplo: criar uma presença digital clara e profissional para apresentar serviços, gerar contactos qualificados e transmitir confiança.</p>
+            <p>
+              Criar um website institucional para a União de Freguesias do Rochoso e Monte Margarida,
+              com informação clara e organizada sobre a autarquia, os serviços e as localidades,
+              facilitando o acesso à informação e o contacto com a população.
+            </p>
+            <p>
+              O objetivo é disponibilizar uma presença digital acessível e simples de utilizar,
+              adaptada a telemóvel, tablet e computador, que permita divulgar notícias, avisos,
+              documentos e contactos úteis.
+            </p>
           </div>
         </section>
 
@@ -46,16 +74,18 @@
           <div>
             <h2>O que vamos construir</h2>
             <ul>
-              <li>Criar uma presença digital profissional e responsiva.</li>
-              <li>Comunicar claramente a oferta da marca.</li>
-              <li>Facilitar contacto, pedido de orçamento ou compra.</li>
-              <li>Preparar uma base sólida para futuras campanhas digitais.</li>
+              <li>Criar um website institucional alinhado com a identidade da União de Freguesias.</li>
+              <li>Apresentar a autarquia, os órgãos autárquicos e as localidades.</li>
+              <li>Comunicar os serviços, os horários de atendimento e os contactos úteis.</li>
+              <li>Disponibilizar notícias, avisos, editais e documentos para consulta.</li>
+              <li>Facilitar o contacto dos cidadãos através de formulário, telefone e correio eletrónico.</li>
+              <li>Preparar uma base digital com atenção à acessibilidade, segurança e desempenho.</li>
             </ul>
           </div>
         </section>
 
         <section class="section section-grid">
-          <div class="section-number">03 / Escopo</div>
+          <div class="section-number">03 / Âmbito</div>
           <div>
             <h2>Incluído no projeto</h2>
             <table class="table">
@@ -63,40 +93,84 @@
                 <tr><th>Área</th><th>Entregáveis</th></tr>
               </thead>
               <tbody>
-                <tr><td>Estratégia</td><td>Sitemap, objetivos por página e direção inicial.</td></tr>
-                <tr><td>Design</td><td>Web design, direção visual e versão responsive.</td></tr>
-                <tr><td>Desenvolvimento</td><td>Website em código, formulário, performance e SEO técnico básico.</td></tr>
-                <tr><td>Lançamento</td><td>Deploy, domínio, testes finais e guia de entrega.</td></tr>
+                <tr>
+                  <td>Estratégia</td>
+                  <td>Sitemap, organização da informação e estrutura base do website institucional.</td>
+                </tr>
+                <tr>
+                  <td>Design</td>
+                  <td>Web design profissional, direção visual cuidada e versão adaptada para telemóvel, tablet e computador.</td>
+                </tr>
+                <tr>
+                  <td>Desenvolvimento</td>
+                  <td>Website desenvolvido em código, otimizado para desempenho, segurança e SEO técnico.</td>
+                </tr>
+                <tr>
+                  <td>Conteúdos</td>
+                  <td>Estrutura para página inicial, autarquia, localidades, serviços, notícias, avisos, editais, documentos e contactos, com conteúdos fornecidos pela União de Freguesias.</td>
+                </tr>
+                <tr>
+                  <td>Base de dados</td>
+                  <td>Configuração da base de dados necessária ao funcionamento do website e à organização dos conteúdos definidos no projeto.</td>
+                </tr>
+                <tr>
+                  <td>Lançamento</td>
+                  <td>Publicação, ligação ao domínio, testes finais, configuração técnica e tutorial de utilização.</td>
+                </tr>
+                <tr>
+                  <td>Serviço anual</td>
+                  <td>Alojamento, gestão da base de dados, manutenção técnica, cópias de segurança, monitorização e apoio técnico, conforme o plano anual descrito abaixo.</td>
+                </tr>
               </tbody>
             </table>
           </div>
         </section>
 
         <section class="section section-grid">
-          <div class="section-number">04 / Rede parceira</div>
+          <div class="section-number">04 / Investimento</div>
           <div>
-            <h2>Full package, se necessário</h2>
-            <p>Além de design e desenvolvimento, a ATS Studio pode coordenar parceiros de marketing digital, fotografia, vídeo e copywriting para garantir uma presença completa e coerente.</p>
-            <div class="pill-list">
-              <span class="pill">Marketing digital</span>
-              <span class="pill">Fotografia</span>
-              <span class="pill">Vídeo</span>
-              <span class="pill">Copywriting</span>
-              <span class="pill">Campanhas</span>
+            <h2>Valor do projeto</h2>
+            <div class="price-box">
+              <div class="label">Construção do website · pagamento único</div>
+              <div class="amount">600 €</div>
             </div>
+            <div class="price-box">
+              <div class="label">Alojamento, manutenção e base de dados</div>
+              <div class="amount">500 € / ano</div>
+            </div>
+            <div class="callout">
+              <strong>Total do primeiro ano: 1.100 €</strong> — 600 € de construção + 500 € de serviço anual.
+              Nos anos seguintes, o valor do serviço anual é de 500 €.
+            </div>
+            <p class="muted">
+              Construção: 50% na contratação (300 €) e 50% no lançamento do website (300 €).
+              O serviço anual é pago no início de cada período de 12 meses, com início no lançamento do website.
+            </p>
+            <p class="muted">
+              Serviços adicionais não previstos nesta proposta, novas funcionalidades e integrações pagas
+              serão orçamentados separadamente, mediante aprovação prévia.
+            </p>
           </div>
         </section>
 
         <section class="section section-grid">
-          <div class="section-number">05 / Investimento</div>
+          <div class="section-number">05 / Manutenção</div>
           <div>
-            <h2>Valor do projeto</h2>
-            <div class="price-box">
-              <div class="label">Investimento</div>
-              <div class="amount">[Valor] EUR</div>
-              <p>IVA incluído / IVA não incluído, conforme aplicável.</p>
+            <h2>Alojamento e manutenção anual</h2>
+            <p>
+              O serviço anual de 500 € assegura o alojamento e o acompanhamento técnico do website
+              da União de Freguesias do Rochoso e Monte Margarida após o lançamento.
+            </p>
+            <div class="callout">
+              <ul>
+                <li>Alojamento do website e gestão da infraestrutura necessária ao seu funcionamento.</li>
+                <li>Alojamento, gestão e manutenção da base de dados.</li>
+                <li>Atualizações técnicas e de segurança.</li>
+                <li>Cópias de segurança e monitorização de disponibilidade.</li>
+                <li>Correção de problemas técnicos e apoio à utilização do website.</li>
+                <li>Alterações não estruturais a textos, imagens e informações existentes.</li>
+              </ul>
             </div>
-            <p class="muted">Condições: 50% para iniciar o projeto e 50% antes do lançamento. Custos de domínio, email, hosting, ferramentas pagas e parceiros externos não estão incluídos salvo indicação contrária.</p>
           </div>
         </section>
 
@@ -104,11 +178,19 @@
           <div class="section-number">06 / Autonomia</div>
           <div>
             <h2>Edição de conteúdos</h2>
-            <p>Este orçamento considera um website desenvolvido em código, sem área de edição para o cliente, salvo indicação contrária.</p>
-            <p>Alterações futuras a textos, imagens, páginas ou secções devem ser pedidas à ATS Studio e podem ser tratadas por manutenção mensal ou orçamento separado.</p>
-            <div class="callout">
-              Se o cliente precisar de autonomia para editar conteúdos, podemos incluir CMS ou usar uma plataforma editável. Essa opção deve ser definida no escopo.
-            </div>
+            <p>
+              Este orçamento considera um website desenvolvido em código, com possibilidade de área de edição para o cliente,
+              salvo indicação contrária ou limitações técnicas da solução escolhida.
+            </p>
+            <p>
+              A União de Freguesias do Rochoso e Monte Margarida poderá ter autonomia para atualizar conteúdos essenciais, como notícias, horários,
+              contactos, fotografias, avisos e documentos ou outras informações definidas no projeto.
+            </p>
+            <p>
+              Com o serviço anual ativo, alterações futuras não estruturais podem ser solicitadas à ATS Studio e estão
+              incluídas no acompanhamento anual.
+            </p>
+
           </div>
         </section>
 
@@ -118,16 +200,16 @@
             <h2>Para avançar</h2>
             <ol>
               <li>Aprovar esta proposta por escrito.</li>
-              <li>Aceitar os termos de serviço.</li>
-              <li>Efetuar o pagamento inicial.</li>
-              <li>Enviar materiais disponíveis.</li>
-              <li>Agendar chamada de arranque.</li>
+              <li>Assinar o contrato.</li>
+              <li>Efetuar o pagamento inicial de 300 €, correspondente a 50% da construção.</li>
+              <li>Enviar materiais disponíveis, como identidade visual, textos institucionais, fotografias, documentos, horários e contactos.</li>
+              <li>Agendar reunião de arranque para definição da estrutura, conteúdos e funcionalidades.</li>
             </ol>
           </div>
         </section>
 
         <footer class="footer-note">
-          <span>ATS Studio · Alexandre Terras Simões</span>
+          <span>Powered by <a href="https://atstudio.pt">ATS Studio</a></span>
           <span>Guarda, Portugal</span>
         </footer>
       </div>

@@ -1,0 +1,12 @@
+.git
+.next
+node_modules
+data
+docs
+output
+tmp
+.claude
+.vercel
+.env*
+*.md
+Dockerfile

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { hasLocale, getDictionary, type Locale } from "@/lib/i18n";
 import { getProject, getProjects, getProjectSlugs } from "@/lib/projects";
 import Navbar from "@/components/nav/Navbar";
@@ -28,9 +29,13 @@ export async function generateMetadata(
   const tagline = project.tagline[typedLocale];
   const url = `https://atstudio.pt/${typedLocale}/work/${project.slug}`;
   const suffix =
-    typedLocale === "pt"
-      ? "Estudo conceptual pela ATS Studio"
-      : "Concept study by ATS Studio";
+    project.projectKind === "product"
+      ? typedLocale === "pt"
+        ? "Produto digital da ATS Studio"
+        : "Digital product by ATS Studio"
+      : typedLocale === "pt"
+        ? "Estudo conceptual pela ATS Studio"
+        : "Concept study by ATS Studio";
 
   return {
     title: `${project.name} — ${suffix}`,
@@ -48,13 +53,13 @@ export async function generateMetadata(
       siteName: "ATS Studio",
       title: `${project.name} — ATS Studio`,
       description: tagline,
-      images: [{ url: "/og-image.png", width: 1200, height: 630 }],
+      images: [{ url: project.localImage ?? "/og-image.png", width: 1200, height: 630 }],
     },
     twitter: {
       card: "summary_large_image",
       title: `${project.name} — ATS Studio`,
       description: tagline,
-      images: ["/og-image.png"],
+      images: [project.localImage ?? "/og-image.png"],
     },
   };
 }
@@ -76,6 +81,7 @@ export default async function ProjectPage(
   const tagline = project.tagline[locale as Locale];
   const description = project.description[locale as Locale];
   const status = project.status[locale as Locale];
+  const projectCaseStudy = project.caseStudy?.[locale as Locale];
   const caseStudy =
     locale === "pt"
       ? {
@@ -119,8 +125,19 @@ export default async function ProjectPage(
           ],
         };
 
+  if (projectCaseStudy) {
+    caseStudy.goalsList = projectCaseStudy.goals;
+    caseStudy.before = projectCaseStudy.before;
+    caseStudy.after = projectCaseStudy.after;
+    caseStudy.resultsList = projectCaseStudy.results;
+    caseStudy.results =
+      locale === "pt" ? "Impacto da solução" : "Solution impact";
+  }
+
   const idx = projects.findIndex((p) => p.slug === project.slug);
-  const next = projects[(idx + 1) % projects.length];
+  const next = projects.length > 1
+    ? projects[(idx + 1) % projects.length]
+    : undefined;
 
   return (
     <>
@@ -152,6 +169,19 @@ export default async function ProjectPage(
                   {tagline}
                 </p>
               </ScrollReveal>
+              {project.projectUrl ? (
+                <ScrollReveal delay={0.1}>
+                  <a
+                    href={project.projectUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-8 inline-flex items-center gap-3 border border-line px-5 py-3 text-sm text-paper transition-colors hover:border-flame hover:text-flame focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame focus-visible:ring-offset-4 focus-visible:ring-offset-ink"
+                  >
+                    {locale === "pt" ? "Conhecer o ATSAutarquia" : "Explore ATSAutarquia"}
+                    <span aria-hidden>↗</span>
+                  </a>
+                </ScrollReveal>
+              ) : null}
             </div>
           </div>
 
@@ -162,6 +192,43 @@ export default async function ProjectPage(
               </div>
             </ScrollReveal>
           </div>
+
+          {project.galleryImages?.length ? (
+            <section className="mt-16 md:mt-24" aria-labelledby="project-gallery-title">
+              <ScrollReveal>
+                <h2
+                  id="project-gallery-title"
+                  className="font-display text-4xl md:text-6xl"
+                >
+                  {locale === "pt" ? "A plataforma em detalhe." : "The platform in detail."}
+                </h2>
+              </ScrollReveal>
+              <div className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-2">
+                {project.galleryImages.map((item, index) => (
+                  <ScrollReveal
+                    key={item.src}
+                    delay={index * 0.05}
+                    className={index === 0 ? "md:col-span-2" : undefined}
+                  >
+                    <figure>
+                      <div className="relative aspect-[3/2] overflow-hidden rounded-lg border border-line bg-ash md:rounded-xl">
+                        <Image
+                          src={item.src}
+                          alt={item.alt[locale as Locale]}
+                          fill
+                          sizes={index === 0 ? "(min-width: 768px) 95vw, 100vw" : "(min-width: 768px) 48vw, 100vw"}
+                          className="object-cover"
+                        />
+                      </div>
+                      <figcaption className="mt-3 font-mono text-[10px] uppercase tracking-[0.16em] text-smoke">
+                        {item.caption[locale as Locale]}
+                      </figcaption>
+                    </figure>
+                  </ScrollReveal>
+                ))}
+              </div>
+            </section>
+          ) : null}
 
           <div className="mt-16 md:mt-24 grid grid-cols-1 lg:grid-cols-12 gap-10 md:gap-16">
             <div className="lg:col-span-7 space-y-6">
@@ -225,7 +292,7 @@ export default async function ProjectPage(
                     </p>
                   </div>
                   <div className="border border-line bg-paper p-5 text-ink">
-                    <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-ink/45">
+                    <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-ink/65">
                       After
                     </p>
                     <p className="mt-3 text-sm leading-relaxed text-ink/65">
@@ -267,27 +334,31 @@ export default async function ProjectPage(
             </section>
           </div>
 
-          <div className="mt-24 mb-20 border-t border-line pt-10 md:mt-40 md:mb-28">
-            <Link
-              href={`/${locale}/work/${next.slug}`}
-              className="group flex items-center justify-between gap-6"
-            >
-              <div>
-                <p className="font-mono text-xs uppercase tracking-widest text-smoke">
-                  {dict.work.next}
-                </p>
-                <h3 className="h-display text-4xl md:text-6xl mt-3 group-hover:text-flame transition-colors">
-                  {next.name}
-                </h3>
-              </div>
-              <span
-                aria-hidden
-                className="text-3xl text-smoke group-hover:text-flame group-hover:translate-x-2 transition-all"
+          {next ? (
+            <div className="mt-24 mb-20 border-t border-line pt-10 md:mt-40 md:mb-28">
+              <Link
+                href={`/${locale}/work/${next.slug}`}
+                className="group flex items-center justify-between gap-6"
               >
-                →
-              </span>
-            </Link>
-          </div>
+                <div>
+                  <p className="font-mono text-xs uppercase tracking-widest text-smoke">
+                    {dict.work.next}
+                  </p>
+                  <h3 className="h-display text-4xl md:text-6xl mt-3 group-hover:text-flame transition-colors">
+                    {next.name}
+                  </h3>
+                </div>
+                <span
+                  aria-hidden
+                  className="text-3xl text-smoke group-hover:text-flame group-hover:translate-x-2 transition-all"
+                >
+                  →
+                </span>
+              </Link>
+            </div>
+          ) : (
+            <div className="h-20 md:h-28" aria-hidden />
+          )}
         </div>
       </main>
       <Footer locale={locale as Locale} dict={dict} />

@@ -1,35 +1,8 @@
 import { legalContent, type LegalContent, type LegalPageKind } from "@/lib/legal-content";
-import { sanityClient } from "@/lib/sanity";
+import { getEntry } from "@/lib/cms/db";
 import type { Locale } from "@/lib/i18n";
 
 export type { LegalContent, LegalPageKind };
-
-type SanityLegalPage = {
-  kind?: LegalPageKind;
-  content?: Partial<Record<Locale, LegalContent>>;
-};
-
-const LEGAL_FIELDS = `
-  kind,
-  "content": {
-    "pt": {
-      "eyebrow": eyebrowPt,
-      "title": titlePt,
-      "updated": updatedPt,
-      "intro": introPt,
-      "sections": sectionsPt[]{ title, body }
-    },
-    "en": {
-      "eyebrow": eyebrowEn,
-      "title": titleEn,
-      "updated": updatedEn,
-      "intro": introEn,
-      "sections": sectionsEn[]{ title, body }
-    }
-  }
-`;
-
-const legalTags = (kind: LegalPageKind) => ["legalPage", `legalPage:${kind}`];
 
 function isCompleteLegalContent(content: LegalContent | undefined): content is LegalContent {
   return Boolean(
@@ -45,17 +18,8 @@ export async function getLegalPage(
   locale: Locale,
   kind: LegalPageKind,
 ): Promise<LegalContent> {
-  try {
-    const data = await sanityClient.fetch<SanityLegalPage | null>(
-      `*[_type == "legalPage" && kind == $kind][0] { ${LEGAL_FIELDS} }`,
-      { kind },
-      { next: { tags: legalTags(kind) } },
-    );
-    const content = data?.content?.[locale];
-    if (isCompleteLegalContent(content)) return content;
-  } catch {
-    // Keep legal pages available if Sanity is unavailable.
-  }
+  const content = (await getEntry<Record<Locale, LegalContent>>("legalPage", kind))?.data[locale];
+  if (isCompleteLegalContent(content)) return content;
 
   return legalContent[locale][kind];
 }

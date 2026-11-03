@@ -1,8 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import type { Locale } from "@/lib/i18n";
 import { cookieContent } from "@/lib/site-content";
 
@@ -14,8 +13,6 @@ type Consent = {
 
 type Props = {
   locale: Locale;
-  gaId?: string;
-  metaPixelId?: string;
   portalTrackerWebsiteId?: string;
 };
 
@@ -23,21 +20,15 @@ const STORAGE_KEY = "ats_cookie_consent_v1";
 
 export default function CookieConsent({
   locale,
-  gaId,
-  metaPixelId,
   portalTrackerWebsiteId,
 }: Props) {
   const copy = cookieContent[locale];
-  const pathname = usePathname();
   const [consent, setConsent] = useState<Consent | null>(null);
   const [visible, setVisible] = useState(false);
   const [preferencesOpen, setPreferencesOpen] = useState(false);
   const [analytics, setAnalytics] = useState(false);
 
-  const hasTracking = useMemo(
-    () => Boolean(gaId || metaPixelId || portalTrackerWebsiteId),
-    [gaId, metaPixelId, portalTrackerWebsiteId],
-  );
+  const hasTracking = Boolean(portalTrackerWebsiteId);
 
   useEffect(() => {
     const id = window.setTimeout(() => {
@@ -51,20 +42,8 @@ export default function CookieConsent({
   }, []);
 
   useEffect(() => {
-    updateGoogleConsent(consent?.analytics ?? false);
-    if (consent?.analytics) loadTracking({ metaPixelId, portalTrackerWebsiteId });
-  }, [consent?.analytics, metaPixelId, portalTrackerWebsiteId]);
-
-  useEffect(() => {
-    if (!consent?.analytics || !gaId || !window.gtag) return;
-
-    const pagePath = `${pathname}${window.location.search}`;
-    window.gtag("event", "page_view", {
-      page_path: pagePath,
-      page_location: window.location.href,
-      page_title: document.title,
-    });
-  }, [consent?.analytics, gaId, pathname]);
+    if (consent?.analytics) loadTracking(portalTrackerWebsiteId);
+  }, [consent?.analytics, portalTrackerWebsiteId]);
 
   const saveConsent = (allowAnalytics: boolean) => {
     const next: Consent = {
@@ -77,8 +56,7 @@ export default function CookieConsent({
     setAnalytics(allowAnalytics);
     setVisible(false);
     setPreferencesOpen(false);
-    updateGoogleConsent(allowAnalytics);
-    if (allowAnalytics) loadTracking({ metaPixelId, portalTrackerWebsiteId });
+    if (allowAnalytics) loadTracking(portalTrackerWebsiteId);
   };
 
   return (
@@ -215,31 +193,7 @@ function getInitialConsentState(): {
   }
 }
 
-function loadTracking({
-  metaPixelId,
-  portalTrackerWebsiteId,
-}: {
-  metaPixelId?: string;
-  portalTrackerWebsiteId?: string;
-}) {
-  if (metaPixelId && !document.querySelector(`script[data-ats-meta="${metaPixelId}"]`)) {
-    const script = document.createElement("script");
-    script.dataset.atsMeta = metaPixelId;
-    script.innerHTML = `
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '${metaPixelId}');
-      fbq('track', 'PageView');
-    `;
-    document.head.appendChild(script);
-  }
-
+function loadTracking(portalTrackerWebsiteId?: string) {
   if (
     portalTrackerWebsiteId &&
     !document.querySelector(`script[data-ats-portal-tracker="${portalTrackerWebsiteId}"]`)
@@ -250,26 +204,5 @@ function loadTracking({
     script.dataset.websiteId = portalTrackerWebsiteId;
     script.dataset.atsPortalTracker = portalTrackerWebsiteId;
     document.head.appendChild(script);
-  }
-}
-
-function updateGoogleConsent(allowAnalytics: boolean) {
-  if (!window.gtag) return;
-
-  const analyticsConsent = allowAnalytics ? "granted" : "denied";
-  window.gtag("consent", "update", {
-    ad_storage: "denied",
-    ad_user_data: "denied",
-    ad_personalization: "denied",
-    analytics_storage: analyticsConsent,
-  });
-}
-
-declare global {
-  interface Window {
-    dataLayer?: unknown[];
-    gtag?: (...args: unknown[]) => void;
-    fbq?: (...args: unknown[]) => void;
-    _fbq?: (...args: unknown[]) => void;
   }
 }
