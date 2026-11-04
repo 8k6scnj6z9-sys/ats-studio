@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import DiagnosticLoading from "@/components/diagnostico/DiagnosticLoading";
 import DiagnosticResults from "@/components/diagnostico/DiagnosticResults";
 import type { DiagnosticResult } from "@/lib/diagnostico/types";
+import { track } from "@/lib/analytics";
 import type { Dictionary, Locale } from "@/lib/i18n";
 
 type Props = {
@@ -57,6 +58,7 @@ export default function DiagnosticForm({ locale, copy, contactHref }: Props) {
 
       setResult(data as DiagnosticResult);
       setStatus("success");
+      track("diagnostic-submit", { score: (data as DiagnosticResult).scores.overall });
     } catch (err) {
       const code = err instanceof Error ? err.message : "analysis_unavailable";
       const errors = copy.form.errors as Record<string, string>;

@@ -39,13 +39,13 @@ export default async function Footer({ locale, dict }: Props) {
           </h2>
           <ul className="mt-4 space-y-3 text-sm text-paper/72">
             <li>
-              <a href={`mailto:${company.email}`} className="hover:text-flame">
+              <a href={`mailto:${company.email}`} data-umami-event="email-click" className="hover:text-flame">
                 {company.email}
               </a>
             </li>
             {company.phone && (
               <li>
-                <a href={`tel:${company.phone.replace(/\s/g, "")}`} className="hover:text-flame">
+                <a href={`tel:${company.phone.replace(/\s/g, "")}`} data-umami-event="phone-click" className="hover:text-flame">
                   {company.phone}
                 </a>
               </li>

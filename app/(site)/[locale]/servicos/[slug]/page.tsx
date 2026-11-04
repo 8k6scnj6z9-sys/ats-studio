@@ -31,7 +31,6 @@ export async function generateMetadata(props: PageProps<"/[locale]/servicos/[slu
       siteName: "ATS Studio",
       title: content.seoTitle,
       description: content.seoDescription,
-      images: [{ url: "/og-image.png", width: 1200, height: 630 }],
     },
   };
 }
@@ -103,12 +102,16 @@ export default async function ServicePageRoute(props: PageProps<"/[locale]/servi
               <div className="mt-10 flex flex-wrap gap-3">
                 <Link
                   href={`/${typedLocale}#contact`}
+                  data-umami-event="cta-proposal"
+                  data-umami-event-service={page.slug}
                   className="rounded-full bg-flame px-6 py-3 text-sm font-medium text-ink transition-colors hover:bg-paper focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame focus-visible:ring-offset-4 focus-visible:ring-offset-ink"
                 >
                   {pt ? "Pedir proposta" : "Request a proposal"}
                 </Link>
                 <Link
                   href={`/${typedLocale}/diagnostico`}
+                  data-umami-event="cta-diagnostic"
+                  data-umami-event-service={page.slug}
                   className="rounded-full border border-line px-6 py-3 text-sm text-paper transition-colors hover:border-flame hover:text-flame focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame focus-visible:ring-offset-4 focus-visible:ring-offset-ink"
                 >
                   {pt ? "Diagnóstico digital gratuito" : "Free digital diagnosis"}
@@ -149,6 +152,8 @@ export default async function ServicePageRoute(props: PageProps<"/[locale]/servi
             <section className="mt-20 md:mt-28" aria-labelledby="proof-title">
               <Link
                 href={`/${typedLocale}/work/${proof.slug}`}
+                data-umami-event="service-proof"
+                data-umami-event-service={page.slug}
                 className="group grid grid-cols-1 overflow-hidden rounded-xl border border-line bg-ash md:grid-cols-2"
               >
                 {proof.localImage ? (
@@ -223,12 +228,15 @@ export default async function ServicePageRoute(props: PageProps<"/[locale]/servi
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href={`/${typedLocale}#contact`}
+                data-umami-event="cta-contact"
+                data-umami-event-service={page.slug}
                 className="rounded-full bg-flame px-6 py-3 text-sm font-medium text-ink transition-colors hover:bg-paper"
               >
                 {pt ? "Falar com a ATS Studio" : "Talk to ATS Studio"}
               </Link>
               <a
                 href={`mailto:${company.email}`}
+                data-umami-event="email-click"
                 className="rounded-full border border-line px-6 py-3 text-sm text-paper transition-colors hover:border-flame hover:text-flame"
               >
                 {company.email}

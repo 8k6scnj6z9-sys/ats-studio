@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import type { Dictionary } from "@/lib/i18n";
 import type { SocialLink } from "@/lib/site-settings";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import { track } from "@/lib/analytics";
 
 type Props = { dict: Dictionary; socialLinks: SocialLink[] };
 type Status = "idle" | "sending" | "success" | "error";
@@ -31,6 +32,7 @@ export default function Contact({ dict, socialLinks }: Props) {
       });
       if (!res.ok) throw new Error("send failed");
       setStatus("success");
+      track("contact-submit", { page: window.location.pathname });
       (e.target as HTMLFormElement).reset();
     } catch {
       setStatus("error");
@@ -64,6 +66,7 @@ export default function Contact({ dict, socialLinks }: Props) {
           <ScrollReveal delay={0.15}>
             <a
               href={`mailto:${c.email}`}
+              data-umami-event="email-click"
               className="block mt-10 font-display text-3xl md:text-5xl underline decoration-flame decoration-2 underline-offset-8 hover:text-flame transition-colors break-all"
             >
               {c.email}
