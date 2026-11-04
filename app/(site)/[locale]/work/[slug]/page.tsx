@@ -53,13 +53,11 @@ export async function generateMetadata(
       siteName: "ATS Studio",
       title: `${project.name} — ATS Studio`,
       description: tagline,
-      images: [{ url: project.localImage ?? "/og-image.png", width: 1200, height: 630 }],
     },
     twitter: {
       card: "summary_large_image",
       title: `${project.name} — ATS Studio`,
       description: tagline,
-      images: [project.localImage ?? "/og-image.png"],
     },
   };
 }
@@ -191,6 +189,8 @@ export default async function ProjectPage(
                 <ScrollReveal delay={0.1}>
                   <a
                     href={project.projectUrl}
+                    data-umami-event="project-visit"
+                    data-umami-event-project={project.slug}
                     target="_blank"
                     rel="noreferrer"
                     className="mt-8 inline-flex items-center gap-3 border border-line px-5 py-3 text-sm text-paper transition-colors hover:border-flame hover:text-flame focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame focus-visible:ring-offset-4 focus-visible:ring-offset-ink"
@@ -396,12 +396,16 @@ export default async function ProjectPage(
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
                 href={`/${locale}#contact`}
+                data-umami-event="cta-contact"
+                data-umami-event-project={project.slug}
                 className="rounded-full bg-flame px-6 py-3 text-sm font-medium text-ink transition-colors hover:bg-paper focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame focus-visible:ring-offset-4 focus-visible:ring-offset-ash"
               >
                 {locale === "pt" ? "Falar sobre o meu projeto" : "Talk about my project"}
               </Link>
               <Link
                 href={`/${locale}/diagnostico`}
+                data-umami-event="cta-diagnostic"
+                data-umami-event-project={project.slug}
                 className="rounded-full border border-line px-6 py-3 text-sm text-paper transition-colors hover:border-flame hover:text-flame focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-flame focus-visible:ring-offset-4 focus-visible:ring-offset-ash"
               >
                 {locale === "pt" ? "Diagnóstico digital gratuito" : "Free digital diagnosis"}

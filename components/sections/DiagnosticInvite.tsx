@@ -48,6 +48,8 @@ export default function DiagnosticInvite({ locale, dict }: Props) {
           <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
             <Link
               href={`/${locale}/diagnostico`}
+              data-umami-event="cta-diagnostic"
+              data-umami-event-from="home"
               className="inline-flex justify-center rounded-full bg-flame px-6 py-4 text-sm font-medium text-ink transition-colors hover:bg-paper"
             >
               {content.cta}

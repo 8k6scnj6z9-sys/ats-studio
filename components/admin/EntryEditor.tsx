@@ -44,6 +44,7 @@ function ImageField({ label, value, onChange }: { label: string; value: string; 
         aria-label={`${label}: enviar ficheiro`}
         type="file"
         accept="image/png,image/jpeg,image/webp,image/avif"
+        title="PNG, JPEG, WebP ou AVIF até 8 MB; é convertida para WebP com no máximo 2400 px"
         onChange={(e) => e.target.files?.[0] && upload(e.target.files[0])}
         className="text-xs text-smoke file:mr-3 file:rounded-full file:border-0 file:bg-ash file:px-3 file:py-1 file:text-paper"
       />

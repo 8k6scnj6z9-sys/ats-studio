@@ -92,6 +92,8 @@ export default function Hero({ locale, dict }: Props) {
             </Link>
             <Link
               href={`/${locale}#contact`}
+              data-umami-event="cta-contact"
+              data-umami-event-from="hero"
               className="inline-flex items-center gap-3 px-1 py-4 text-sm text-smoke hover:text-flame transition-colors"
             >
               <span className="block w-8 h-px bg-current" />
