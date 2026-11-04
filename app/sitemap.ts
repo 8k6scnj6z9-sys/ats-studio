@@ -8,7 +8,6 @@ import { locales } from "@/lib/i18n";
 export const dynamic = "force-dynamic";
 
 const siteUrl = "https://atstudio.pt";
-const portalUrl = "https://portal.atstudio.pt";
 const siteLastModified = "2026-11-04";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -135,25 +134,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }))
   );
 
-  const portalRoutes = locales.map((locale) => ({
-    url: `${portalUrl}/${locale}/login`,
-    lastModified: siteLastModified,
-    changeFrequency: "monthly" as const,
-    priority: 0.35,
-    alternates: {
-      languages: {
-        "pt-PT": `${portalUrl}/pt/login`,
-        en: `${portalUrl}/en/login`,
-      },
-    },
-  }));
-
   return [
     ...staticRoutes,
     ...projectRoutes,
     ...processRoutes,
     ...resourceRoutes,
     ...serviceRoutes,
-    ...portalRoutes,
   ];
 }
