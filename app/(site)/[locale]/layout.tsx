@@ -116,6 +116,7 @@ export default async function LocaleLayout(props: LayoutProps<"/[locale]">) {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
+    "@id": `${siteUrl}/#organization`,
     name: company.name,
     alternateName: "AT Studio",
     url: siteUrl,
@@ -133,17 +134,28 @@ export default async function LocaleLayout(props: LayoutProps<"/[locale]">) {
     },
     email: company.email,
     ...(company.phone ? { telephone: company.phone } : {}),
-    areaServed: ["Portugal", "Guarda", "European Union"],
+    areaServed: [
+      { "@type": "City", name: "Guarda" },
+      { "@type": "AdministrativeArea", name: "Distrito da Guarda" },
+      { "@type": "Country", name: "Portugal" },
+    ],
     address: {
       "@type": "PostalAddress",
       addressLocality: company.addressLocality,
+      postalCode: "6300",
+      addressRegion: "Guarda",
       addressCountry: company.addressCountry,
     },
+    // City-level coordinates (Guarda), not a street address.
+    geo: { "@type": "GeoCoordinates", latitude: 40.5373, longitude: -7.2676 },
+    hasMap: "https://www.openstreetmap.org/?mlat=40.5373&mlon=-7.2676#map=13/40.5373/-7.2676",
     sameAs: siteSettings.socialLinks.map((social) => social.url),
     description: dict.meta.description,
     serviceType: [
       "Web design",
       "Web development",
+      "Custom software development",
+      "E-commerce development",
       "Branding",
       "UI/UX design",
       "Digital strategy",

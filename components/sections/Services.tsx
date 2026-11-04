@@ -2,12 +2,13 @@
 
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import Link from "next/link";
 import type { Dictionary } from "@/lib/i18n";
 import SectionHeader from "@/components/ui/SectionHeader";
 
-type Props = { dict: Dictionary };
+type Props = { dict: Dictionary; serviceLinks?: { href: string; label: string }[] };
 
-export default function Services({ dict }: Props) {
+export default function Services({ dict, serviceLinks = [] }: Props) {
   const [openId, setOpenId] = useState<string | null>(dict.services.items[0].id);
 
   return (
@@ -84,6 +85,20 @@ export default function Services({ dict }: Props) {
           );
         })}
       </div>
+
+      {serviceLinks.length > 0 && (
+        <nav aria-label={dict.services.title} className="mt-10 flex flex-wrap gap-3">
+          {serviceLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="inline-flex items-center gap-2 rounded-full border border-line px-5 py-2.5 text-sm text-paper/85 transition-colors hover:border-flame hover:text-flame"
+            >
+              {link.label} <span aria-hidden>→</span>
+            </Link>
+          ))}
+        </nav>
+      )}
 
       <motion.div
         initial={{ opacity: 0, y: 30 }}

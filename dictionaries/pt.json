@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "ATS Studio — Web design, desenvolvimento e branding na Guarda",
-    "description": "ATS Studio cria websites, web apps, identidade visual e experiências digitais para marcas, negócios locais e empresas que precisam de uma presença online clara, profissional e eficiente.",
+    "title": "Websites e software na Guarda | ATS Studio",
+    "description": "Criação de websites, lojas online e software à medida na Guarda. A ATS Studio desenha, desenvolve e aloja sites e plataformas rápidos, seguros e preparados para o Google.",
     "siteName": "ATS Studio",
     "shareTitle": "ATS Studio — Websites, apps e marcas digitais profissionais",
     "shareDescription": "Estúdio digital de Alexandre Terras Simões, na Guarda. Web design, desenvolvimento, branding, UI/UX e direção digital para negócios que valorizam clareza, confiança e execução cuidada.",
@@ -18,7 +18,13 @@
       "sites profissionais",
       "web apps",
       "Next.js developer Portugal",
-      "Alexandre Terras Simões"
+      "Alexandre Terras Simões",
+      "websites Guarda",
+      "sites Guarda",
+      "software Guarda",
+      "software à medida Guarda",
+      "lojas online Guarda",
+      "empresa de websites Guarda"
     ]
   },
   "nav": {
@@ -31,7 +37,7 @@
     "contact": "Contacto"
   },
   "hero": {
-    "eyebrow": "Estúdio digital · Guarda",
+    "eyebrow": "Websites e software na Guarda",
     "title": "ATS Studio",
     "statement": "Da Guarda para marcas que precisam de uma presença digital profissional.",
     "subtitle": "Design, desenvolvimento e direção digital para negócios que procuram clareza, confiança e uma experiência online bem estruturada.",
