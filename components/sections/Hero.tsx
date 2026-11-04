@@ -35,12 +35,12 @@ export default function Hero({ locale, dict }: Props) {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mb-7 md:mb-10 grid grid-cols-1 md:grid-cols-12 gap-5 font-mono text-xs uppercase tracking-widest text-smoke"
         >
-          <span className="md:col-span-3 text-flame">{dict.hero.eyebrow}</span>
+          <h1 className="md:col-span-3 text-flame">{dict.hero.eyebrow}</h1>
           <span className="hidden md:block md:col-span-4">Web development / design</span>
           <span className="hidden md:block md:col-span-5 text-right">Professional digital studio · 2026</span>
         </motion.div>
 
-        <h1 className="h-display text-[5.7rem] sm:text-[8rem] md:text-[11rem] lg:text-[14rem] xl:text-[16rem] leading-[0.78] text-balance">
+        <p className="h-display text-[5.7rem] sm:text-[8rem] md:text-[11rem] lg:text-[14rem] xl:text-[16rem] leading-[0.78] text-balance">
           {/* CSS animations start at first paint, before hydration, so they don't delay LCP. */}
           <span className="block hero-rise" style={{ animationDelay: "0.35s" }}>
             ATS
@@ -48,7 +48,7 @@ export default function Hero({ locale, dict }: Props) {
           <span className="block pl-[0.32em] italic text-flame hero-rise" style={{ animationDelay: "0.45s" }}>
             Studio
           </span>
-        </h1>
+        </p>
 
         <div
           className="mt-10 md:mt-14 grid grid-cols-1 md:grid-cols-12 gap-8 md:items-end hero-fade"

@@ -2238,6 +2238,297 @@
           }
         }
       }
+    },
+    {
+      "key": "software-a-medida-guarda",
+      "data": {
+        "slug": "software-a-medida-guarda",
+        "order": 4,
+        "serviceType": "Custom software development",
+        "areaServed": [
+          "Guarda",
+          "Beiras e Serra da Estrela",
+          "Portugal"
+        ],
+        "proofProject": "atsautarquia",
+        "content": {
+          "pt": {
+            "eyebrow": "Software à medida na Guarda",
+            "title": "Software à medida para empresas e instituições da Guarda.",
+            "seoTitle": "Software à medida na Guarda | ATS Studio",
+            "seoDescription": "Desenvolvimento de software à medida na Guarda: plataformas web, backoffices, automações e integrações para empresas, associações e autarquias. Fala com a ATS Studio.",
+            "intro": "Quando as folhas de Excel, os emails e as ferramentas genéricas já não chegam, desenvolvemos software feito para o teu processo: plataformas web, backoffices, áreas de cliente e automações, desenhados e mantidos a partir da Guarda.",
+            "benefits": [
+              {
+                "title": "Feito para o teu processo",
+                "text": "O software adapta-se à forma como a tua equipa trabalha, e não o contrário."
+              },
+              {
+                "title": "Menos trabalho manual",
+                "text": "Automatizamos tarefas repetitivas, alertas e relatórios para libertar tempo à equipa."
+              },
+              {
+                "title": "Tudo num só sítio",
+                "text": "Clientes, pedidos, documentos e dados reunidos numa plataforma, acessível em qualquer dispositivo."
+              },
+              {
+                "title": "Integrações",
+                "text": "Ligação a pagamentos online, email, faturação e outros sistemas que já usas."
+              },
+              {
+                "title": "Segurança e RGPD",
+                "text": "Perfis e permissões, registos de acesso, cópias de segurança e alojamento na União Europeia."
+              },
+              {
+                "title": "Evolução contínua",
+                "text": "Começamos pelo essencial e acrescentamos funcionalidades à medida que o negócio cresce."
+              }
+            ],
+            "deliverables": [
+              "Levantamento do processo e dos utilizadores",
+              "Protótipo clicável antes do desenvolvimento",
+              "Plataforma web acessível no telemóvel e no computador",
+              "Backoffice com perfis e permissões",
+              "Automações, alertas e relatórios",
+              "Integrações com pagamentos e outros sistemas",
+              "Alojamento, cópias de segurança e monitorização",
+              "Formação, suporte e manutenção"
+            ],
+            "proofTitle": "ATSAutarquia, software em produção",
+            "proofText": "Plataforma que reúne website, área do cidadão e backoffice para juntas e uniões de freguesia.",
+            "faq": [
+              {
+                "question": "Que tipo de software desenvolvem?",
+                "answer": "Plataformas web à medida: backoffices, áreas de cliente, sistemas de pedidos e marcações, gestão de documentos, automações e integrações. Funcionam no browser, no computador e no telemóvel."
+              },
+              {
+                "question": "Trabalham com empresas da Guarda?",
+                "answer": "Sim. Estamos na Guarda e reunimos presencialmente com empresas, associações e instituições da região, e também trabalhamos com clientes de todo o país."
+              },
+              {
+                "question": "Quanto custa um software à medida?",
+                "answer": "Depende do âmbito. Começamos por perceber o processo e propomos uma primeira versão com o essencial, com orçamento fechado por fases."
+              },
+              {
+                "question": "Quem fica com o software e os dados?",
+                "answer": "A propriedade e o acesso ao código e aos dados ficam definidos no contrato. Os dados são teus e podem ser exportados."
+              }
+            ],
+            "ctaTitle": "Tens um processo que podia ser mais simples?",
+            "ctaText": "Conta-nos como trabalhas hoje. Mostramos-te o que pode ser automatizado e como seria uma primeira versão."
+          },
+          "en": {
+            "eyebrow": "Custom software in Guarda",
+            "title": "Custom software for businesses and institutions in Guarda, Portugal.",
+            "seoTitle": "Custom software development in Guarda, Portugal | ATS Studio",
+            "seoDescription": "Custom software development in Guarda, Portugal: web platforms, back offices, automations and integrations for businesses, associations and local authorities.",
+            "intro": "When spreadsheets, emails and generic tools are no longer enough, we build software made for your process: web platforms, back offices, client areas and automations, designed and maintained from Guarda.",
+            "benefits": [
+              {
+                "title": "Built for your process",
+                "text": "The software adapts to how your team works, not the other way round."
+              },
+              {
+                "title": "Less manual work",
+                "text": "We automate repetitive tasks, alerts and reports to free up your team's time."
+              },
+              {
+                "title": "Everything in one place",
+                "text": "Clients, requests, documents and data in one platform, on any device."
+              },
+              {
+                "title": "Integrations",
+                "text": "Connections to online payments, email, invoicing and the systems you already use."
+              },
+              {
+                "title": "Security and GDPR",
+                "text": "Roles and permissions, access logs, backups and hosting in the European Union."
+              },
+              {
+                "title": "Continuous improvement",
+                "text": "We start with the essentials and add features as the business grows."
+              }
+            ],
+            "deliverables": [
+              "Process and user discovery",
+              "Clickable prototype before development",
+              "Web platform for phone and desktop",
+              "Back office with roles and permissions",
+              "Automations, alerts and reports",
+              "Integrations with payments and other systems",
+              "Hosting, backups and monitoring",
+              "Training, support and maintenance"
+            ],
+            "proofTitle": "ATSAutarquia, software in production",
+            "proofText": "A platform combining website, citizen area and back office for Portuguese parish councils.",
+            "faq": [
+              {
+                "question": "What kind of software do you build?",
+                "answer": "Custom web platforms: back offices, client areas, request and booking systems, document management, automations and integrations. They run in the browser, on desktop and on phones."
+              },
+              {
+                "question": "Do you work with businesses in Guarda?",
+                "answer": "Yes. We are based in Guarda and meet businesses, associations and institutions in the region in person, and we also work with clients across Portugal."
+              },
+              {
+                "question": "How much does custom software cost?",
+                "answer": "It depends on the scope. We first understand the process and propose a first version with the essentials, with a fixed quote per phase."
+              },
+              {
+                "question": "Who owns the software and data?",
+                "answer": "Ownership of and access to the code and data are set in the contract. The data is yours and can be exported."
+              }
+            ],
+            "ctaTitle": "Got a process that could be simpler?",
+            "ctaText": "Tell us how you work today. We show you what can be automated and what a first version would look like."
+          }
+        }
+      }
+    },
+    {
+      "key": "lojas-online-guarda",
+      "data": {
+        "slug": "lojas-online-guarda",
+        "order": 5,
+        "serviceType": "E-commerce development",
+        "areaServed": [
+          "Guarda",
+          "Beiras e Serra da Estrela",
+          "Portugal"
+        ],
+        "content": {
+          "pt": {
+            "eyebrow": "Lojas online na Guarda",
+            "title": "Criação de lojas online para negócios da Guarda.",
+            "seoTitle": "Criação de lojas online na Guarda | ATS Studio",
+            "seoDescription": "Lojas online na Guarda com pagamentos MB WAY, Multibanco e cartão, envios, faturação e gestão simples de produtos. Vende para todo o país com a ATS Studio.",
+            "intro": "Leva a tua loja da Guarda para todo o país. Criamos lojas online rápidas, com pagamentos portugueses, gestão simples de produtos e encomendas, e uma experiência pensada para comprar no telemóvel.",
+            "benefits": [
+              {
+                "title": "Pagamentos portugueses",
+                "text": "MB WAY, Multibanco e cartão através de fornecedores de pagamento certificados."
+              },
+              {
+                "title": "Pensada para o telemóvel",
+                "text": "Catálogo, carrinho e checkout rápidos e claros num ecrã pequeno."
+              },
+              {
+                "title": "Gestão simples",
+                "text": "Produtos, stock, encomendas e clientes geridos num painel fácil de usar."
+              },
+              {
+                "title": "Envios e recolha",
+                "text": "Portes por zona, envio para todo o país ou recolha na loja física."
+              },
+              {
+                "title": "Encontrada no Google",
+                "text": "Páginas de produto preparadas para pesquisa, com dados estruturados e boa velocidade."
+              },
+              {
+                "title": "Conformidade",
+                "text": "Termos, privacidade, livre resolução e Livro de Reclamações tratados desde o início."
+              }
+            ],
+            "deliverables": [
+              "Catálogo de produtos com categorias e variantes",
+              "Carrinho e checkout otimizados para mobile",
+              "Pagamentos MB WAY, Multibanco e cartão",
+              "Configuração de envios e recolha na loja",
+              "Emails de confirmação e estado da encomenda",
+              "Páginas legais para venda online",
+              "SEO de produtos e categorias",
+              "Formação para gerir a loja"
+            ],
+            "proofTitle": "",
+            "proofText": "",
+            "faq": [
+              {
+                "question": "Que meios de pagamento posso aceitar?",
+                "answer": "Os mais usados em Portugal: MB WAY, referências Multibanco e cartão de crédito ou débito, através de um fornecedor de pagamentos certificado."
+              },
+              {
+                "question": "Posso vender só na Guarda ou também para o país todo?",
+                "answer": "As duas coisas. Configuramos recolha na loja para clientes locais e envios para todo o país com portes por zona."
+              },
+              {
+                "question": "Consigo gerir os produtos sozinho?",
+                "answer": "Sim. A loja inclui um painel para acrescentar produtos, mudar preços, gerir stock e acompanhar encomendas, e damos formação."
+              },
+              {
+                "question": "O que é preciso para vender online legalmente?",
+                "answer": "Identificação do vendedor, termos de venda, política de privacidade, informação sobre livre resolução e ligação ao Livro de Reclamações. Ajudamos a preparar tudo."
+              }
+            ],
+            "ctaTitle": "Queres vender online?",
+            "ctaText": "Conta-nos o que vendes e como entregas. Preparamos uma proposta com o essencial para começares a vender."
+          },
+          "en": {
+            "eyebrow": "Online stores in Guarda",
+            "title": "Online store development for businesses in Guarda, Portugal.",
+            "seoTitle": "Online store development in Guarda, Portugal | ATS Studio",
+            "seoDescription": "Online stores in Guarda, Portugal with MB WAY, Multibanco and card payments, shipping, invoicing and simple product management. Sell nationwide with ATS Studio.",
+            "intro": "Take your Guarda shop nationwide. We build fast online stores with Portuguese payment methods, simple product and order management, and a mobile-first shopping experience.",
+            "benefits": [
+              {
+                "title": "Portuguese payments",
+                "text": "MB WAY, Multibanco and cards through certified payment providers."
+              },
+              {
+                "title": "Made for phones",
+                "text": "Fast, clear catalogue, cart and checkout on small screens."
+              },
+              {
+                "title": "Simple management",
+                "text": "Products, stock, orders and customers in an easy dashboard."
+              },
+              {
+                "title": "Shipping and pickup",
+                "text": "Rates by zone, nationwide shipping or pickup at your physical shop."
+              },
+              {
+                "title": "Found on Google",
+                "text": "Product pages ready for search, with structured data and good speed."
+              },
+              {
+                "title": "Compliance",
+                "text": "Terms, privacy, withdrawal rights and the Complaints Book handled from day one."
+              }
+            ],
+            "deliverables": [
+              "Product catalogue with categories and variants",
+              "Mobile-optimised cart and checkout",
+              "MB WAY, Multibanco and card payments",
+              "Shipping and in-store pickup setup",
+              "Order confirmation and status emails",
+              "Legal pages for online sales",
+              "Product and category SEO",
+              "Training to run the store"
+            ],
+            "proofTitle": "",
+            "proofText": "",
+            "faq": [
+              {
+                "question": "Which payment methods can I accept?",
+                "answer": "The most used in Portugal: MB WAY, Multibanco references and credit or debit cards, through a certified payment provider."
+              },
+              {
+                "question": "Can I sell locally and nationwide?",
+                "answer": "Both. We set up in-store pickup for local customers and nationwide shipping with rates by zone."
+              },
+              {
+                "question": "Can I manage products myself?",
+                "answer": "Yes. The store includes a dashboard to add products, change prices, manage stock and follow orders, and we provide training."
+              },
+              {
+                "question": "What do I need to sell online legally?",
+                "answer": "Seller identification, terms of sale, a privacy policy, withdrawal information and a link to the Complaints Book. We help you prepare it all."
+              }
+            ],
+            "ctaTitle": "Want to sell online?",
+            "ctaText": "Tell us what you sell and how you deliver. We prepare a proposal with the essentials to start selling."
+          }
+        }
+      }
     }
   ]
 }

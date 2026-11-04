@@ -9,7 +9,7 @@ export const dynamic = "force-dynamic";
 
 const siteUrl = "https://atstudio.pt";
 const portalUrl = "https://portal.atstudio.pt";
-const siteLastModified = "2026-06-11";
+const siteLastModified = "2026-11-04";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const [projects, processSlugs, resources, services] = await Promise.all([

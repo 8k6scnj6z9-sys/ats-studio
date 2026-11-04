@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "ATS Studio — Web design, development and branding in Guarda",
-    "description": "ATS Studio creates websites, web apps, visual identity and digital experiences for brands, local businesses and companies that need a clear, professional and efficient online presence.",
+    "title": "Websites and software in Guarda, Portugal | ATS Studio",
+    "description": "Website design, online stores and custom software in Guarda, Portugal. ATS Studio designs, builds and hosts fast, secure sites and platforms ready for Google.",
     "siteName": "ATS Studio",
     "shareTitle": "ATS Studio — Professional websites, apps and digital brands",
     "shareDescription": "Alexandre Terras Simões digital studio in Guarda. Web design, development, branding, UI/UX and digital direction for businesses that value clarity, trust and careful execution.",
@@ -17,7 +17,10 @@
       "professional websites",
       "web apps",
       "Next.js developer Portugal",
-      "Alexandre Terras Simões"
+      "Alexandre Terras Simões",
+      "websites Guarda Portugal",
+      "software Guarda",
+      "web design Guarda Portugal"
     ]
   },
   "nav": {
@@ -30,7 +33,7 @@
     "contact": "Contact"
   },
   "hero": {
-    "eyebrow": "Digital studio · Guarda",
+    "eyebrow": "Websites and software in Guarda, Portugal",
     "title": "ATS Studio",
     "statement": "From Guarda for brands that need a professional digital presence.",
     "subtitle": "Design, development and digital direction for businesses looking for clarity, trust and a well-structured online experience.",

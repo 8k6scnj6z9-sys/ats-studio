@@ -14,16 +14,22 @@ import TrustSignals from "@/components/sections/TrustSignals";
 import Contact from "@/components/sections/Contact";
 import Footer from "@/components/sections/Footer";
 import { getSiteSettings } from "@/lib/site-settings";
+import { getServicePages } from "@/lib/service-pages";
 
 export default async function HomePage(props: PageProps<"/[locale]">) {
   const { locale } = await props.params;
   if (!hasLocale(locale)) notFound();
-  const [dict, projects, processSteps, siteSettings] = await Promise.all([
+  const [dict, projects, processSteps, siteSettings, servicePages] = await Promise.all([
     getDictionary(locale as Locale),
     getProjects(),
     getProcessSteps(),
     getSiteSettings(),
+    getServicePages(),
   ]);
+  const serviceLinks = servicePages.map((page) => ({
+    href: `/${locale}/servicos/${page.slug}`,
+    label: page.content[locale as Locale].eyebrow,
+  }));
 
   return (
     <>
@@ -32,7 +38,7 @@ export default async function HomePage(props: PageProps<"/[locale]">) {
         <Hero locale={locale as Locale} dict={dict} />
         <DiagnosticInvite locale={locale as Locale} dict={dict} />
         <Work locale={locale as Locale} dict={dict} projects={projects} />
-        <Services dict={dict} />
+        <Services dict={dict} serviceLinks={serviceLinks} />
         <Audience dict={dict} />
         <About dict={dict} />
         <Process locale={locale as Locale} dict={dict} steps={processSteps} />
