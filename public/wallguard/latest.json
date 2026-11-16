@@ -1,11 +1,11 @@
 {
-  "version": "0.6.0",
-  "notes": "Vulnerabilidades (macOS e apps desatualizadas, CVEs exploradas, serviços abertos à rede, Homebrew), Privacidade (câmara, microfone, ecrã, teclado, com alertas) e verificação de passwords expostas.",
-  "pub_date": "2026-11-16T22:28:27Z",
+  "version": "0.10.0",
+  "notes": "Novo logo; botão de atualização na barra lateral; filtro DNS permanente; permissões mantidas entre atualizações; ações diretas em Privacidade e Segurança; chave de ameaças fornecida pela ATS Studio.",
+  "pub_date": "2026-11-16T23:47:32Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUVndMc2VySk96RUNscmltbDNkb0VIeXlSSEdpWGRpV1NBV0lFeXBTeDBIdUFTZEpPWDZSMGg4TFhTZncrdGJQTXUrZ1c4bi9wNmdiREhJMlNRZmZlU1F4bTJCeXpUaFFFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0ODY4MTAyCWZpbGU6V2FsbEd1YXJkXzAuNi4wX2Rhcndpbi1hYXJjaDY0LmFwcC50YXIuZ3oKMGVjV2xXWXd5R0RscS9TQWRYNEludHlRM0NPSHBCYUM2N1h3aHFhM2dMRTVxTC9oekh1WHJIWk5wYlZnVUp2c2YvdG9kSEVMejFqdFhybEdsd1orQ1E9PQo=",
-      "url": "https://atstudio.pt/wallguard/WallGuard_0.6.0_darwin-aarch64.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUVndMc2VySk96RVBKVkdqNnNrN0E5MVprMkdmVzFwVFNPWWF4UHJrdzZOMUc5eW1rTTMwU3NyVHQreE1OQkRQdzF0T3p4d2ZjM1R0L1orNlZ4Ukw3YVptRFpkS2p0VVFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0ODcyODQ0CWZpbGU6V2FsbEd1YXJkXzAuMTAuMF9kYXJ3aW4tYWFyY2g2NC5hcHAudGFyLmd6CmlyKzRJZzZINkFpaDR4VjVCZjVMWWg5WHJ1VytxRTJjdkY1cTBwS09nekszcWxZTWp2VzB1VUJDNXhZQlRMM3RsU0VuM25USUdkRDlYOEgrdWFzSkRBPT0K",
+      "url": "https://atstudio.pt/wallguard/WallGuard_0.10.0_darwin-aarch64.app.tar.gz"
     }
   }
 }
