@@ -1,11 +1,11 @@
 {
-  "version": "0.3.0",
-  "notes": "Atualizações automáticas da app a partir de atstudio.pt.",
-  "pub_date": "2026-11-13T14:52:36Z",
+  "version": "0.3.1",
+  "notes": "Instalador .pkg para macOS e assinatura da app corrigida.",
+  "pub_date": "2026-11-16T15:54:14Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUVndMc2VySk96RU9kZzRVSlRWWTJTZmNjVFFkV2pqM3E0WUdQbmNLTXR1cHJIZ3JLSVlzWWtjK05zaUphZk03Y1dxOVhDaWZla1BKcmZGZXZPdEI4QTluMVBTcUhyeEF3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0NTgxNTUxCWZpbGU6V2FsbCBHdWFyZC5hcHAudGFyLmd6CXZlcnNpb246MC4zLjAKODdJbDRRdndaMk1SSWtkSmFRZVliWWlMVDMwbG80cHhrVUpBWWlwNm5rVXZxK04ydVpkUXFoNS84Tkx2S3I4YjV6MXlEVVpleGJkWmZFd3JxVDFDQVE9PQo=",
-      "url": "https://atstudio.pt/wallguard/WallGuard_0.3.0_darwin-aarch64.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUVndMc2VySk96RU9HR1VWTE9CNk84ZGtxZUhRajkyTUtudFdMT08ydCt2MmZCTHE0V3Q0eWZvbGN3d1poR1RZNjdNbThlUEYzNEV2Yy9laWRtTmpJT09ZWnUraFRwdVE0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0ODQ0NDQ3CWZpbGU6V2FsbEd1YXJkXzAuMy4xX2Rhcndpbi1hYXJjaDY0LmFwcC50YXIuZ3oKdVh4aG53Qmh0VXRFRk5UdVAvMzlacGt5US9ZQi92em82NDYyMEszZG5mT1Jnbkpxb1JwRzJodUlHVHZwUVhwZE5aSEZiZ3MxOVVublN4aVl2ZVhVRGc9PQo=",
+      "url": "https://atstudio.pt/wallguard/WallGuard_0.3.1_darwin-aarch64.app.tar.gz"
     }
   }
 }
