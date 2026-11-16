@@ -1,11 +1,11 @@
 {
-  "version": "0.4.0",
-  "notes": "Novo visual: tema claro, escudo 3D e objetos 3D em cada secção.",
-  "pub_date": "2026-11-16T16:24:20Z",
+  "version": "0.5.0",
+  "notes": "Análise dentro de arquivos ZIP/7z/TAR e macros Office, discos externos e USB, cache de análise (até 15x mais rápida), rede (ligações por app, servidores maliciosos, Wi-Fi, ARP, DNS, dispositivos) e auditoria de extensões do browser.",
+  "pub_date": "2026-11-16T16:52:41Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUVndMc2VySk96RUMweXJLT1p5Q3VjaEZza3hWbkxiUnRzd1lQY0N2WWErNTVvRUsySjltSTdmQ0FrMEtITXZSeUlYLytLUEtqalVVMEI5MHpWM0EzSERzbkVJZHp0OFE4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0ODQ2MjU0CWZpbGU6V2FsbEd1YXJkXzAuNC4wX2Rhcndpbi1hYXJjaDY0LmFwcC50YXIuZ3oKRjFKaWZjb2pvS1hnN1JKVzNDOFZ5UXVnTjZFOGlOUmtYUGthWWhYelUyMDBRZ2IrK2Z6aEhVSXk4Z1ZvNFdPRFdoWFoycGlFQXFhUUtWREgvcnlQQ1E9PQo=",
-      "url": "https://atstudio.pt/wallguard/WallGuard_0.4.0_darwin-aarch64.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUVndMc2VySk96RUxpYUJFekxTczR0QUxaRWVTNWZHbWNLVGNMZ1J3SGlmeFRWR3Zrcm9TcWJYZ3d0T2pNWDRhTFpzWm9EK3RxeFVVYVVNZUFmQ2NiNXFRcWhPeUh5SXdnPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0ODQ3OTU1CWZpbGU6V2FsbEd1YXJkXzAuNS4wX2Rhcndpbi1hYXJjaDY0LmFwcC50YXIuZ3oKMUlnWStnbkZqWTN2dlk4c3FRSlBRNFU4eTdwS1hxTWhzUVFQTWs4MEp6clRVTStab295NzRmdktBNmtiMnV4SjYrenVJbkhKcnVsNHN3dVVZdEtBQ3c9PQo=",
+      "url": "https://atstudio.pt/wallguard/WallGuard_0.5.0_darwin-aarch64.app.tar.gz"
     }
   }
 }
