@@ -1,11 +1,11 @@
 {
-  "version": "0.10.1",
-  "notes": "Anti-ransomware sem falsos alarmes de IA e builds (só dispara com conteúdo encriptado, apagões em massa ou iscos); decisões na Atividade (Quarentena, Ignorar, Dispensar); DNS do sistema com estado real e aviso do Tailscale; Privacidade com erros claros; Homebrew no Terminal; novo logo.",
-  "pub_date": "2026-11-17T00:23:20Z",
+  "version": "0.11.0",
+  "notes": "Consola ATS: liga este computador a guard.atstudio.pt para veres o estado e os alertas de todos os teus computadores (só estado e títulos de alertas).",
+  "pub_date": "2026-11-17T10:54:44Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUVndMc2VySk96RURNemQvRmZacVlwdVNtTVdzZVNEVnhrTU5yNWFCb0kySGU4UEg4T2JrTnJsRHRrWlh3d3VQZjl5aEx4Qng0VzVOb2wrWjhxTmk1N3NVcXl4NXJkVlFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0ODc0OTk0CWZpbGU6V2FsbEd1YXJkXzAuMTAuMV9kYXJ3aW4tYWFyY2g2NC5hcHAudGFyLmd6CktaSmU1TUtocHp3bGlwQU56WWNIdXRnL1o5OWR6UXVEZFFlRGZDMnRDWDhEWWk5eVI4a0NRdVk5UEZ2NlZMMjJNcjlXZCs3Y2hROXVaU1hMVW9wUENBPT0K",
-      "url": "https://atstudio.pt/wallguard/WallGuard_0.10.1_darwin-aarch64.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUVndMc2VySk96RUhFTE4zRFFCb1B5NGZveGpIcWs0dlo2bWRkbmYxWEF2dFJUQ1E3UDE1QVlCbjU4Y0xaNWRiUXMxa0p0R0FEWmhpVURsQTdIemQ4cmZwL3Y3YlRIdGdBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0OTEyODc3CWZpbGU6V2FsbEd1YXJkXzAuMTEuMF9kYXJ3aW4tYWFyY2g2NC5hcHAudGFyLmd6CmFYT0M0WDV3QnJOaitscU1WNWhnVUE5TTJVZy9HZU4vbGQzWEIrSXVOTmVqS21YVzFBNVF4VENRUFIxOHg0aFVrdzAxODI4akNBdm1iM1psaXdvMkFnPT0K",
+      "url": "https://atstudio.pt/wallguard/WallGuard_0.11.0_darwin-aarch64.app.tar.gz"
     }
   }
 }
