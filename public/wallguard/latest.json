@@ -1,11 +1,11 @@
 {
-  "version": "0.10.0",
-  "notes": "Novo logo; botão de atualização na barra lateral; filtro DNS permanente; permissões mantidas entre atualizações; ações diretas em Privacidade e Segurança; chave de ameaças fornecida pela ATS Studio.",
-  "pub_date": "2026-11-16T23:47:32Z",
+  "version": "0.10.1",
+  "notes": "Anti-ransomware sem falsos alarmes de IA e builds (só dispara com conteúdo encriptado, apagões em massa ou iscos); decisões na Atividade (Quarentena, Ignorar, Dispensar); DNS do sistema com estado real e aviso do Tailscale; Privacidade com erros claros; Homebrew no Terminal; novo logo.",
+  "pub_date": "2026-11-17T00:23:20Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUVndMc2VySk96RVBKVkdqNnNrN0E5MVprMkdmVzFwVFNPWWF4UHJrdzZOMUc5eW1rTTMwU3NyVHQreE1OQkRQdzF0T3p4d2ZjM1R0L1orNlZ4Ukw3YVptRFpkS2p0VVFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0ODcyODQ0CWZpbGU6V2FsbEd1YXJkXzAuMTAuMF9kYXJ3aW4tYWFyY2g2NC5hcHAudGFyLmd6CmlyKzRJZzZINkFpaDR4VjVCZjVMWWg5WHJ1VytxRTJjdkY1cTBwS09nekszcWxZTWp2VzB1VUJDNXhZQlRMM3RsU0VuM25USUdkRDlYOEgrdWFzSkRBPT0K",
-      "url": "https://atstudio.pt/wallguard/WallGuard_0.10.0_darwin-aarch64.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUVndMc2VySk96RURNemQvRmZacVlwdVNtTVdzZVNEVnhrTU5yNWFCb0kySGU4UEg4T2JrTnJsRHRrWlh3d3VQZjl5aEx4Qng0VzVOb2wrWjhxTmk1N3NVcXl4NXJkVlFBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0ODc0OTk0CWZpbGU6V2FsbEd1YXJkXzAuMTAuMV9kYXJ3aW4tYWFyY2g2NC5hcHAudGFyLmd6CktaSmU1TUtocHp3bGlwQU56WWNIdXRnL1o5OWR6UXVEZFFlRGZDMnRDWDhEWWk5eVI4a0NRdVk5UEZ2NlZMMjJNcjlXZCs3Y2hROXVaU1hMVW9wUENBPT0K",
+      "url": "https://atstudio.pt/wallguard/WallGuard_0.10.1_darwin-aarch64.app.tar.gz"
     }
   }
 }
