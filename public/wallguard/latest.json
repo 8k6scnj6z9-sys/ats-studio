@@ -1,11 +1,11 @@
 {
-  "version": "0.11.0",
-  "notes": "Consola ATS: liga este computador a guard.atstudio.pt para veres o estado e os alertas de todos os teus computadores (só estado e títulos de alertas).",
-  "pub_date": "2026-11-17T10:54:44Z",
+  "version": "0.11.1",
+  "notes": "Apagar muitos ficheiros de seguida (limpezas, ferramentas de IA, Git) já não dispara o alarme de ransomware.",
+  "pub_date": "2026-11-17T15:58:44Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUVndMc2VySk96RUhFTE4zRFFCb1B5NGZveGpIcWs0dlo2bWRkbmYxWEF2dFJUQ1E3UDE1QVlCbjU4Y0xaNWRiUXMxa0p0R0FEWmhpVURsQTdIemQ4cmZwL3Y3YlRIdGdBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0OTEyODc3CWZpbGU6V2FsbEd1YXJkXzAuMTEuMF9kYXJ3aW4tYWFyY2g2NC5hcHAudGFyLmd6CmFYT0M0WDV3QnJOaitscU1WNWhnVUE5TTJVZy9HZU4vbGQzWEIrSXVOTmVqS21YVzFBNVF4VENRUFIxOHg0aFVrdzAxODI4akNBdm1iM1psaXdvMkFnPT0K",
-      "url": "https://atstudio.pt/wallguard/WallGuard_0.11.0_darwin-aarch64.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUVndMc2VySk96RUF3bUpudUNaMTQ3SlI3OGNPTW1vYit5dGIydFRyTGNzNnp5VDh1aWc2c1J6ZkpoT3VtZHY4NVRLUVdZZnF4OFJjeWM2THdLcHJheGY2bUFhN253a1E4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0OTMxMTA4CWZpbGU6V2FsbEd1YXJkXzAuMTEuMV9kYXJ3aW4tYWFyY2g2NC5hcHAudGFyLmd6Cmp2NTRnWXdnVlBRK3dPUVE3dlRHN1JOYVV0NGdNS1pTVDdCYk9EQXpHMnhuZyttWEhvSEFwaUx5bXdSOWFzNjVub0c2NXZmYmpuMHRmVEVIb2FnNEF3PT0K",
+      "url": "https://atstudio.pt/wallguard/WallGuard_0.11.1_darwin-aarch64.app.tar.gz"
     }
   }
 }
