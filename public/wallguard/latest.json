@@ -1,11 +1,11 @@
 {
-  "version": "0.12.0",
-  "notes": "Cofre de documentos com restauro, bloqueio de comandos que apagam cópias de recuperação, integridade do sistema, verificação de links e extensão do browser, pausa em ecrã inteiro, notificações configuráveis, relatório PDF e políticas da consola.",
-  "pub_date": "2026-11-17T16:38:53Z",
+  "version": "0.12.1",
+  "notes": "Retirar acesso funciona com apps desinstaladas; o acesso total ao disco é detetado corretamente; aviso de contas de administrador a mais; frequência da análise automática configurável; logo ATS Studio na barra lateral.",
+  "pub_date": "2026-11-17T19:07:03Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUVndMc2VySk96RU9VdjIyWnhNZ2kyTkp5cEhrcGg3ZEc2dUR5MHk4VUw3SG1scVNSYmFiVXFDdGpCZHJLR2twNTJpVVJNRnNiNkM3dHFQcmdVeEVlWVFrSFFzR1hsR3dzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0OTMzNTI3CWZpbGU6V2FsbEd1YXJkXzAuMTIuMF9kYXJ3aW4tYWFyY2g2NC5hcHAudGFyLmd6ClhQenduRjd2MEh2WCtrVGt1ZFdjSy81VDBSL3JZNG56Mm82VDhTTkc1RUQxNFNsbDZaTm1WVzd5K3hwU1VId1U3bkdETzNaZGFzVnZTWnBETFdGRUJnPT0K",
-      "url": "https://atstudio.pt/wallguard/WallGuard_0.12.0_darwin-aarch64.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUVndMc2VySk96RUNidGNqdHNQclhxcml3VjNGK3hodVpiK2s2RDl4RDF6SjFrbGN6VVQxa09zTmc4NDI5UHo3cFJobHQvYVZuczZJZmxkdDY2RUc0TCt6dmZQSU54TkFzPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzk0OTQyNDE3CWZpbGU6V2FsbEd1YXJkXzAuMTIuMV9kYXJ3aW4tYWFyY2g2NC5hcHAudGFyLmd6Ck10SW83N1JMOVhtckJhZE5JUC9xV3E1RVNpK2o3MC9abWxHWVdrK0NSK2RnRkhYaUE3eWhKbHlYU3l3dU5tbFhLbWhTQ2Jldzg2WlJDbWhEcnlObUJnPT0K",
+      "url": "https://atstudio.pt/wallguard/WallGuard_0.12.1_darwin-aarch64.app.tar.gz"
     }
   }
 }
